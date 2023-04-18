@@ -1,6 +1,7 @@
 package br.com.artcomp.wiew;
 
 //import br.com.artcomp.controller.VerificaLogin;
+import br.com.artcomp.controller.VerificaLogin;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
@@ -16,14 +17,18 @@ import javax.swing.BorderFactory;
  */
 public class Login extends javax.swing.JFrame {
 
-   // VerificaLogin verL;
-    //Principal principal;
+    VerificaLogin verL;
+    Principal principal;
 
     public Login() {
         initComponents();
 
-       // this.verL = new VerificaLogin();
-       // this.principal = new Principal();
+        this.verL = new VerificaLogin();
+        try {
+            this.principal = new Principal();
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel1.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.jButton2.setBackground(new Color(0, 0, 0, 150));
@@ -281,13 +286,13 @@ public class Login extends javax.swing.JFrame {
 
         if (evt.getKeyCode() == evt.VK_ENTER) {
 
-           // if (verL.VerificaLogin(Login.getText(), new String(this.Senha.getPassword()))) {
-                //this.dispose();
-                //principal.setVisible(true);
-            //} else {
-                //jLErro.setForeground(new Color(255, 0, 0, 255));
-               // jLErro.setVisible(true);
-            //}
+            if (verL.VerificaLogin(Login.getText(), new String(this.Senha.getPassword()))) {
+                this.dispose();
+                principal.setVisible(true);
+            } else {
+                jLErro.setForeground(new Color(255, 0, 0, 255));
+                jLErro.setVisible(true);
+            }
         }
 
     }//GEN-LAST:event_SenhaKeyPressed
@@ -300,13 +305,13 @@ public class Login extends javax.swing.JFrame {
 
     private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed
 
-//        if (verL.VerificaLogin(Login.getText(), new String(this.Senha.getPassword()))) {
-//            this.dispose();
-//            principal.setVisible(true);
-//        } else {
-//            jLErro.setForeground(new Color(255, 0, 0, 255));
-//            jLErro.setVisible(true);
-//        }
+        if (verL.VerificaLogin(Login.getText(), new String(this.Senha.getPassword()))) {
+            this.dispose();
+            principal.setVisible(true);
+        } else {
+            jLErro.setForeground(new Color(255, 0, 0, 255));
+            jLErro.setVisible(true);
+        }
 
     }//GEN-LAST:event_kButton1ActionPerformed
 

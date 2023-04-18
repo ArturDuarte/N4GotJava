@@ -5,6 +5,8 @@
 package br.com.artcomp.wiew;
 
 import java.awt.Color;
+import java.awt.Font;
+import javax.swing.BorderFactory;
 
 /**
  *
@@ -18,8 +20,30 @@ public class TelaMostrar extends javax.swing.JFrame {
     public TelaMostrar() {
         initComponents();
 
+         this.JTLogin.setBackground(new Color(9, 73, 110));
+        this.JTLogin.setFont(new Font("Square721 BT", 1, 14));
+        this.JTLogin.setForeground(new Color(255, 255, 255));
+        this.JTLogin.setToolTipText("");
+        this.JTLogin.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(255, 255, 255)));
+        this.JTLogin.setCaretColor(new Color(255, 255, 255));
+        this.JTLogin.setDisabledTextColor(new Color(255, 255, 255));
+        this.JTLogin.setOpaque(false);
+        this.JTLogin.setSelectionColor(new Color(9, 73, 110));
+        
+        this.JTSenha.setBackground(new Color(9, 73, 110));
+        this.JTSenha.setFont(new Font("Square721 BT", 1, 14));
+        this.JTSenha.setForeground(new Color(255, 255, 255));
+        this.JTSenha.setToolTipText("");
+        this.JTSenha.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(255, 255, 255)));
+        this.JTSenha.setCaretColor(new Color(255, 255, 255));
+        this.JTSenha.setDisabledTextColor(new Color(255, 255, 255));
+        this.JTSenha.setOpaque(false);
+        this.JTSenha.setSelectionColor(new Color(9, 73, 110));
+        
         this.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
-        this.kGradientPanel1.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
+        this.kGradientPanel3.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
+        this.kGradientPanel4.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
+        
     }
 
     /**
@@ -35,15 +59,24 @@ public class TelaMostrar extends javax.swing.JFrame {
         jBFechar = new javax.swing.JButton();
         btolhar1 = new br.com.artcomp.cell.ActionButton();
         jLabel1 = new javax.swing.JLabel();
+        kGradientPanel3 = new com.k33ptoo.components.KGradientPanel();
+        JTSenha = new javax.swing.JTextField();
+        kGradientPanel4 = new com.k33ptoo.components.KGradientPanel();
+        JTLogin = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        btolhar = new br.com.artcomp.cell.ActionButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
         kGradientPanel1.setBackground(new java.awt.Color(255, 102, 0));
         kGradientPanel1.setkBorderRadius(15);
-        kGradientPanel1.setkEndColor(new java.awt.Color(255, 102, 0));
-        kGradientPanel1.setkGradientFocus(180);
+        kGradientPanel1.setkEndColor(new java.awt.Color(195, 79, 1));
+        kGradientPanel1.setkGradientFocus(200);
         kGradientPanel1.setkStartColor(new java.awt.Color(255, 102, 0));
+        kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jBFechar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jBFechar.setForeground(new java.awt.Color(255, 255, 255));
@@ -61,44 +94,83 @@ public class TelaMostrar extends javax.swing.JFrame {
                 jBFecharActionPerformed(evt);
             }
         });
+        kGradientPanel1.add(jBFechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, 30, 30));
 
         btolhar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/Itens.png"))); // NOI18N
+        btolhar1.setFocusable(false);
+        btolhar1.setRequestFocusEnabled(false);
         btolhar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btolhar1ActionPerformed(evt);
             }
         });
+        kGradientPanel1.add(btolhar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 40, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/camera.png"))); // NOI18N
+        kGradientPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, -1, 100));
 
-        javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
-        kGradientPanel1.setLayout(kGradientPanel1Layout);
-        kGradientPanel1Layout.setHorizontalGroup(
-            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
-                .addGap(0, 670, Short.MAX_VALUE)
-                .addComponent(jBFechar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(btolhar1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(284, 284, 284))
-        );
-        kGradientPanel1Layout.setVerticalGroup(
-            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addComponent(jBFechar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(btolhar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 358, Short.MAX_VALUE))
-        );
+        kGradientPanel3.setkBorderRadius(30);
+        kGradientPanel3.setkEndColor(new java.awt.Color(170, 68, 0));
+        kGradientPanel3.setkStartColor(new java.awt.Color(170, 68, 0));
+        kGradientPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        JTSenha.setBackground(new java.awt.Color(30, 30, 30));
+        JTSenha.setFont(new java.awt.Font("Square721 BT", 1, 14)); // NOI18N
+        JTSenha.setForeground(new java.awt.Color(255, 255, 255));
+        JTSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTSenha.setText("***************");
+        JTSenha.setToolTipText("");
+        JTSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        JTSenha.setCaretColor(new java.awt.Color(255, 255, 255));
+        JTSenha.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        JTSenha.setSelectionColor(new java.awt.Color(9, 73, 110));
+        kGradientPanel3.add(JTSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 240, 30));
+
+        kGradientPanel1.add(kGradientPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 260, 30));
+
+        kGradientPanel4.setkBorderRadius(30);
+        kGradientPanel4.setkEndColor(new java.awt.Color(170, 68, 0));
+        kGradientPanel4.setkStartColor(new java.awt.Color(170, 68, 0));
+        kGradientPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        JTLogin.setBackground(new java.awt.Color(30, 30, 30));
+        JTLogin.setFont(new java.awt.Font("Square721 BT", 1, 14)); // NOI18N
+        JTLogin.setForeground(new java.awt.Color(255, 255, 255));
+        JTLogin.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTLogin.setToolTipText("");
+        JTLogin.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        JTLogin.setCaretColor(new java.awt.Color(255, 255, 255));
+        JTLogin.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        JTLogin.setSelectionColor(new java.awt.Color(9, 73, 110));
+        kGradientPanel4.add(JTLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 240, 30));
+
+        kGradientPanel1.add(kGradientPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 260, 30));
+
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Login");
+        kGradientPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, -1, 20));
+
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Senha");
+        kGradientPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, -1, 20));
+
+        btolhar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/olho.png"))); // NOI18N
+        btolhar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btolharActionPerformed(evt);
+            }
+        });
+        kGradientPanel1.add(btolhar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 300, 30, 30));
+
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Clicando no cadeado a senha sera descriptografada.");
+        kGradientPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, 460, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,7 +180,7 @@ public class TelaMostrar extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
 
         pack();
@@ -123,6 +195,10 @@ public class TelaMostrar extends javax.swing.JFrame {
     private void btolhar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btolhar1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btolhar1ActionPerformed
+
+    private void btolharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btolharActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btolharActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,9 +237,17 @@ public class TelaMostrar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField JTLogin;
+    private javax.swing.JTextField JTSenha;
+    private br.com.artcomp.cell.ActionButton btolhar;
     private br.com.artcomp.cell.ActionButton btolhar1;
     private javax.swing.JButton jBFechar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private com.k33ptoo.components.KGradientPanel kGradientPanel1;
+    private com.k33ptoo.components.KGradientPanel kGradientPanel3;
+    private com.k33ptoo.components.KGradientPanel kGradientPanel4;
     // End of variables declaration//GEN-END:variables
 }

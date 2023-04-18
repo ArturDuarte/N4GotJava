@@ -319,7 +319,7 @@ public class Principal extends javax.swing.JFrame {
         kGradientPanel7.setkTransparentControls(false);
 
         table.setBackground(new java.awt.Color(255, 102, 0));
-        table.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        table.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         table.setForeground(new java.awt.Color(255, 102, 0));
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -357,7 +357,8 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         table.setGridColor(new java.awt.Color(255, 102, 0));
-        table.setRowHeight(60);
+        table.setRequestFocusEnabled(false);
+        table.setRowHeight(50);
         table.setSelectionBackground(new java.awt.Color(170, 68, 0));
         table.setSelectionForeground(new java.awt.Color(255, 102, 0));
         scrollPaneWin112.setViewportView(table);

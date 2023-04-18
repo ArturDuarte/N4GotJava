@@ -21,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author artco
+ * @author Artur
  */
 public class Principal extends javax.swing.JFrame {
 

@@ -1,4 +1,3 @@
-
 package br.com.artcomp.wiew;
 
 import br.com.artcomp.cell.PintarCabecalho;
@@ -48,7 +47,7 @@ public class Principal extends javax.swing.JFrame {
         table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 14), true, new Color(170, 68, 0), Color.WHITE));
         table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 14), true, new Color(170, 68, 0), Color.WHITE));
 
-        scrollPaneWin112.setBackground(new Color(170,68,0));
+        scrollPaneWin112.setBackground(new Color(170, 68, 0));
         this.Login.setBackground(new Color(9, 73, 110));
         this.Login.setFont(new Font("Square721 BT", 1, 14));
         this.Login.setForeground(new Color(255, 255, 255));
@@ -58,6 +57,48 @@ public class Principal extends javax.swing.JFrame {
         this.Login.setDisabledTextColor(new Color(255, 255, 255));
         this.Login.setOpaque(false);
         this.Login.setSelectionColor(new Color(9, 73, 110));
+
+        
+        table.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{                       
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null}
+                },
+                new String[]{
+                    "OBJETO", "COMENTARIO", "ICONE"
+                }
+        ) {
+            boolean[] canEdit = new boolean[]{
+                false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit[columnIndex];
+            }
+        });
 
         CarregaTabela();
 
@@ -72,42 +113,42 @@ public class Principal extends javax.swing.JFrame {
     public void CarregaTabela() throws SQLException {
 
         CarregaTabela CaTab = new CarregaTabela();
-        
+
         ArrayList<Objetos> lista = CaTab.VerificaLista();
         var linha = 0;
-        
+
         for (Objetos o : lista) {
 
             System.out.println("aqui--" + o.getNome());
-            
+
             table.setValueAt(o.getNome(), linha, 0);
             table.setValueAt(o.getPalavraChave(), linha, 1);
             linha++;
-           
+
             TableActionEvent event = new TableActionEvent() {
-            @Override
-            public void onEdit(int row) {
-                System.out.println("Edit row : " + row);
-                edit.setVisible(true);
-            }
-
-            @Override
-            public void onDelete(int row) {
-                if (table.isEditing()) {
-                    table.getCellEditor().stopCellEditing();
+                @Override
+                public void onEdit(int row) {
+                    System.out.println("Edit row : " + row);
+                    edit.setVisible(true);
                 }
-                DefaultTableModel model = (DefaultTableModel) table.getModel();
-                model.removeRow(row);
-            }
 
-            @Override
-            public void onView(int row) {
-                System.out.println("View row : " + row);
-                most.setVisible(true);
-            }
-        };
-        table.getColumnModel().getColumn(2).setCellRenderer(new TableActionCellRender());
-        table.getColumnModel().getColumn(2).setCellEditor(new TableActionCellEditor(event));
+                @Override
+                public void onDelete(int row) {
+                    if (table.isEditing()) {
+                        table.getCellEditor().stopCellEditing();
+                    }
+                    DefaultTableModel model = (DefaultTableModel) table.getModel();
+                    model.removeRow(row);
+                }
+
+                @Override
+                public void onView(int row) {
+                    System.out.println("View row : " + row);
+                    most.setVisible(true);
+                }
+            };
+            table.getColumnModel().getColumn(2).setCellRenderer(new TableActionCellRender());
+            table.getColumnModel().getColumn(2).setCellEditor(new TableActionCellEditor(event));
         }
     }
 
@@ -323,26 +364,7 @@ public class Principal extends javax.swing.JFrame {
         table.setForeground(new java.awt.Color(255, 102, 0));
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "OBJETO", "COMENTARIO", "ICONE"

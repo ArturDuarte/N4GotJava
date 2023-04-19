@@ -26,6 +26,8 @@ public class Principal extends javax.swing.JFrame {
 
     TelaEditar edit = new TelaEditar();
     TelaMostrar most = new TelaMostrar();
+    CarregaTabela CaTab = new CarregaTabela();
+    ArrayList<Objetos> lista = CaTab.VerificaLista();
 
     /**
      * Creates new form Principal
@@ -57,50 +59,11 @@ public class Principal extends javax.swing.JFrame {
         this.Login.setDisabledTextColor(new Color(255, 255, 255));
         this.Login.setOpaque(false);
         this.Login.setSelectionColor(new Color(9, 73, 110));
+        int linha = 2;
 
-        
-        table.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][]{                       
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null}
-                },
-                new String[]{
-                    "OBJETO", "COMENTARIO", "ICONE"
-                }
-        ) {
-            boolean[] canEdit = new boolean[]{
-                false, false, true
-            };
+        criatabela();
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit[columnIndex];
-            }
-        });
-
-        CarregaTabela();
+        carregaTabela();
 
     }
 
@@ -110,11 +73,8 @@ public class Principal extends javax.swing.JFrame {
         return icon;
     }
 
-    public void CarregaTabela() throws SQLException {
+    public void carregaTabela() throws SQLException {
 
-        CarregaTabela CaTab = new CarregaTabela();
-
-        ArrayList<Objetos> lista = CaTab.VerificaLista();
         var linha = 0;
 
         for (Objetos o : lista) {
@@ -587,4 +547,252 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTable table;
     // End of variables declaration//GEN-END:variables
 
+    public void criatabela() {
+
+        System.out.println(lista.size());
+        switch (lista.size()) {
+            case 1:
+                table.setModel(new javax.swing.table.DefaultTableModel(
+                        new Object[][]{
+                            {null, null, null}
+                        },
+                        new String[]{
+                            "OBJETO", "COMENTARIO", "ICONE"
+                        }
+                ) {
+                    boolean[] canEdit = new boolean[]{
+                        false, false, true
+                    };
+
+                    @Override
+                    public boolean isCellEditable(int rowIndex, int columnIndex) {
+                        return canEdit[columnIndex];
+                    }
+                });
+                break;
+            case 2:
+                table.setModel(new javax.swing.table.DefaultTableModel(
+                        new Object[][]{
+                            {null, null, null},
+                            {null, null, null}
+                        },
+                        new String[]{
+                            "OBJETO", "COMENTARIO", "ICONE"
+                        }
+                ) {
+                    boolean[] canEdit = new boolean[]{
+                        false, false, true
+                    };
+
+                    @Override
+                    public boolean isCellEditable(int rowIndex, int columnIndex
+                    ) {
+                        return canEdit[columnIndex];
+                    }
+                }
+                );
+                break;
+            case 3:
+                table.setModel(new javax.swing.table.DefaultTableModel(
+                        new Object[][]{
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null}
+                        },
+                        new String[]{
+                            "OBJETO", "COMENTARIO", "ICONE"
+                        }
+                ) {
+                    boolean[] canEdit = new boolean[]{
+                        false, false, true
+                    };
+
+                    @Override
+                    public boolean isCellEditable(int rowIndex, int columnIndex) {
+                        return canEdit[columnIndex];
+                    }
+                });
+                break;
+            case 4:
+                table.setModel(new javax.swing.table.DefaultTableModel(
+                        new Object[][]{
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null}
+                        },
+                        new String[]{
+                            "OBJETO", "COMENTARIO", "ICONE"
+                        }
+                ) {
+                    boolean[] canEdit = new boolean[]{
+                        false, false, true
+                    };
+
+                    @Override
+                    public boolean isCellEditable(int rowIndex, int columnIndex) {
+                        return canEdit[columnIndex];
+                    }
+                });
+                break;
+            case 5:
+                table.setModel(new javax.swing.table.DefaultTableModel(
+                        new Object[][]{
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null}
+                        },
+                        new String[]{
+                            "OBJETO", "COMENTARIO", "ICONE"
+                        }
+                ) {
+                    boolean[] canEdit = new boolean[]{
+                        false, false, true
+                    };
+
+                    @Override
+                    public boolean isCellEditable(int rowIndex, int columnIndex) {
+                        return canEdit[columnIndex];
+                    }
+                });
+                break;
+            case 6:
+                table.setModel(new javax.swing.table.DefaultTableModel(
+                        new Object[][]{
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null}
+                        },
+                        new String[]{
+                            "OBJETO", "COMENTARIO", "ICONE"
+                        }
+                ) {
+                    boolean[] canEdit = new boolean[]{
+                        false, false, true
+                    };
+
+                    @Override
+                    public boolean isCellEditable(int rowIndex, int columnIndex) {
+                        return canEdit[columnIndex];
+                    }
+                });
+                break;
+            case 7:
+                table.setModel(new javax.swing.table.DefaultTableModel(
+                        new Object[][]{
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null}
+                        },
+                        new String[]{
+                            "OBJETO", "COMENTARIO", "ICONE"
+                        }
+                ) {
+                    boolean[] canEdit = new boolean[]{
+                        false, false, true
+                    };
+
+                    @Override
+                    public boolean isCellEditable(int rowIndex, int columnIndex) {
+                        return canEdit[columnIndex];
+                    }
+                });
+                break;
+            case 8:
+                System.out.println("entrou aqui - 8");
+                table.setModel(new javax.swing.table.DefaultTableModel(
+                        new Object[][]{
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null}
+                        },
+                        new String[]{
+                            "OBJETO", "COMENTARIO", "ICONE"
+                        }
+                ) {
+                    boolean[] canEdit = new boolean[]{
+                        false, false, true
+                    };
+
+                    @Override
+                    public boolean isCellEditable(int rowIndex, int columnIndex) {
+                        return canEdit[columnIndex];
+                    }
+                });
+                break;
+            case 9:
+                table.setModel(new javax.swing.table.DefaultTableModel(
+                        new Object[][]{
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null}
+                        },
+                        new String[]{
+                            "OBJETO", "COMENTARIO", "ICONE"
+                        }
+                ) {
+                    boolean[] canEdit = new boolean[]{
+                        false, false, true
+                    };
+
+                    @Override
+                    public boolean isCellEditable(int rowIndex, int columnIndex) {
+                        return canEdit[columnIndex];
+                    }
+                });
+                break;
+            case 10:
+                System.out.println("entrou aqui 9");
+                table.setModel(new javax.swing.table.DefaultTableModel(
+                        new Object[][]{
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null}
+                        },
+                        new String[]{
+                            "OBJETO", "COMENTARIO", "ICONE"
+                        }
+                ) {
+                    boolean[] canEdit = new boolean[]{
+                        false, false, true
+                    };
+
+                    @Override
+                    public boolean isCellEditable(int rowIndex, int columnIndex) {
+                        return canEdit[columnIndex];
+                    }
+                });
+                break;
+            default:
+                throw new AssertionError();
+        }
+
+    }
 }

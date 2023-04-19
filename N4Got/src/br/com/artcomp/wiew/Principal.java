@@ -7,7 +7,6 @@ import br.com.artcomp.cell.TableActionEvent;
 import br.com.artcomp.controller.CarregaTabela;
 import br.com.artcomp.model.Objetos;
 import java.awt.Color;
-import static java.awt.Color.red;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -59,7 +58,7 @@ public class Principal extends javax.swing.JFrame {
         this.Login.setDisabledTextColor(new Color(255, 255, 255));
         this.Login.setOpaque(false);
         this.Login.setSelectionColor(new Color(9, 73, 110));
-        int linha = 2;
+        
 
         criatabela();
 
@@ -550,6 +549,7 @@ public class Principal extends javax.swing.JFrame {
     public void criatabela() {
 
         System.out.println(lista.size());
+        
         switch (lista.size()) {
             case 1:
                 table.setModel(new javax.swing.table.DefaultTableModel(
@@ -759,7 +759,7 @@ public class Principal extends javax.swing.JFrame {
                     public boolean isCellEditable(int rowIndex, int columnIndex) {
                         return canEdit[columnIndex];
                     }
-                });
+                });              
                 break;
             case 10:
                 System.out.println("entrou aqui 9");

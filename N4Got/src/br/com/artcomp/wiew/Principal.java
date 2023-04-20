@@ -23,11 +23,10 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Principal extends javax.swing.JFrame {
 
-    TelaEditar edit = new TelaEditar();    
+    TelaEditar edit = new TelaEditar();
     CarregaTabela CaTab = new CarregaTabela();
     ArrayList<Objetos> lista = CaTab.VerificaLista();
 
-    
     public Principal() throws SQLException {
         initComponents();
 
@@ -41,21 +40,20 @@ public class Principal extends javax.swing.JFrame {
         this.scrollPaneWin112.setBorder(BorderFactory.createLineBorder(new Color(255, 102, 51), 1));
         this.table.setForeground(new Color(255, 255, 255));
         table.getParent().setBackground(new Color(255, 102, 0));
-        table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 14), true, new Color(170, 68, 0), Color.WHITE));
-        table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 14), true, new Color(170, 68, 0), Color.WHITE));
-        table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 14), true, new Color(170, 68, 0), Color.WHITE));
+        table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+        table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+        table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
 
         scrollPaneWin112.setBackground(new Color(170, 68, 0));
-        this.Login.setBackground(new Color(9, 73, 110));
-        this.Login.setFont(new Font("Square721 BT", 1, 14));
-        this.Login.setForeground(new Color(255, 255, 255));
-        this.Login.setToolTipText("");
-        this.Login.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 0, new Color(255, 255, 255)));
-        this.Login.setCaretColor(new Color(255, 255, 255));
-        this.Login.setDisabledTextColor(new Color(255, 255, 255));
-        this.Login.setOpaque(false);
-        this.Login.setSelectionColor(new Color(9, 73, 110));
-        
+        this.Pesquisa.setBackground(new Color(9, 73, 110));
+        this.Pesquisa.setFont(new Font("Square721 BT", 1, 14));
+        this.Pesquisa.setForeground(new Color(255, 255, 255));
+        this.Pesquisa.setToolTipText("");
+        this.Pesquisa.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 0, new Color(255, 255, 255)));
+        this.Pesquisa.setCaretColor(new Color(255, 255, 255));
+        this.Pesquisa.setDisabledTextColor(new Color(255, 255, 255));
+        this.Pesquisa.setOpaque(false);
+        this.Pesquisa.setSelectionColor(new Color(9, 73, 110));
 
         criatabela();
 
@@ -86,7 +84,7 @@ public class Principal extends javax.swing.JFrame {
                 @Override
                 public void onEdit(int row) {
                     System.out.println("Edit row : " + row);
-                    
+
                     edit.setVisible(true);
                 }
 
@@ -102,10 +100,10 @@ public class Principal extends javax.swing.JFrame {
                 @Override
                 public void onView(int row) {
                     System.out.println("View row : " + row);
-                    TelaMostrar most = new TelaMostrar();                            
+                    TelaMostrar most = new TelaMostrar();
                     most.mostraDados(lista.get(row).getNome(), lista.get(row).getSenha());
                     most.setVisible(true);
-                    
+
                 }
             };
             table.getColumnModel().getColumn(2).setCellRenderer(new TableActionCellRender());
@@ -130,7 +128,7 @@ public class Principal extends javax.swing.JFrame {
         kGradientPanel7 = new com.k33ptoo.components.KGradientPanel();
         scrollPaneWin112 = new br.com.artcomp.scroll.ScrollPaneWin11();
         table = new javax.swing.JTable();
-        Login = new javax.swing.JTextField();
+        Pesquisa = new javax.swing.JTextField();
         kGradientPanel8 = new com.k33ptoo.components.KGradientPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -323,7 +321,7 @@ public class Principal extends javax.swing.JFrame {
         scrollPaneWin112.setForeground(new java.awt.Color(255, 255, 255));
 
         table.setBackground(new java.awt.Color(255, 102, 0));
-        table.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        table.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         table.setForeground(new java.awt.Color(255, 102, 0));
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -367,33 +365,33 @@ public class Principal extends javax.swing.JFrame {
 
         kGradientPanel1.add(kGradientPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 750, 550));
 
-        Login.setBackground(new java.awt.Color(30, 30, 30));
-        Login.setFont(new java.awt.Font("Square721 BT", 1, 14)); // NOI18N
-        Login.setForeground(new java.awt.Color(255, 255, 255));
-        Login.setToolTipText("");
-        Login.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 0, new java.awt.Color(255, 255, 255)));
-        Login.setCaretColor(new java.awt.Color(255, 255, 255));
-        Login.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        Login.setSelectionColor(new java.awt.Color(9, 73, 110));
-        Login.addFocusListener(new java.awt.event.FocusAdapter() {
+        Pesquisa.setBackground(new java.awt.Color(30, 30, 30));
+        Pesquisa.setFont(new java.awt.Font("Square721 BT", 1, 14)); // NOI18N
+        Pesquisa.setForeground(new java.awt.Color(255, 255, 255));
+        Pesquisa.setToolTipText("");
+        Pesquisa.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 0, new java.awt.Color(255, 255, 255)));
+        Pesquisa.setCaretColor(new java.awt.Color(255, 255, 255));
+        Pesquisa.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        Pesquisa.setSelectionColor(new java.awt.Color(9, 73, 110));
+        Pesquisa.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                LoginFocusGained(evt);
+                PesquisaFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                LoginFocusLost(evt);
+                PesquisaFocusLost(evt);
             }
         });
-        Login.addMouseListener(new java.awt.event.MouseAdapter() {
+        Pesquisa.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LoginMouseClicked(evt);
+                PesquisaMouseClicked(evt);
             }
         });
-        Login.addKeyListener(new java.awt.event.KeyAdapter() {
+        Pesquisa.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                LoginKeyPressed(evt);
+                PesquisaKeyPressed(evt);
             }
         });
-        kGradientPanel1.add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 210, 40));
+        kGradientPanel1.add(Pesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 210, 40));
 
         kGradientPanel8.setkBorderRadius(20);
         kGradientPanel8.setkEndColor(new java.awt.Color(170, 68, 0));
@@ -459,7 +457,11 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_kButton2ActionPerformed
 
     private void kButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton3ActionPerformed
+      
+         TelaCadastro tc = new TelaCadastro();
+        tc.setVisible(true);
         // TODO add your handling code here:
+// TODO add your handling code here:
     }//GEN-LAST:event_kButton3ActionPerformed
 
     private void kButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton4ActionPerformed
@@ -470,25 +472,23 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_kButton5ActionPerformed
 
-    private void LoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_LoginKeyPressed
+    private void PesquisaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PesquisaKeyPressed
 
-        if (evt.getKeyCode() == evt.VK_ENTER) {
+       
+    }//GEN-LAST:event_PesquisaKeyPressed
 
-        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LoginKeyPressed
+    private void PesquisaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PesquisaMouseClicked
+        
+        
+    }//GEN-LAST:event_PesquisaMouseClicked
 
-    private void LoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginMouseClicked
+    private void PesquisaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PesquisaFocusLost
 
-    }//GEN-LAST:event_LoginMouseClicked
+    }//GEN-LAST:event_PesquisaFocusLost
 
-    private void LoginFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_LoginFocusLost
+    private void PesquisaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PesquisaFocusGained
 
-    }//GEN-LAST:event_LoginFocusLost
-
-    private void LoginFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_LoginFocusGained
-
-    }//GEN-LAST:event_LoginFocusGained
+    }//GEN-LAST:event_PesquisaFocusGained
 
     /**
      * @param args the command line arguments
@@ -531,7 +531,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Login;
+    private javax.swing.JTextField Pesquisa;
     private javax.swing.JButton jBFechar;
     private javax.swing.JButton jBMinimisar;
     private javax.swing.JLabel jLabel1;
@@ -554,7 +554,7 @@ public class Principal extends javax.swing.JFrame {
     public void criatabela() {
 
         System.out.println(lista.size());
-        
+
         switch (lista.size()) {
             case 1:
                 table.setModel(new javax.swing.table.DefaultTableModel(
@@ -764,7 +764,10 @@ public class Principal extends javax.swing.JFrame {
                     public boolean isCellEditable(int rowIndex, int columnIndex) {
                         return canEdit[columnIndex];
                     }
-                });              
+                });
+                table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 14), true, new Color(170, 68, 0), Color.WHITE));
+                table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 14), true, new Color(170, 68, 0), Color.WHITE));
+                table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 14), true, new Color(170, 68, 0), Color.WHITE));
                 break;
             case 10:
                 System.out.println("entrou aqui 9");
@@ -794,6 +797,9 @@ public class Principal extends javax.swing.JFrame {
                         return canEdit[columnIndex];
                     }
                 });
+                table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                 break;
             default:
                 throw new AssertionError();

@@ -26,7 +26,7 @@ public class CarregaTabela {
         
         if(lista.isEmpty()){
             
-            //janela de cadstrar objeto
+            //tela de aviso que não tem nada na tabela
         }else{
             return lista;
         }

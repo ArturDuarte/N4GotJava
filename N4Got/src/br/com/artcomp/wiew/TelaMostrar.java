@@ -4,6 +4,7 @@
  */
 package br.com.artcomp.wiew;
 
+import br.com.artcomp.controller.VerificaSenha;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.BorderFactory;
@@ -14,13 +15,13 @@ import javax.swing.BorderFactory;
  */
 public class TelaMostrar extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaMostrar
-     */
+    String T;
+
     public TelaMostrar() {
+
         initComponents();
 
-         this.JTLogin.setBackground(new Color(9, 73, 110));
+        this.JTLogin.setBackground(new Color(9, 73, 110));
         this.JTLogin.setFont(new Font("Square721 BT", 1, 14));
         this.JTLogin.setForeground(new Color(255, 255, 255));
         this.JTLogin.setToolTipText("");
@@ -29,7 +30,7 @@ public class TelaMostrar extends javax.swing.JFrame {
         this.JTLogin.setDisabledTextColor(new Color(255, 255, 255));
         this.JTLogin.setOpaque(false);
         this.JTLogin.setSelectionColor(new Color(9, 73, 110));
-        
+
         this.JTSenha.setBackground(new Color(9, 73, 110));
         this.JTSenha.setFont(new Font("Square721 BT", 1, 14));
         this.JTSenha.setForeground(new Color(255, 255, 255));
@@ -40,10 +41,33 @@ public class TelaMostrar extends javax.swing.JFrame {
         this.JTSenha.setOpaque(false);
         this.JTSenha.setSelectionColor(new Color(9, 73, 110));
         
+        this.JTSenha2.setBackground(new Color(9, 73, 110));
+        this.JTSenha2.setFont(new Font("Square721 BT", 1, 14));
+        this.JTSenha2.setForeground(new Color(255, 255, 255));
+        this.JTSenha2.setToolTipText("");
+        this.JTSenha2.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(255, 255, 255)));
+        this.JTSenha2.setCaretColor(new Color(255, 255, 255));
+        this.JTSenha2.setDisabledTextColor(new Color(255, 255, 255));
+        this.JTSenha2.setOpaque(false);
+        this.JTSenha2.setSelectionColor(new Color(9, 73, 110));
+
         this.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel3.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel4.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
-        
+        this.kGradientPanel1.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
+        this.kGradientPanel5.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
+        this.JTSenhaR.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
+        this.kGradientPanel2.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
+
+        kGradientPanel2.setVisible(false);
+        jLMensagem1.setVisible(false);
+    }
+
+    public void mostraDados(String login, String senha) {
+        this.T = senha;
+        this.JTLogin.setText(login);
+        System.out.println("senha  " + T);
+
     }
 
     /**
@@ -55,28 +79,34 @@ public class TelaMostrar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        kGradientPanel1 = new com.k33ptoo.components.KGradientPanel();
+        JTSenhaR = new com.k33ptoo.components.KGradientPanel();
         jBFechar = new javax.swing.JButton();
-        btolhar1 = new br.com.artcomp.cell.ActionButton();
         jLabel1 = new javax.swing.JLabel();
+        kGradientPanel1 = new com.k33ptoo.components.KGradientPanel();
         kGradientPanel3 = new com.k33ptoo.components.KGradientPanel();
         JTSenha = new javax.swing.JTextField();
         kGradientPanel4 = new com.k33ptoo.components.KGradientPanel();
         JTLogin = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        btolhar = new br.com.artcomp.cell.ActionButton();
-        jLabel7 = new javax.swing.JLabel();
+        jLMensagem = new javax.swing.JLabel();
+        actionButton1 = new br.com.artcomp.cell.ActionButton();
+        jLMensagem1 = new javax.swing.JLabel();
+        kGradientPanel2 = new com.k33ptoo.components.KGradientPanel();
+        kGradientPanel5 = new com.k33ptoo.components.KGradientPanel();
+        JTSenha2 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        kButton2 = new com.k33ptoo.components.KButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        kGradientPanel1.setBackground(new java.awt.Color(255, 102, 0));
-        kGradientPanel1.setkBorderRadius(15);
-        kGradientPanel1.setkEndColor(new java.awt.Color(195, 79, 1));
-        kGradientPanel1.setkGradientFocus(200);
-        kGradientPanel1.setkStartColor(new java.awt.Color(255, 102, 0));
-        kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        JTSenhaR.setBackground(new java.awt.Color(255, 102, 0));
+        JTSenhaR.setkBorderRadius(15);
+        JTSenhaR.setkEndColor(new java.awt.Color(195, 79, 1));
+        JTSenhaR.setkGradientFocus(200);
+        JTSenhaR.setkStartColor(new java.awt.Color(255, 102, 0));
+        JTSenhaR.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jBFechar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jBFechar.setForeground(new java.awt.Color(255, 255, 255));
@@ -94,20 +124,14 @@ public class TelaMostrar extends javax.swing.JFrame {
                 jBFecharActionPerformed(evt);
             }
         });
-        kGradientPanel1.add(jBFechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, 30, 30));
-
-        btolhar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/Itens.png"))); // NOI18N
-        btolhar1.setFocusable(false);
-        btolhar1.setRequestFocusEnabled(false);
-        btolhar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btolhar1ActionPerformed(evt);
-            }
-        });
-        kGradientPanel1.add(btolhar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 40, -1));
+        JTSenhaR.add(jBFechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 0, 40, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/camera.png"))); // NOI18N
-        kGradientPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, -1, 100));
+        JTSenhaR.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, -1, 100));
+
+        kGradientPanel1.setkEndColor(new java.awt.Color(255, 102, 0));
+        kGradientPanel1.setkStartColor(new java.awt.Color(255, 102, 0));
+        kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         kGradientPanel3.setkBorderRadius(30);
         kGradientPanel3.setkEndColor(new java.awt.Color(170, 68, 0));
@@ -123,10 +147,16 @@ public class TelaMostrar extends javax.swing.JFrame {
         JTSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         JTSenha.setCaretColor(new java.awt.Color(255, 255, 255));
         JTSenha.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        JTSenha.setEnabled(false);
         JTSenha.setSelectionColor(new java.awt.Color(9, 73, 110));
-        kGradientPanel3.add(JTSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 240, 30));
+        JTSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTSenhaActionPerformed(evt);
+            }
+        });
+        kGradientPanel3.add(JTSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 290, 40));
 
-        kGradientPanel1.add(kGradientPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 260, 30));
+        kGradientPanel1.add(kGradientPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 142, 310, -1));
 
         kGradientPanel4.setkBorderRadius(30);
         kGradientPanel4.setkEndColor(new java.awt.Color(170, 68, 0));
@@ -141,46 +171,108 @@ public class TelaMostrar extends javax.swing.JFrame {
         JTLogin.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         JTLogin.setCaretColor(new java.awt.Color(255, 255, 255));
         JTLogin.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        JTLogin.setEnabled(false);
         JTLogin.setSelectionColor(new java.awt.Color(9, 73, 110));
-        kGradientPanel4.add(JTLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 240, 30));
+        kGradientPanel4.add(JTLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 290, 40));
 
-        kGradientPanel1.add(kGradientPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 260, 30));
+        kGradientPanel1.add(kGradientPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 62, 310, -1));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Login");
-        kGradientPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, -1, 20));
+        kGradientPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(228, 32, -1, -1));
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Senha");
-        kGradientPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, -1, 20));
+        kGradientPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(228, 112, -1, -1));
 
-        btolhar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/olho.png"))); // NOI18N
-        btolhar.addActionListener(new java.awt.event.ActionListener() {
+        jLMensagem.setBackground(new java.awt.Color(255, 255, 255));
+        jLMensagem.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLMensagem.setForeground(new java.awt.Color(255, 255, 255));
+        jLMensagem.setText("Clicando no cadeado a senha sera descriptografada.");
+        kGradientPanel1.add(jLMensagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 464, 20));
+
+        actionButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/olho.png"))); // NOI18N
+        actionButton1.setFocusable(false);
+        actionButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btolharActionPerformed(evt);
+                actionButton1ActionPerformed(evt);
             }
         });
-        kGradientPanel1.add(btolhar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 300, 30, 30));
+        kGradientPanel1.add(actionButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 142, -1, -1));
 
-        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Clicando no cadeado a senha sera descriptografada.");
-        kGradientPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, 460, 20));
+        jLMensagem1.setBackground(new java.awt.Color(255, 255, 255));
+        jLMensagem1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLMensagem1.setForeground(new java.awt.Color(255, 255, 255));
+        jLMensagem1.setText("Senha descriptografada.");
+        kGradientPanel1.add(jLMensagem1, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 230, 220, 20));
+
+        JTSenhaR.add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 490, 290));
+
+        kGradientPanel2.setkEndColor(new java.awt.Color(255, 102, 0));
+        kGradientPanel2.setkStartColor(new java.awt.Color(255, 102, 0));
+        kGradientPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        kGradientPanel5.setkBorderRadius(30);
+        kGradientPanel5.setkEndColor(new java.awt.Color(170, 68, 0));
+        kGradientPanel5.setkStartColor(new java.awt.Color(170, 68, 0));
+        kGradientPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        JTSenha2.setBackground(new java.awt.Color(30, 30, 30));
+        JTSenha2.setFont(new java.awt.Font("Square721 BT", 1, 14)); // NOI18N
+        JTSenha2.setForeground(new java.awt.Color(255, 255, 255));
+        JTSenha2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTSenha2.setToolTipText("");
+        JTSenha2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        JTSenha2.setCaretColor(new java.awt.Color(255, 255, 255));
+        JTSenha2.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        JTSenha2.setSelectionColor(new java.awt.Color(9, 73, 110));
+        kGradientPanel5.add(JTSenha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 240, 40));
+
+        kGradientPanel2.add(kGradientPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 108, 260, 38));
+
+        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Digite sua senha ! ");
+        kGradientPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 53, 180, 20));
+
+        kButton2.setText("Descriptografar");
+        kButton2.setBorderPainted(false);
+        kButton2.setFocusPainted(false);
+        kButton2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        kButton2.setkBackGroundColor(new java.awt.Color(0, 255, 255));
+        kButton2.setkBorderRadius(20);
+        kButton2.setkEndColor(new java.awt.Color(255, 255, 255));
+        kButton2.setkFillButton(false);
+        kButton2.setkHoverColor(new java.awt.Color(255, 0, 0));
+        kButton2.setkHoverEndColor(new java.awt.Color(255, 102, 0));
+        kButton2.setkHoverForeGround(new java.awt.Color(255, 102, 0));
+        kButton2.setkHoverStartColor(new java.awt.Color(255, 255, 255));
+        kButton2.setkIndicatorColor(new java.awt.Color(0, 255, 255));
+        kButton2.setkPressedColor(new java.awt.Color(255, 255, 255));
+        kButton2.setkStartColor(new java.awt.Color(255, 102, 0));
+        kButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton2ActionPerformed(evt);
+            }
+        });
+        kGradientPanel2.add(kButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 176, -1, 50));
+
+        JTSenhaR.add(kGradientPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 490, 290));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JTSenhaR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+            .addComponent(JTSenhaR, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
 
         pack();
@@ -192,16 +284,34 @@ public class TelaMostrar extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jBFecharActionPerformed
 
-    private void btolhar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btolhar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btolhar1ActionPerformed
+    private void actionButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionButton1ActionPerformed
 
-    private void btolharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btolharActionPerformed
-        
-        TelaSenha ts = new TelaSenha();
-        ts.setVisible(true);
-                
-    }//GEN-LAST:event_btolharActionPerformed
+        kGradientPanel1.setVisible(false);
+        kGradientPanel2.setVisible(true);
+        jLMensagem.setVisible(false);
+        jLMensagem1.setVisible(true);
+        actionButton1.setEnabled(false);
+
+    }//GEN-LAST:event_actionButton1ActionPerformed
+
+    private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
+
+        VerificaSenha vs = new VerificaSenha();
+        if (vs.VerificaSenha(JTSenha2.getText())) {
+
+            JTSenha.setText(T);
+            kGradientPanel2.setVisible(false);
+            kGradientPanel1.setVisible(true);
+        } else {
+            System.out.println("erro da senha");
+        }
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kButton2ActionPerformed
+
+    private void JTSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTSenhaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,15 +352,21 @@ public class TelaMostrar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField JTLogin;
     private javax.swing.JTextField JTSenha;
-    private br.com.artcomp.cell.ActionButton btolhar;
-    private br.com.artcomp.cell.ActionButton btolhar1;
+    private javax.swing.JTextField JTSenha2;
+    private com.k33ptoo.components.KGradientPanel JTSenhaR;
+    private br.com.artcomp.cell.ActionButton actionButton1;
     private javax.swing.JButton jBFechar;
+    private javax.swing.JLabel jLMensagem;
+    private javax.swing.JLabel jLMensagem1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private com.k33ptoo.components.KButton kButton2;
     private com.k33ptoo.components.KGradientPanel kGradientPanel1;
+    private com.k33ptoo.components.KGradientPanel kGradientPanel2;
     private com.k33ptoo.components.KGradientPanel kGradientPanel3;
     private com.k33ptoo.components.KGradientPanel kGradientPanel4;
+    private com.k33ptoo.components.KGradientPanel kGradientPanel5;
     // End of variables declaration//GEN-END:variables
 }

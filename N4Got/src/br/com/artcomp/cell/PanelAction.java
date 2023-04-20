@@ -44,9 +44,11 @@ public class PanelAction extends javax.swing.JPanel {
         btolhar = new br.com.artcomp.cell.ActionButton();
 
         bteditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/lapis.png"))); // NOI18N
+        bteditar.setFocusable(false);
         bteditar.setRequestFocusEnabled(false);
 
         btolhar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/olho.png"))); // NOI18N
+        btolhar.setFocusable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

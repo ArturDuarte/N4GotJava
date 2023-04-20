@@ -23,14 +23,11 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Principal extends javax.swing.JFrame {
 
-    TelaEditar edit = new TelaEditar();
-    TelaMostrar most = new TelaMostrar();
+    TelaEditar edit = new TelaEditar();    
     CarregaTabela CaTab = new CarregaTabela();
     ArrayList<Objetos> lista = CaTab.VerificaLista();
 
-    /**
-     * Creates new form Principal
-     */
+    
     public Principal() throws SQLException {
         initComponents();
 
@@ -84,10 +81,12 @@ public class Principal extends javax.swing.JFrame {
             table.setValueAt(o.getPalavraChave(), linha, 1);
             linha++;
 
-            TableActionEvent event = new TableActionEvent() {
+            TableActionEvent event;
+            event = new TableActionEvent() {
                 @Override
                 public void onEdit(int row) {
                     System.out.println("Edit row : " + row);
+                    
                     edit.setVisible(true);
                 }
 
@@ -103,7 +102,10 @@ public class Principal extends javax.swing.JFrame {
                 @Override
                 public void onView(int row) {
                     System.out.println("View row : " + row);
+                    TelaMostrar most = new TelaMostrar();                            
+                    most.mostraDados(lista.get(row).getNome(), lista.get(row).getSenha());
                     most.setVisible(true);
+                    
                 }
             };
             table.getColumnModel().getColumn(2).setCellRenderer(new TableActionCellRender());
@@ -318,6 +320,8 @@ public class Principal extends javax.swing.JFrame {
         kGradientPanel7.setkStartColor(new java.awt.Color(170, 68, 0));
         kGradientPanel7.setkTransparentControls(false);
 
+        scrollPaneWin112.setForeground(new java.awt.Color(255, 255, 255));
+
         table.setBackground(new java.awt.Color(255, 102, 0));
         table.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         table.setForeground(new java.awt.Color(255, 102, 0));
@@ -441,7 +445,8 @@ public class Principal extends javax.swing.JFrame {
 
     private void jBFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBFecharActionPerformed
 
-        this.dispose();
+        //this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_jBFecharActionPerformed
 
     private void jBMinimisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBMinimisarActionPerformed

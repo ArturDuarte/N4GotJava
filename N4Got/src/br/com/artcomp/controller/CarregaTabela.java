@@ -4,7 +4,7 @@
  */
 package br.com.artcomp.controller;
 
-import br.com.artcomp.model.ObjetoDAO;
+import br.com.artcomp.DAO.ObjetoDAO;
 import br.com.artcomp.model.Objetos;
 import java.sql.SQLException;
 import java.util.ArrayList;

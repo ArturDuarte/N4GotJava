@@ -5,7 +5,7 @@
 package br.com.artcomp.controller;
 
 import br.com.artcomp.model.PessoaLogin;
-import br.com.artcomp.model.VerificaLoginDAO;
+import br.com.artcomp.DAO.VerificaLoginDAO;
 
 /**
  *
@@ -20,7 +20,7 @@ public class VerificaLogin {
     }
 
     // Verifica se os valores são corretos não null
-    public boolean VerificaLogin(String nome, String login) {
+    public boolean verificaLogin(String nome, String login) {
 
         if (nome.isEmpty()) {
             return false;

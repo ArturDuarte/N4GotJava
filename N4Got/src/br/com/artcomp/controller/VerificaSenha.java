@@ -4,7 +4,7 @@
  */
 package br.com.artcomp.controller;
 
-import br.com.artcomp.model.VerificaSenhaDAO;
+import br.com.artcomp.DAO.VerificaSenhaDAO;
 
 
 public class VerificaSenha {

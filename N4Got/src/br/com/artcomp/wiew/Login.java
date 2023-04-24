@@ -286,7 +286,7 @@ public class Login extends javax.swing.JFrame {
 
         if (evt.getKeyCode() == evt.VK_ENTER) {
 
-            if (verL.VerificaLogin(Login.getText(), new String(this.Senha.getPassword()))) {
+            if (verL.verificaLogin(Login.getText(), new String(this.Senha.getPassword()))) {
                 this.dispose();
                 principal.setVisible(true);
             } else {
@@ -305,7 +305,7 @@ public class Login extends javax.swing.JFrame {
 
     private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed
 
-        if (verL.VerificaLogin(Login.getText(), new String(this.Senha.getPassword()))) {
+        if (verL.verificaLogin(Login.getText(), new String(this.Senha.getPassword()))) {
             this.dispose();
             principal.setVisible(true);
         } else {

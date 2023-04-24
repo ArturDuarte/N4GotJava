@@ -4,6 +4,7 @@
  */
 package br.com.artcomp.wiew;
 
+import br.com.artcomp.controller.CadastroObjeto;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.BorderFactory;
@@ -14,9 +15,7 @@ import javax.swing.BorderFactory;
  */
 public class TelaCadastro extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaEditar
-     */
+    String imagem;
     public TelaCadastro() {
         initComponents();
 
@@ -79,7 +78,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         kGradientPanel1 = new com.k33ptoo.components.KGradientPanel();
         btolhar1 = new br.com.artcomp.cell.ActionButton();
         jBFechar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        JLImagem = new javax.swing.JLabel();
         JTNome = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         JTSobNome = new javax.swing.JTextField();
@@ -131,8 +130,8 @@ public class TelaCadastro extends javax.swing.JFrame {
         });
         kGradientPanel1.add(jBFechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, 30, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/camera.png"))); // NOI18N
-        kGradientPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, -1, 100));
+        JLImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/camera.png"))); // NOI18N
+        kGradientPanel1.add(JLImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, -1, 100));
 
         JTNome.setBackground(new java.awt.Color(30, 30, 30));
         JTNome.setFont(new java.awt.Font("Square721 BT", 1, 14)); // NOI18N
@@ -270,7 +269,17 @@ public class TelaCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_jBFecharActionPerformed
 
     private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
-        // TODO add your handling code here:
+       
+        CadastroObjeto co = new CadastroObjeto();
+        if (co.cadastroObjeto(JTLogin.getText(), new String(this.JTSenha.getText()), JTNome.getText(), JTSobNome.getText(), imagem)) {
+            
+            // tela cadastrado com sucesso
+        } else {
+            // erro de cadastro
+        }
+
+
+// TODO add your handling code here:
     }//GEN-LAST:event_kButton2ActionPerformed
 
     private void JTSobNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTSobNomeActionPerformed
@@ -324,6 +333,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel JLImagem;
     private javax.swing.JTextField JTLogin;
     private javax.swing.JTextField JTNome;
     private javax.swing.JTextField JTSenha;
@@ -331,7 +341,6 @@ public class TelaCadastro extends javax.swing.JFrame {
     private br.com.artcomp.cell.ActionButton btolhar;
     private br.com.artcomp.cell.ActionButton btolhar1;
     private javax.swing.JButton jBFechar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;

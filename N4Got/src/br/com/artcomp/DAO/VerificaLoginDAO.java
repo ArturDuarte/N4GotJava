@@ -1,6 +1,7 @@
 
-package br.com.artcomp.model;
+package br.com.artcomp.DAO;
 
+import br.com.artcomp.model.PessoaLogin;
 import br.com.artcomp.utilitarios.Conexao;
 import java.sql.SQLException;
 

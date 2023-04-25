@@ -8,6 +8,7 @@ import br.com.artcomp.controller.CadastroObjeto;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,7 +16,7 @@ import javax.swing.BorderFactory;
  */
 public class TelaCadastro extends javax.swing.JFrame {
 
-    String imagem;
+    String imagem = "art";
     public TelaCadastro() {
         initComponents();
 
@@ -200,7 +201,6 @@ public class TelaCadastro extends javax.swing.JFrame {
         JTSenha.setFont(new java.awt.Font("Square721 BT", 1, 14)); // NOI18N
         JTSenha.setForeground(new java.awt.Color(255, 255, 255));
         JTSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTSenha.setText("***************");
         JTSenha.setToolTipText("");
         JTSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         JTSenha.setCaretColor(new java.awt.Color(255, 255, 255));
@@ -271,11 +271,13 @@ public class TelaCadastro extends javax.swing.JFrame {
     private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
        
         CadastroObjeto co = new CadastroObjeto();
-        if (co.cadastroObjeto(JTLogin.getText(), new String(this.JTSenha.getText()), JTNome.getText(), JTSobNome.getText(), imagem)) {
-            
-            // tela cadastrado com sucesso
+        //co.cadastroObjeto(JTLogin.getText(),JTSenha.getText(), JTNome.getText(), JTSobNome.getText(), imagem);
+       if (co.cadastroObjeto(JTLogin.getText(),JTSenha.getText(), JTNome.getText(), JTSobNome.getText(), imagem)) {
+           
+           JOptionPane.showMessageDialog(null, "Gravação realizada com sucesso ");
+           this.dispose();
         } else {
-            // erro de cadastro
+            JOptionPane.showMessageDialog(null, "Erro de Gravação ");
         }
 
 

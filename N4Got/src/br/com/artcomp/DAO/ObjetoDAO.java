@@ -39,7 +39,7 @@ public class ObjetoDAO {
                 objts.setImagem(con_cadastro.resultset.getString("imagem"));
                 lista.add(objts);
             }
-            con_cadastro.desconecta();
+           con_cadastro.desconecta();
             return lista;
             
         }

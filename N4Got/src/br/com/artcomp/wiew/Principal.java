@@ -459,9 +459,8 @@ public class Principal extends javax.swing.JFrame {
     private void kButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton3ActionPerformed
       
          TelaCadastro tc = new TelaCadastro();
-        tc.setVisible(true);
-        // TODO add your handling code here:
-// TODO add your handling code here:
+        tc.setVisible(true);        
+
     }//GEN-LAST:event_kButton3ActionPerformed
 
     private void kButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton4ActionPerformed
@@ -770,9 +769,76 @@ public class Principal extends javax.swing.JFrame {
                 table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 14), true, new Color(170, 68, 0), Color.WHITE));
                 break;
             case 10:
-                System.out.println("entrou aqui 9");
+                System.out.println("entrou aqui 10");
                 table.setModel(new javax.swing.table.DefaultTableModel(
                         new Object[][]{
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null}
+                        },
+                        new String[]{
+                            "OBJETO", "COMENTARIO", "ICONE"
+                        }
+                ) {
+                    boolean[] canEdit = new boolean[]{
+                        false, false, true
+                    };
+
+                    @Override
+                    public boolean isCellEditable(int rowIndex, int columnIndex) {
+                        return canEdit[columnIndex];
+                    }
+                });
+                table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                break;
+                case 11:
+                System.out.println("entrou aqui 11");
+                table.setModel(new javax.swing.table.DefaultTableModel(
+                        new Object[][]{
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null},
+                            {null, null, null}
+                        },
+                        new String[]{
+                            "OBJETO", "COMENTARIO", "ICONE"
+                        }
+                ) {
+                    boolean[] canEdit = new boolean[]{
+                        false, false, true
+                    };
+
+                    @Override
+                    public boolean isCellEditable(int rowIndex, int columnIndex) {
+                        return canEdit[columnIndex];
+                    }
+                });
+                table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                break;
+                case 12:
+                System.out.println("entrou aqui 11");
+                table.setModel(new javax.swing.table.DefaultTableModel(
+                        new Object[][]{
+                            {null, null, null},
+                            {null, null, null},
                             {null, null, null},
                             {null, null, null},
                             {null, null, null},

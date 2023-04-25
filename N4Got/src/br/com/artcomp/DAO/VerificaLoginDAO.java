@@ -40,7 +40,7 @@ public class VerificaLoginDAO {
 
                 if (nome.equalsIgnoreCase(pess.getNome()) && senha.equalsIgnoreCase(new String(pess.getSenha()))) {
 
-                    this.con_cadastro.desconecta();
+                    //this.con_cadastro.desconecta();
                     return true;
 
                 }

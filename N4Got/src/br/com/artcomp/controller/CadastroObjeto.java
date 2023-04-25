@@ -4,6 +4,8 @@
  */
 package br.com.artcomp.controller;
 
+import br.com.artcomp.DAO.CadastroDAO;
+import br.com.artcomp.DAO.ObjetoDAO;
 import br.com.artcomp.model.Objetos;
 
 /**
@@ -12,7 +14,7 @@ import br.com.artcomp.model.Objetos;
  */
 public class CadastroObjeto {
     
-    Objetos ob = new Objetos();
+    CadastroDAO cadDAO = new CadastroDAO();
     
     public CadastroObjeto(){
         
@@ -22,16 +24,20 @@ public class CadastroObjeto {
         
         
         if (nome.isEmpty()) {
-            return false;
+            System.out.println("vazio");
         } else {
 
+            Objetos ob = new Objetos();
             ob.setNome(nome);
             ob.setPalavraChave(sobrNome);
             ob.setLogin(login);
             ob.setSenha(senha);
             ob.setImagem(imagem);
-            return true;
+           
+            
+             return cadDAO.insert(ob);
 
         }
+        return false;
     }
 }

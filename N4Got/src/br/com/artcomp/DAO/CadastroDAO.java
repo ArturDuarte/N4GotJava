@@ -42,7 +42,7 @@ public class CadastroDAO {
             con_cadastro.statement.executeUpdate(sql);
 
             
-            this.con_cadastro.desconecta();
+            //this.con_cadastro.desconecta();
             return true;
 
         } catch (SQLException e) {

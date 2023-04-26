@@ -289,8 +289,8 @@ public class TelaCadastro extends javax.swing.JFrame {
             //instancia de uma classe fabrica
             Principal pri = Fabrica.getInstancia().getPrincipal();
             pri.dispose();
-            pri.setVisible(true);
-            // pri.metodoChamadoDoCadastro();
+            pri.setVisible(true);  
+            limpaDados();
             this.dispose();
            
         } else {
@@ -369,4 +369,11 @@ public class TelaCadastro extends javax.swing.JFrame {
     private com.k33ptoo.components.KGradientPanel kGradientPanel3;
     private com.k33ptoo.components.KGradientPanel kGradientPanel4;
     // End of variables declaration//GEN-END:variables
+
+    private void limpaDados() {
+        JTNome.setText("");
+        JTSobNome.setText("");
+        JTLogin.setText("");
+        JTSenha.setText("");
+    }
 }

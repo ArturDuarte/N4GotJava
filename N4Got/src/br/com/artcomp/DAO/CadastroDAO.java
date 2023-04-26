@@ -41,7 +41,7 @@ public class CadastroDAO {
 
             con_cadastro.statement.executeUpdate(sql);
 
-            //JOptionPane.showMessageDialog(null, "Gravação realizada com sucesso");
+            
             this.con_cadastro.desconecta();
             return true;
 

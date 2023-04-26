@@ -24,9 +24,9 @@ public class CarregaTabela {
     
     public ArrayList<Objetos> VerificaLista(){
         
-        if(lista.isEmpty()){
+        if(lista == null){
             
-            //tela de aviso que não tem nada na tabela
+            System.out.println("lista vazia ----");
         }else{
             return lista;
         }

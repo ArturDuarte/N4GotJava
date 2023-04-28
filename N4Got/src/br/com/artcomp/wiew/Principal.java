@@ -200,7 +200,7 @@ public class Principal extends javax.swing.JFrame {
         kButton3.setText("Novo Objeto");
         kButton3.setBorderPainted(false);
         kButton3.setFocusPainted(false);
-        kButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        kButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         kButton3.setkBackGroundColor(new java.awt.Color(0, 255, 255));
         kButton3.setkBorderRadius(20);
         kButton3.setkEndColor(new java.awt.Color(255, 255, 255));
@@ -221,7 +221,7 @@ public class Principal extends javax.swing.JFrame {
         kButton4.setText("Favoritos");
         kButton4.setBorderPainted(false);
         kButton4.setFocusPainted(false);
-        kButton4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        kButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         kButton4.setkBackGroundColor(new java.awt.Color(0, 255, 255));
         kButton4.setkBorderRadius(20);
         kButton4.setkEndColor(new java.awt.Color(255, 255, 255));
@@ -242,7 +242,7 @@ public class Principal extends javax.swing.JFrame {
         kButton5.setText("Configuração");
         kButton5.setBorderPainted(false);
         kButton5.setFocusPainted(false);
-        kButton5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        kButton5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         kButton5.setkBackGroundColor(new java.awt.Color(0, 255, 255));
         kButton5.setkBorderRadius(20);
         kButton5.setkEndColor(new java.awt.Color(255, 255, 255));
@@ -262,7 +262,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel4.setText("1.0.1.12");
+        jLabel4.setText("1.0.1.122");
 
         javax.swing.GroupLayout kGradientPanel2Layout = new javax.swing.GroupLayout(kGradientPanel2);
         kGradientPanel2.setLayout(kGradientPanel2Layout);
@@ -278,7 +278,7 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(kButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel2Layout.createSequentialGroup()
-                        .addGap(0, 59, Short.MAX_VALUE)
+                        .addGap(0, 57, Short.MAX_VALUE)
                         .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)

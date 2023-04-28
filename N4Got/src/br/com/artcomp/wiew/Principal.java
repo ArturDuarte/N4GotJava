@@ -130,7 +130,6 @@ public class Principal extends javax.swing.JFrame {
         jBFechar = new javax.swing.JButton();
         kGradientPanel2 = new com.k33ptoo.components.KGradientPanel();
         jLabel1 = new javax.swing.JLabel();
-        kButton2 = new com.k33ptoo.components.KButton();
         kButton3 = new com.k33ptoo.components.KButton();
         kButton4 = new com.k33ptoo.components.KButton();
         kButton5 = new com.k33ptoo.components.KButton();
@@ -198,29 +197,10 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/n4got50.png"))); // NOI18N
 
-        kButton2.setText("Todos os Objetos");
-        kButton2.setBorderPainted(false);
-        kButton2.setFocusPainted(false);
-        kButton2.setkBackGroundColor(new java.awt.Color(0, 255, 255));
-        kButton2.setkBorderRadius(20);
-        kButton2.setkEndColor(new java.awt.Color(255, 255, 255));
-        kButton2.setkFillButton(false);
-        kButton2.setkHoverColor(new java.awt.Color(255, 0, 0));
-        kButton2.setkHoverEndColor(new java.awt.Color(255, 102, 0));
-        kButton2.setkHoverForeGround(new java.awt.Color(255, 102, 0));
-        kButton2.setkHoverStartColor(new java.awt.Color(255, 255, 255));
-        kButton2.setkIndicatorColor(new java.awt.Color(0, 255, 255));
-        kButton2.setkPressedColor(new java.awt.Color(255, 255, 255));
-        kButton2.setkStartColor(new java.awt.Color(255, 102, 0));
-        kButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kButton2ActionPerformed(evt);
-            }
-        });
-
         kButton3.setText("Novo Objeto");
         kButton3.setBorderPainted(false);
         kButton3.setFocusPainted(false);
+        kButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         kButton3.setkBackGroundColor(new java.awt.Color(0, 255, 255));
         kButton3.setkBorderRadius(20);
         kButton3.setkEndColor(new java.awt.Color(255, 255, 255));
@@ -241,6 +221,7 @@ public class Principal extends javax.swing.JFrame {
         kButton4.setText("Favoritos");
         kButton4.setBorderPainted(false);
         kButton4.setFocusPainted(false);
+        kButton4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         kButton4.setkBackGroundColor(new java.awt.Color(0, 255, 255));
         kButton4.setkBorderRadius(20);
         kButton4.setkEndColor(new java.awt.Color(255, 255, 255));
@@ -261,6 +242,7 @@ public class Principal extends javax.swing.JFrame {
         kButton5.setText("Configuração");
         kButton5.setBorderPainted(false);
         kButton5.setFocusPainted(false);
+        kButton5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         kButton5.setkBackGroundColor(new java.awt.Color(0, 255, 255));
         kButton5.setkBorderRadius(20);
         kButton5.setkEndColor(new java.awt.Color(255, 255, 255));
@@ -278,6 +260,8 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setText("1.0.1.12");
 
         javax.swing.GroupLayout kGradientPanel2Layout = new javax.swing.GroupLayout(kGradientPanel2);
@@ -290,7 +274,6 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(kGradientPanel2Layout.createSequentialGroup()
                         .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(kButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(kButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(kButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(kButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addContainerGap())
@@ -309,15 +292,13 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(kGradientPanel2Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(103, 103, 103)
-                .addComponent(kButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(89, 89, 89)
+                .addComponent(kButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(kButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(kButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(kButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(kButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 224, Short.MAX_VALUE)
+                .addComponent(kButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 226, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addContainerGap())
         );
@@ -462,10 +443,6 @@ public class Principal extends javax.swing.JFrame {
         this.setState(this.ICONIFIED);
     }//GEN-LAST:event_jBMinimisarActionPerformed
 
-    private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_kButton2ActionPerformed
-
     private void kButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton3ActionPerformed
 
         tc.setVisible(true);
@@ -547,7 +524,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private com.k33ptoo.components.KButton kButton2;
     private com.k33ptoo.components.KButton kButton3;
     private com.k33ptoo.components.KButton kButton4;
     private com.k33ptoo.components.KButton kButton5;

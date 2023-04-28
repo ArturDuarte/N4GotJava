@@ -146,7 +146,6 @@
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="kButton3" pref="0" max="32767" attributes="0"/>
-                                  <Component id="kButton2" alignment="0" pref="0" max="32767" attributes="0"/>
                                   <Component id="kButton5" alignment="0" pref="0" max="32767" attributes="0"/>
                                   <Component id="kButton4" alignment="1" pref="0" max="32767" attributes="0"/>
                               </Group>
@@ -174,15 +173,13 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" pref="55" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
-                      <Component id="kButton2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+                      <Component id="kButton3" min="-2" pref="70" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="kButton3" min="-2" max="-2" attributes="0"/>
+                      <Component id="kButton4" min="-2" pref="70" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="kButton4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="kButton5" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="224" max="32767" attributes="0"/>
+                      <Component id="kButton5" min="-2" pref="70" max="-2" attributes="0"/>
+                      <EmptySpace pref="226" max="32767" attributes="0"/>
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -197,50 +194,14 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="com.k33ptoo.components.KButton" name="kButton2">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Todos os Objetos"/>
-                <Property name="borderPainted" type="boolean" value="false"/>
-                <Property name="focusPainted" type="boolean" value="false"/>
-                <Property name="kBackGroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="0" type="rgb"/>
-                </Property>
-                <Property name="kBorderRadius" type="int" value="20"/>
-                <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="kFillButton" type="boolean" value="false"/>
-                <Property name="kHoverColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="ff" type="rgb"/>
-                </Property>
-                <Property name="kHoverEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="66" red="ff" type="rgb"/>
-                </Property>
-                <Property name="kHoverForeGround" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="66" red="ff" type="rgb"/>
-                </Property>
-                <Property name="kHoverStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="kIndicatorColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="0" type="rgb"/>
-                </Property>
-                <Property name="kPressedColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="kStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="66" red="ff" type="rgb"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kButton2ActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="com.k33ptoo.components.KButton" name="kButton3">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Novo Objeto"/>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="focusPainted" type="boolean" value="false"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="0"/>
+                </Property>
                 <Property name="kBackGroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="0" type="rgb"/>
                 </Property>
@@ -280,6 +241,9 @@
                 <Property name="text" type="java.lang.String" value="Favoritos"/>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="focusPainted" type="boolean" value="false"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="0"/>
+                </Property>
                 <Property name="kBackGroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="0" type="rgb"/>
                 </Property>
@@ -319,6 +283,9 @@
                 <Property name="text" type="java.lang.String" value="Configura&#xe7;&#xe3;o"/>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="focusPainted" type="boolean" value="false"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="0"/>
+                </Property>
                 <Property name="kBackGroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="0" type="rgb"/>
                 </Property>
@@ -355,6 +322,12 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="12" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="1.0.1.12"/>
               </Properties>
             </Component>

@@ -23,7 +23,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Principal extends javax.swing.JFrame {
 
-    TelaEditar edit = new TelaEditar();
+    
     CarregaTabela CaTab = new CarregaTabela();
     TelaCadastro tc = new TelaCadastro();
     ArrayList<Objetos> lista = CaTab.VerificaLista();
@@ -87,8 +87,9 @@ public class Principal extends javax.swing.JFrame {
                 event = new TableActionEvent() {
                     @Override
                     public void onEdit(int row) {
-                        System.out.println("Edit row : " + row);
-
+                        System.out.println("Editar row : " + row);
+                        TelaEditar edit = new TelaEditar();
+                        edit.mostraDados(lista.get(row).getNome(), lista.get(row).getPalavraChave(),lista.get(row).getLogin(),lista.get(row).getSenha());
                         edit.setVisible(true);
                     }
 
@@ -262,6 +263,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("1.0.1.122");
 
         javax.swing.GroupLayout kGradientPanel2Layout = new javax.swing.GroupLayout(kGradientPanel2);

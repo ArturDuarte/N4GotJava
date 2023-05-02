@@ -1,7 +1,7 @@
 package br.com.artcomp.model;
 
-
 import br.com.artcomp.wiew.Principal;
+import br.com.artcomp.wiew.TelaEditar;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -9,10 +9,14 @@ import java.util.logging.Logger;
 public class Fabrica {
 
     /**
-     * @param painelPrincipal the painelPrincipal to set
+     * @param principal
      */
     public void setPainelPrincipal(Principal principal) {
         this.pPrincipal = principal;
+    }
+
+    public void setTelaEditar(TelaEditar telaEditar) {
+        this.pEditar = telaEditar;
     }
 
     /**
@@ -30,21 +34,22 @@ public class Fabrica {
     }
 
     private Principal pPrincipal;
-   
-   // private ConexaoBanco conexaoBanco;
-   
 
+    private TelaEditar pEditar;
+
+    // private ConexaoBanco conexaoBanco;
     private static Fabrica INSTANCIA = new Fabrica();
 
     private Fabrica() {
         try {
             pPrincipal = new Principal();
-            
+            pEditar = new TelaEditar();
+
             // conexaoBanco = new ConexaoBanco();
         } catch (SQLException ex) {
             Logger.getLogger(Fabrica.class.getName()).log(Level.SEVERE, null, ex);
         }
-       
+
     }
 
     public static Fabrica getInstancia() {
@@ -57,7 +62,8 @@ public class Fabrica {
     public Principal getPrincipal() {
         return pPrincipal;
     }
-   
+    public TelaEditar getTelaEditar() {
+        return pEditar;
+    }
 
-   
 }

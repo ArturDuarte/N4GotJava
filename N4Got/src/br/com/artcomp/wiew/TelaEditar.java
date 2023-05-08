@@ -74,10 +74,13 @@ public class TelaEditar extends javax.swing.JFrame {
         JTNome.setText(nome);
         JTSobNome.setText(sobreNome);
         JTLogin.setText(login);
-        JTSenha.setText("********");
+        JTSenha.setText(senha);
         JTSenha.setEditable(false);
     }
     
+    public void mostraSenha(){
+         JTSenha.setText("********");
+    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -285,7 +288,9 @@ public class TelaEditar extends javax.swing.JFrame {
     }//GEN-LAST:event_JTSobNomeActionPerformed
 
     private void btolharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btolharActionPerformed
-
+        
+        TelaSenha ts = new TelaSenha();
+        ts.setVisible(true);
        
     }//GEN-LAST:event_btolharActionPerformed
 

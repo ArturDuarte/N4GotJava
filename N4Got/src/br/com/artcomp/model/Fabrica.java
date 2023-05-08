@@ -12,11 +12,11 @@ public class Fabrica {
      * @param principal
      */
     public void setPainelPrincipal(Principal principal) {
-        this.pPrincipal = principal;
+        this.setpPrincipal(principal);
     }
 
     public void setTelaEditar(TelaEditar telaEditar) {
-        this.pEditar = telaEditar;
+        this.setpEditar(telaEditar);
     }
 
     /**
@@ -34,7 +34,6 @@ public class Fabrica {
     }
 
     private Principal pPrincipal;
-
     private TelaEditar pEditar;
 
     // private ConexaoBanco conexaoBanco;
@@ -60,10 +59,38 @@ public class Fabrica {
      * @return the painelPrincipal
      */
     public Principal getPrincipal() {
-        return pPrincipal;
+        return getpPrincipal();
     }
     public TelaEditar getTelaEditar() {
+        return getpEditar();
+    }
+
+    /**
+     * @return the pPrincipal
+     */
+    public Principal getpPrincipal() {
+        return pPrincipal;
+    }
+
+    /**
+     * @param pPrincipal the pPrincipal to set
+     */
+    public void setpPrincipal(Principal pPrincipal) {
+        this.pPrincipal = pPrincipal;
+    }
+
+    /**
+     * @return the pEditar
+     */
+    public TelaEditar getpEditar() {
         return pEditar;
+    }
+
+    /**
+     * @param pEditar the pEditar to set
+     */
+    public void setpEditar(TelaEditar pEditar) {
+        this.pEditar = pEditar;
     }
 
 }

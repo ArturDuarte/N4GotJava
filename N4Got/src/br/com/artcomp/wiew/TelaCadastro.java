@@ -287,7 +287,7 @@ public class TelaCadastro extends javax.swing.JFrame {
 
             JOptionPane.showMessageDialog(null, "Gravação realizada com sucesso ");
             //instancia de uma classe fabrica
-            Principal pri = Fabrica.getInstancia().getPrincipal();
+            Principal pri = Fabrica.getInstancia().getPrincipal();          
             pri.dispose();
             pri.setVisible(true);  
             limpaDados();

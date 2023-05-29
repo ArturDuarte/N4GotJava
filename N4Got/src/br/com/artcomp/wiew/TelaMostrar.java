@@ -40,7 +40,7 @@ public class TelaMostrar extends javax.swing.JFrame {
         this.JTSenha.setDisabledTextColor(new Color(255, 255, 255));
         this.JTSenha.setOpaque(false);
         this.JTSenha.setSelectionColor(new Color(9, 73, 110));
-        
+
         this.JTSenha2.setBackground(new Color(9, 73, 110));
         this.JTSenha2.setFont(new Font("Square721 BT", 1, 14));
         this.JTSenha2.setForeground(new Color(255, 255, 255));
@@ -230,6 +230,11 @@ public class TelaMostrar extends javax.swing.JFrame {
         JTSenha2.setCaretColor(new java.awt.Color(255, 255, 255));
         JTSenha2.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         JTSenha2.setSelectionColor(new java.awt.Color(9, 73, 110));
+        JTSenha2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                JTSenha2KeyPressed(evt);
+            }
+        });
         kGradientPanel5.add(JTSenha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 240, 40));
 
         kGradientPanel2.add(kGradientPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 108, 260, 38));
@@ -312,6 +317,25 @@ public class TelaMostrar extends javax.swing.JFrame {
     private void JTSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JTSenhaActionPerformed
+
+    private void JTSenha2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTSenha2KeyPressed
+
+        if (evt.getKeyCode() == evt.VK_ENTER) {
+
+            VerificaSenha vs = new VerificaSenha();
+            if (vs.VerificaSenha(JTSenha2.getText())) {
+
+                JTSenha.setText(T);
+                kGradientPanel2.setVisible(false);
+                kGradientPanel1.setVisible(true);
+            } else {
+                System.out.println("erro da senha");
+            }
+
+        }
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTSenha2KeyPressed
 
     /**
      * @param args the command line arguments

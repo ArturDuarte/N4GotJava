@@ -13,11 +13,11 @@ import br.com.artcomp.model.Fabrica;
  */
 public class TelaSenha extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaSenha
-     */
+    String senha;
+
     public TelaSenha() {
         initComponents();
+
     }
 
     /**
@@ -57,6 +57,11 @@ public class TelaSenha extends javax.swing.JFrame {
         JTSenha2.setCaretColor(new java.awt.Color(255, 255, 255));
         JTSenha2.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         JTSenha2.setSelectionColor(new java.awt.Color(9, 73, 110));
+        JTSenha2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                JTSenha2KeyPressed(evt);
+            }
+        });
         kGradientPanel5.add(JTSenha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 240, 40));
 
         kGradientPanel2.add(kGradientPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 108, 260, 38));
@@ -138,8 +143,8 @@ public class TelaSenha extends javax.swing.JFrame {
         if (vs.VerificaSenha(JTSenha2.getText())) {
 
             TelaEditar te = Fabrica.getInstancia().getTelaEditar();
-            te.mostraSenha();
-            
+            this.dispose();
+
         } else {
             System.out.println("erro da senha");
         }
@@ -151,6 +156,25 @@ public class TelaSenha extends javax.swing.JFrame {
 
         this.dispose();
     }//GEN-LAST:event_jBFecharActionPerformed
+
+    private void JTSenha2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTSenha2KeyPressed
+
+        if (evt.getKeyCode() == evt.VK_ENTER) {
+
+            VerificaSenha vs = new VerificaSenha();
+            if (vs.VerificaSenha(JTSenha2.getText())) {
+
+                TelaEditar te = Fabrica.getInstancia().getTelaEditar();
+                this.dispose();
+
+            } else {
+                System.out.println("erro da senha");
+            }
+
+        }
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTSenha2KeyPressed
 
     /**
      * @param args the command line arguments

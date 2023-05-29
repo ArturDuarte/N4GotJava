@@ -5,6 +5,7 @@
 package br.com.artcomp.wiew;
 
 import br.com.artcomp.controller.VerificaSenha;
+import br.com.artcomp.model.Objetos;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.BorderFactory;
@@ -15,9 +16,8 @@ import javax.swing.BorderFactory;
  */
 public class TelaEditar extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaEditar
-     */
+    
+
     public TelaEditar() {
         initComponents();
 
@@ -40,7 +40,7 @@ public class TelaEditar extends javax.swing.JFrame {
         this.JTSobNome.setDisabledTextColor(new Color(255, 255, 255));
         this.JTSobNome.setOpaque(false);
         this.JTSobNome.setSelectionColor(new Color(9, 73, 110));
-        
+
         this.JTLogin.setBackground(new Color(9, 73, 110));
         this.JTLogin.setFont(new Font("Square721 BT", 1, 14));
         this.JTLogin.setForeground(new Color(255, 255, 255));
@@ -50,7 +50,7 @@ public class TelaEditar extends javax.swing.JFrame {
         this.JTLogin.setDisabledTextColor(new Color(255, 255, 255));
         this.JTLogin.setOpaque(false);
         this.JTLogin.setSelectionColor(new Color(9, 73, 110));
-        
+
         this.JTSenha.setBackground(new Color(9, 73, 110));
         this.JTSenha.setFont(new Font("Square721 BT", 1, 14));
         this.JTSenha.setForeground(new Color(255, 255, 255));
@@ -61,27 +61,44 @@ public class TelaEditar extends javax.swing.JFrame {
         this.JTSenha.setOpaque(false);
         this.JTSenha.setSelectionColor(new Color(9, 73, 110));
         
+        this.JTSenha1.setBackground(new Color(9, 73, 110));
+        this.JTSenha1.setFont(new Font("Square721 BT", 1, 14));
+        this.JTSenha1.setForeground(new Color(255, 255, 255));
+        this.JTSenha1.setToolTipText("");
+        this.JTSenha1.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(255, 255, 255)));
+        this.JTSenha1.setCaretColor(new Color(255, 255, 255));
+        this.JTSenha1.setDisabledTextColor(new Color(255, 255, 255));
+        this.JTSenha1.setOpaque(false);
+        this.JTSenha1.setSelectionColor(new Color(9, 73, 110));
+        this.JTSenha1.setVisible(true);
+        
         this.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
-        this.kGradientPanel1.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));        
+        this.kGradientPanel1.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel3.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel4.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
 
+        mostraDados();
         
     }
 
-    public void mostraDados(String nome, String sobreNome, String login, String senha){
+    public void mostraDados() {
+
+        Objetos ob = new Objetos();
+        JTNome.setText(ob.getNome());
+        JTSobNome.setText(ob.getPalavraChave());
+        JTLogin.setText(ob.getLogin());
         
-        JTNome.setText(nome);
-        JTSobNome.setText(sobreNome);
-        JTLogin.setText(login);
-        JTSenha.setText(senha);
+        JTSenha.setText("********");
         JTSenha.setEditable(false);
+        JTSenha1.setText(ob.getSenha());
+        System.out.println("o valor de senha  " + ob.getSenha());
     }
-    
-    public void mostraSenha(){
-         JTSenha.setText("********");
-    }
-    
+
+   public void atualizaDados(){
+       this.dispose();
+       JTSenha.setVisible(false);
+   }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -96,12 +113,13 @@ public class TelaEditar extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         kButton2 = new com.k33ptoo.components.KButton();
         kGradientPanel3 = new com.k33ptoo.components.KGradientPanel();
-        JTSenha = new javax.swing.JTextField();
         kGradientPanel4 = new com.k33ptoo.components.KGradientPanel();
         JTLogin = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         btolhar = new br.com.artcomp.cell.ActionButton();
+        JTSenha1 = new javax.swing.JTextField();
+        JTSenha = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -206,19 +224,6 @@ public class TelaEditar extends javax.swing.JFrame {
         kGradientPanel3.setkEndColor(new java.awt.Color(170, 68, 0));
         kGradientPanel3.setkStartColor(new java.awt.Color(170, 68, 0));
         kGradientPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        JTSenha.setBackground(new java.awt.Color(30, 30, 30));
-        JTSenha.setFont(new java.awt.Font("Square721 BT", 1, 14)); // NOI18N
-        JTSenha.setForeground(new java.awt.Color(255, 255, 255));
-        JTSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTSenha.setText("***************");
-        JTSenha.setToolTipText("");
-        JTSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
-        JTSenha.setCaretColor(new java.awt.Color(255, 255, 255));
-        JTSenha.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        JTSenha.setSelectionColor(new java.awt.Color(9, 73, 110));
-        kGradientPanel3.add(JTSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 240, 30));
-
         kGradientPanel1.add(kGradientPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, 260, 30));
 
         kGradientPanel4.setkBorderRadius(30);
@@ -259,6 +264,30 @@ public class TelaEditar extends javax.swing.JFrame {
         });
         kGradientPanel1.add(btolhar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 360, 30, 30));
 
+        JTSenha1.setBackground(new java.awt.Color(30, 30, 30));
+        JTSenha1.setFont(new java.awt.Font("Square721 BT", 1, 14)); // NOI18N
+        JTSenha1.setForeground(new java.awt.Color(255, 255, 255));
+        JTSenha1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTSenha1.setText("***************");
+        JTSenha1.setToolTipText("");
+        JTSenha1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        JTSenha1.setCaretColor(new java.awt.Color(255, 255, 255));
+        JTSenha1.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        JTSenha1.setSelectionColor(new java.awt.Color(9, 73, 110));
+        kGradientPanel1.add(JTSenha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, 240, 30));
+
+        JTSenha.setBackground(new java.awt.Color(30, 30, 30));
+        JTSenha.setFont(new java.awt.Font("Square721 BT", 1, 14)); // NOI18N
+        JTSenha.setForeground(new java.awt.Color(255, 255, 255));
+        JTSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTSenha.setText("***************");
+        JTSenha.setToolTipText("");
+        JTSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        JTSenha.setCaretColor(new java.awt.Color(255, 255, 255));
+        JTSenha.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        JTSenha.setSelectionColor(new java.awt.Color(9, 73, 110));
+        kGradientPanel1.add(JTSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, 240, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -288,10 +317,11 @@ public class TelaEditar extends javax.swing.JFrame {
     }//GEN-LAST:event_JTSobNomeActionPerformed
 
     private void btolharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btolharActionPerformed
+
+        TelaSenha ts = new TelaSenha();  
         
-        TelaSenha ts = new TelaSenha();
         ts.setVisible(true);
-       
+
     }//GEN-LAST:event_btolharActionPerformed
 
     private void btolhar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btolhar1ActionPerformed
@@ -338,6 +368,7 @@ public class TelaEditar extends javax.swing.JFrame {
     private javax.swing.JTextField JTLogin;
     private javax.swing.JTextField JTNome;
     private javax.swing.JTextField JTSenha;
+    private javax.swing.JTextField JTSenha1;
     private javax.swing.JTextField JTSobNome;
     private br.com.artcomp.cell.ActionButton btolhar;
     private br.com.artcomp.cell.ActionButton btolhar1;

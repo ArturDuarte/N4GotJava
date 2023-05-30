@@ -49,6 +49,11 @@ public class PanelAction extends javax.swing.JPanel {
 
         btolhar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/olho.png"))); // NOI18N
         btolhar.setFocusable(false);
+        btolhar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btolharActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -73,6 +78,10 @@ public class PanelAction extends javax.swing.JPanel {
                 .addGap(16, 16, 16))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btolharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btolharActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btolharActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -111,7 +111,7 @@ public class Principal extends javax.swing.JFrame {
                     public void onView(int row) {
                         System.out.println("View row : " + row);
                         TelaMostrar most = new TelaMostrar();
-                        most.mostraDados(lista.get(row).getNome(), lista.get(row).getSenha());
+                        most.mostraDados(lista.get(row).getLogin(), lista.get(row).getSenha());
                         most.setVisible(true);
 
                     }

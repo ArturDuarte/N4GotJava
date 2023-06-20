@@ -23,7 +23,6 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Principal extends javax.swing.JFrame {
 
-    
     CarregaTabela CaTab = new CarregaTabela();
     TelaCadastro tc = new TelaCadastro();
     ArrayList<Objetos> lista = CaTab.VerificaLista();
@@ -78,9 +77,9 @@ public class Principal extends javax.swing.JFrame {
             for (Objetos o : lista) {
 
                 System.out.println("aqui--" + o.getNome());
-
-                table.setValueAt(o.getNome(), linha, 0);
-                table.setValueAt(o.getPalavraChave(), linha, 1);
+                table.setValueAt("A", linha, 0);
+                table.setValueAt(o.getNome(), linha, 1);
+                table.setValueAt(o.getPalavraChave(), linha, 2);
                 linha++;
 
                 TableActionEvent event;
@@ -116,8 +115,8 @@ public class Principal extends javax.swing.JFrame {
 
                     }
                 };
-                table.getColumnModel().getColumn(2).setCellRenderer(new TableActionCellRender());
-                table.getColumnModel().getColumn(2).setCellEditor(new TableActionCellEditor(event));
+                table.getColumnModel().getColumn(3).setCellRenderer(new TableActionCellRender());
+                table.getColumnModel().getColumn(3).setCellEditor(new TableActionCellEditor(event));
 
             }
         }
@@ -326,11 +325,11 @@ public class Principal extends javax.swing.JFrame {
 
             },
             new String [] {
-                "OBJETO", "COMENTARIO", "ICONE"
+                "IMG", "OBJETO", "COMENTARIO", "ICONE"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, true
+                false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -343,6 +342,9 @@ public class Principal extends javax.swing.JFrame {
         table.setSelectionBackground(new java.awt.Color(170, 68, 0));
         table.setSelectionForeground(new java.awt.Color(255, 102, 0));
         scrollPaneWin112.setViewportView(table);
+        if (table.getColumnModel().getColumnCount() > 0) {
+            table.getColumnModel().getColumn(0).setPreferredWidth(10);
+        }
 
         javax.swing.GroupLayout kGradientPanel7Layout = new javax.swing.GroupLayout(kGradientPanel7);
         kGradientPanel7.setLayout(kGradientPanel7Layout);
@@ -553,7 +555,7 @@ public class Principal extends javax.swing.JFrame {
                 case 1:
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
-                                {null, null, null}
+                                {null, null, null, null}
                             },
                             new String[]{
                                 "OBJETO", "COMENTARIO", "ICONE"
@@ -1303,40 +1305,40 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     break;
                 case 24:
-                    System.out.println("entrou aqui 11");
+                    System.out.println("entrou aqui 24");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
-                                {null, null, null},
-                                {null, null, null},
-                                {null, null, null},
-                                {null, null, null},
-                                {null, null, null},
-                                {null, null, null},
-                                {null, null, null},
-                                {null, null, null},
-                                {null, null, null},
-                                {null, null, null},
-                                {null, null, null},
-                                {null, null, null},
-                                {null, null, null},
-                                {null, null, null},
-                                {null, null, null},
-                                {null, null, null},
-                                {null, null, null},
-                                {null, null, null},
-                                {null, null, null},
-                                {null, null, null},
-                                {null, null, null},
-                                {null, null, null},
-                                {null, null, null},
-                                {null, null, null}
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null}
                             },
                             new String[]{
-                                "OBJETO", "COMENTARIO", "ICONE"
+                                "IMG","OBJETO", "COMENTARIO", "ICONE"
                             }
                     ) {
                         boolean[] canEdit = new boolean[]{
-                            false, false, true
+                            false,false, false, true
                         };
 
                         @Override
@@ -1347,6 +1349,7 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     break;
                 case 25:
                     System.out.println("entrou aqui 11");
@@ -1443,7 +1446,7 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     break;
-                    case 27:
+                case 27:
                     System.out.println("entrou aqui 11");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
@@ -1492,7 +1495,7 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     break;
-                    case 28:
+                case 28:
                     System.out.println("entrou aqui 11");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
@@ -1542,7 +1545,7 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     break;
-                    case 29:
+                case 29:
                     System.out.println("entrou aqui 11");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
@@ -1593,7 +1596,7 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     break;
-                    case 30:
+                case 30:
                     System.out.println("entrou aqui 11");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{

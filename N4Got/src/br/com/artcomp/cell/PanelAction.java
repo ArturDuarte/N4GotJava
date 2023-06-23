@@ -1,16 +1,14 @@
-
 package br.com.artcomp.cell;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 
 public class PanelAction extends javax.swing.JPanel {
 
     /**
      * Creates new form PanelAction
      */
-     public PanelAction() {
+    public PanelAction() {
         initComponents();
     }
 
@@ -29,6 +27,13 @@ public class PanelAction extends javax.swing.JPanel {
                 event.onView(row);
             }
         });
+        
+        btolhar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                event.onDelete(row);
+            }
+        });
     }
 
     /**
@@ -42,53 +47,30 @@ public class PanelAction extends javax.swing.JPanel {
 
         bteditar = new br.com.artcomp.cell.ActionButton();
         btolhar = new br.com.artcomp.cell.ActionButton();
+        bteditar1 = new br.com.artcomp.cell.ActionButton();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         bteditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/lapis.png"))); // NOI18N
         bteditar.setFocusable(false);
         bteditar.setRequestFocusEnabled(false);
+        add(bteditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 40, 40));
 
         btolhar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/olho.png"))); // NOI18N
         btolhar.setFocusable(false);
-        btolhar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btolharActionPerformed(evt);
-            }
-        });
+        add(btolhar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 40, 40));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
-                .addComponent(bteditar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btolhar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(bteditar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btolhar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(16, 16, 16))
-        );
+        bteditar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/lixeira.png"))); // NOI18N
+        bteditar1.setFocusable(false);
+        bteditar1.setRequestFocusEnabled(false);
+        add(bteditar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 40, 40));
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btolharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btolharActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btolharActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private br.com.artcomp.cell.ActionButton bteditar;
+    private br.com.artcomp.cell.ActionButton bteditar1;
     private br.com.artcomp.cell.ActionButton btolhar;
     // End of variables declaration//GEN-END:variables
 
-    
-    
 }

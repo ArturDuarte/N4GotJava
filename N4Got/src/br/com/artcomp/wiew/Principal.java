@@ -38,13 +38,11 @@ public class Principal extends javax.swing.JFrame {
         this.setIconImage(this.getIconImage());
 
         this.scrollPaneWin112.setBorder(BorderFactory.createLineBorder(new Color(255, 102, 51), 1));
+        this.scrollPaneWin112.setBackground(new Color(170, 68, 0));
+        
         this.table.setForeground(new Color(255, 255, 255));
-        table.getParent().setBackground(new Color(255, 102, 0));
-        table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
-        table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
-        table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
-
-        scrollPaneWin112.setBackground(new Color(170, 68, 0));
+        table.getParent().setBackground(new Color(255, 102, 0));        
+        
         this.Pesquisa.setBackground(new Color(9, 73, 110));
         this.Pesquisa.setFont(new Font("Square721 BT", 1, 14));
         this.Pesquisa.setForeground(new Color(255, 255, 255));
@@ -77,9 +75,9 @@ public class Principal extends javax.swing.JFrame {
             for (Objetos o : lista) {
 
                 System.out.println("aqui--" + o.getNome());
-                table.setValueAt("A", linha, 0);
-                table.setValueAt(o.getNome(), linha, 1);
-                table.setValueAt(o.getPalavraChave(), linha, 2);
+                
+                table.setValueAt("  "+o.getNome(), linha, 0);
+                table.setValueAt(o.getPalavraChave(), linha, 1);
                 linha++;
 
                 TableActionEvent event;
@@ -99,11 +97,12 @@ public class Principal extends javax.swing.JFrame {
 
                     @Override
                     public void onDelete(int row) {
-                        if (table.isEditing()) {
-                            table.getCellEditor().stopCellEditing();
-                        }
-                        DefaultTableModel model = (DefaultTableModel) table.getModel();
-                        model.removeRow(row);
+//                        if (table.isEditing()) {
+//                            table.getCellEditor().stopCellEditing();
+//                        }
+//                        DefaultTableModel model = (DefaultTableModel) table.getModel();
+//                        model.removeRow(row);
+                            System.out.println("vou apagar");
                     }
 
                     @Override
@@ -115,8 +114,8 @@ public class Principal extends javax.swing.JFrame {
 
                     }
                 };
-                table.getColumnModel().getColumn(3).setCellRenderer(new TableActionCellRender());
-                table.getColumnModel().getColumn(3).setCellEditor(new TableActionCellEditor(event));
+                table.getColumnModel().getColumn(2).setCellRenderer(new TableActionCellRender());
+                table.getColumnModel().getColumn(2).setCellEditor(new TableActionCellEditor(event));
 
             }
         }
@@ -325,26 +324,27 @@ public class Principal extends javax.swing.JFrame {
 
             },
             new String [] {
-                "IMG", "OBJETO", "COMENTARIO", "ICONE"
+                "OBJETO", "COMENTARIO", "ICONE"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, true
+                false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
+        table.setToolTipText("");
         table.setGridColor(new java.awt.Color(255, 102, 0));
+        table.setInheritsPopupMenu(true);
+        table.setName(""); // NOI18N
         table.setRequestFocusEnabled(false);
-        table.setRowHeight(50);
-        table.setSelectionBackground(new java.awt.Color(170, 68, 0));
-        table.setSelectionForeground(new java.awt.Color(255, 102, 0));
+        table.setRowHeight(45);
+        table.setSelectionBackground(new java.awt.Color(214, 86, 0));
+        table.setSelectionForeground(new java.awt.Color(255, 255, 255));
+        table.setShowGrid(true);
         scrollPaneWin112.setViewportView(table);
-        if (table.getColumnModel().getColumnCount() > 0) {
-            table.getColumnModel().getColumn(0).setPreferredWidth(10);
-        }
 
         javax.swing.GroupLayout kGradientPanel7Layout = new javax.swing.GroupLayout(kGradientPanel7);
         kGradientPanel7.setLayout(kGradientPanel7Layout);
@@ -555,7 +555,7 @@ public class Principal extends javax.swing.JFrame {
                 case 1:
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
-                                {null, null, null, null}
+                                {null, null, null}
                             },
                             new String[]{
                                 "OBJETO", "COMENTARIO", "ICONE"
@@ -1308,37 +1308,37 @@ public class Principal extends javax.swing.JFrame {
                     System.out.println("entrou aqui 24");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
-                                {null, null, null, null},
-                                {null, null, null, null},
-                                {null, null, null, null},
-                                {null, null, null, null},
-                                {null, null, null, null},
-                                {null, null, null, null},
-                                {null, null, null, null},
-                                {null, null, null, null},
-                                {null, null, null, null},
-                                {null, null, null, null},
-                                {null, null, null, null},
-                                {null, null, null, null},
-                                {null, null, null, null},
-                                {null, null, null, null},
-                                {null, null, null, null},
-                                {null, null, null, null},
-                                {null, null, null, null},
-                                {null, null, null, null},
-                                {null, null, null, null},
-                                {null, null, null, null},
-                                {null, null, null, null},
-                                {null, null, null, null},
-                                {null, null, null, null},
-                                {null, null, null, null}
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null}
                             },
                             new String[]{
-                                "IMG","OBJETO", "COMENTARIO", "ICONE"
+                                "OBJETO", "COMENTARIO", "ICONE"
                             }
                     ) {
                         boolean[] canEdit = new boolean[]{
-                            false,false, false, true
+                            false, false, true
                         };
 
                         @Override
@@ -1349,7 +1349,10 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
-                    table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
+                    
                     break;
                 case 25:
                     System.out.println("entrou aqui 11");

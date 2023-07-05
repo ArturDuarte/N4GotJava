@@ -120,6 +120,7 @@ public class TelaEditar extends javax.swing.JFrame {
         btolhar = new br.com.artcomp.cell.ActionButton();
         JTSenha1 = new javax.swing.JTextField();
         JTSenha = new javax.swing.JTextField();
+        kGradientPanel2 = new com.k33ptoo.components.KGradientPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -274,7 +275,7 @@ public class TelaEditar extends javax.swing.JFrame {
         JTSenha1.setCaretColor(new java.awt.Color(255, 255, 255));
         JTSenha1.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         JTSenha1.setSelectionColor(new java.awt.Color(9, 73, 110));
-        kGradientPanel1.add(JTSenha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, 240, 30));
+        kGradientPanel1.add(JTSenha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 240, 30));
 
         JTSenha.setBackground(new java.awt.Color(30, 30, 30));
         JTSenha.setFont(new java.awt.Font("Square721 BT", 1, 14)); // NOI18N
@@ -286,7 +287,20 @@ public class TelaEditar extends javax.swing.JFrame {
         JTSenha.setCaretColor(new java.awt.Color(255, 255, 255));
         JTSenha.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         JTSenha.setSelectionColor(new java.awt.Color(9, 73, 110));
-        kGradientPanel1.add(JTSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, 240, 30));
+        kGradientPanel1.add(JTSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, 240, 30));
+
+        javax.swing.GroupLayout kGradientPanel2Layout = new javax.swing.GroupLayout(kGradientPanel2);
+        kGradientPanel2.setLayout(kGradientPanel2Layout);
+        kGradientPanel2Layout.setHorizontalGroup(
+            kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 450, Short.MAX_VALUE)
+        );
+        kGradientPanel2Layout.setVerticalGroup(
+            kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 290, Short.MAX_VALUE)
+        );
+
+        kGradientPanel1.add(kGradientPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 450, 290));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -380,6 +394,7 @@ public class TelaEditar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private com.k33ptoo.components.KButton kButton2;
     private com.k33ptoo.components.KGradientPanel kGradientPanel1;
+    private com.k33ptoo.components.KGradientPanel kGradientPanel2;
     private com.k33ptoo.components.KGradientPanel kGradientPanel3;
     private com.k33ptoo.components.KGradientPanel kGradientPanel4;
     // End of variables declaration//GEN-END:variables

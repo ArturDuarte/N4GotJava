@@ -39,10 +39,10 @@ public class Principal extends javax.swing.JFrame {
 
         this.scrollPaneWin112.setBorder(BorderFactory.createLineBorder(new Color(255, 102, 51), 1));
         this.scrollPaneWin112.setBackground(new Color(170, 68, 0));
-        
+
         this.table.setForeground(new Color(255, 255, 255));
-        table.getParent().setBackground(new Color(255, 102, 0));        
-        
+        table.getParent().setBackground(new Color(255, 102, 0));
+
         this.Pesquisa.setBackground(new Color(9, 73, 110));
         this.Pesquisa.setFont(new Font("Square721 BT", 1, 14));
         this.Pesquisa.setForeground(new Color(255, 255, 255));
@@ -75,8 +75,8 @@ public class Principal extends javax.swing.JFrame {
             for (Objetos o : lista) {
 
                 System.out.println("aqui--" + o.getNome());
-                
-                table.setValueAt("  "+o.getNome(), linha, 0);
+
+                table.setValueAt("  " + o.getNome(), linha, 0);
                 table.setValueAt(o.getPalavraChave(), linha, 1);
                 linha++;
 
@@ -102,7 +102,7 @@ public class Principal extends javax.swing.JFrame {
 //                        }
 //                        DefaultTableModel model = (DefaultTableModel) table.getModel();
 //                        model.removeRow(row);
-                            System.out.println("vou apagar");
+                        System.out.println("vou apagar");
                     }
 
                     @Override
@@ -553,6 +553,7 @@ public class Principal extends javax.swing.JFrame {
 
             switch (lista.size()) {
                 case 1:
+                    System.out.println("entrou aqui - 1");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null}
@@ -570,8 +571,15 @@ public class Principal extends javax.swing.JFrame {
                             return canEdit[columnIndex];
                         }
                     });
+                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 2:
+                    System.out.println("entrou aqui - 2");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -592,8 +600,15 @@ public class Principal extends javax.swing.JFrame {
                         }
                     }
                     );
+                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 3:
+                    System.out.println("entrou aqui - 3");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -613,8 +628,15 @@ public class Principal extends javax.swing.JFrame {
                             return canEdit[columnIndex];
                         }
                     });
+                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 4:
+                    System.out.println("entrou aqui - 4");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -635,8 +657,15 @@ public class Principal extends javax.swing.JFrame {
                             return canEdit[columnIndex];
                         }
                     });
+                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 5:
+                    System.out.println("entrou aqui - 5");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -658,8 +687,15 @@ public class Principal extends javax.swing.JFrame {
                             return canEdit[columnIndex];
                         }
                     });
+                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 6:
+                    System.out.println("entrou aqui - 6");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -682,8 +718,15 @@ public class Principal extends javax.swing.JFrame {
                             return canEdit[columnIndex];
                         }
                     });
+                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 7:
+                    System.out.println("entrou aqui - 7");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -707,6 +750,12 @@ public class Principal extends javax.swing.JFrame {
                             return canEdit[columnIndex];
                         }
                     });
+                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 8:
                     System.out.println("entrou aqui - 8");
@@ -734,8 +783,15 @@ public class Principal extends javax.swing.JFrame {
                             return canEdit[columnIndex];
                         }
                     });
+                    table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 9:
+                    System.out.println("entrou aqui 9");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -761,9 +817,12 @@ public class Principal extends javax.swing.JFrame {
                             return canEdit[columnIndex];
                         }
                     });
-                    table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 14), true, new Color(170, 68, 0), Color.WHITE));
-                    table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 14), true, new Color(170, 68, 0), Color.WHITE));
-                    table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 14), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 10:
                     System.out.println("entrou aqui 10");
@@ -796,6 +855,9 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 11:
                     System.out.println("entrou aqui 11");
@@ -829,9 +891,12 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 12:
-                    System.out.println("entrou aqui 11");
+                    System.out.println("entrou aqui 12");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -863,9 +928,12 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 13:
-                    System.out.println("entrou aqui 11");
+                    System.out.println("entrou aqui 13");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -898,9 +966,12 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 14:
-                    System.out.println("entrou aqui 11");
+                    System.out.println("entrou aqui 14");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -934,9 +1005,12 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 15:
-                    System.out.println("entrou aqui 11");
+                    System.out.println("entrou aqui 15");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -971,9 +1045,12 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 16:
-                    System.out.println("entrou aqui 11");
+                    System.out.println("entrou aqui 16");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -1009,9 +1086,12 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 17:
-                    System.out.println("entrou aqui 11");
+                    System.out.println("entrou aqui 17");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -1048,9 +1128,12 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 18:
-                    System.out.println("entrou aqui 11");
+                    System.out.println("entrou aqui 18");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -1088,9 +1171,12 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 19:
-                    System.out.println("entrou aqui 11");
+                    System.out.println("entrou aqui 19");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -1129,9 +1215,12 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 20:
-                    System.out.println("entrou aqui 11");
+                    System.out.println("entrou aqui 20");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -1171,9 +1260,12 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 21:
-                    System.out.println("entrou aqui 11");
+                    System.out.println("entrou aqui 21");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -1214,9 +1306,12 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 22:
-                    System.out.println("entrou aqui 11");
+                    System.out.println("entrou aqui 22");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -1258,9 +1353,12 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 23:
-                    System.out.println("entrou aqui 11");
+                    System.out.println("entrou aqui 23");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -1303,6 +1401,9 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 24:
                     System.out.println("entrou aqui 24");
@@ -1352,10 +1453,10 @@ public class Principal extends javax.swing.JFrame {
                     //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setPreferredWidth(1);
                     //table.getColumnModel().getColumn(3).setPreferredWidth(10);
-                    
+
                     break;
                 case 25:
-                    System.out.println("entrou aqui 11");
+                    System.out.println("entrou aqui 25");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -1400,9 +1501,12 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 26:
-                    System.out.println("entrou aqui 11");
+                    System.out.println("entrou aqui 26");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -1448,9 +1552,12 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 27:
-                    System.out.println("entrou aqui 11");
+                    System.out.println("entrou aqui 27");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -1497,9 +1604,12 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 28:
-                    System.out.println("entrou aqui 11");
+                    System.out.println("entrou aqui 28");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -1547,9 +1657,12 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 29:
-                    System.out.println("entrou aqui 11");
+                    System.out.println("entrou aqui 29");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -1598,9 +1711,12 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 30:
-                    System.out.println("entrou aqui 11");
+                    System.out.println("entrou aqui 30");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -1650,6 +1766,9 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
                     table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 default:
 

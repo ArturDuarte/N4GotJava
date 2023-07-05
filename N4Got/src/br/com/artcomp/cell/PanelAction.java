@@ -28,7 +28,7 @@ public class PanelAction extends javax.swing.JPanel {
             }
         });
         
-        btolhar.addActionListener(new ActionListener() {
+        btdelete.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 event.onDelete(row);
@@ -47,7 +47,7 @@ public class PanelAction extends javax.swing.JPanel {
 
         bteditar = new br.com.artcomp.cell.ActionButton();
         btolhar = new br.com.artcomp.cell.ActionButton();
-        bteditar1 = new br.com.artcomp.cell.ActionButton();
+        btdelete = new br.com.artcomp.cell.ActionButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -60,16 +60,16 @@ public class PanelAction extends javax.swing.JPanel {
         btolhar.setFocusable(false);
         add(btolhar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 40, 40));
 
-        bteditar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/lixeira.png"))); // NOI18N
-        bteditar1.setFocusable(false);
-        bteditar1.setRequestFocusEnabled(false);
-        add(bteditar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 40, 40));
+        btdelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/lixeira.png"))); // NOI18N
+        btdelete.setFocusable(false);
+        btdelete.setRequestFocusEnabled(false);
+        add(btdelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 40, 40));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private br.com.artcomp.cell.ActionButton btdelete;
     private br.com.artcomp.cell.ActionButton bteditar;
-    private br.com.artcomp.cell.ActionButton bteditar1;
     private br.com.artcomp.cell.ActionButton btolhar;
     // End of variables declaration//GEN-END:variables
 

@@ -8,6 +8,7 @@ import br.com.artcomp.controller.VerificaSenha;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -66,6 +67,8 @@ public class TelaMostrar extends javax.swing.JFrame {
     public void mostraDados(String login, String senha) {
         this.T = senha;
         this.JTLogin.setText(login);
+        //ImageIcon iconLogo = new ImageIcon("src/br/com/artcomp/imagens/n4got100.png");//troca a imagem da tela 
+        //JLImagem.setIcon(iconLogo);
         System.out.println("senha  " + T);
 
     }
@@ -81,7 +84,7 @@ public class TelaMostrar extends javax.swing.JFrame {
 
         JTSenhaR = new com.k33ptoo.components.KGradientPanel();
         jBFechar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        JLImagem = new javax.swing.JLabel();
         kGradientPanel1 = new com.k33ptoo.components.KGradientPanel();
         kGradientPanel3 = new com.k33ptoo.components.KGradientPanel();
         JTSenha = new javax.swing.JTextField();
@@ -126,8 +129,8 @@ public class TelaMostrar extends javax.swing.JFrame {
         });
         JTSenhaR.add(jBFechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 0, 40, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/camera.png"))); // NOI18N
-        JTSenhaR.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, -1, 100));
+        JLImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/camera.png"))); // NOI18N
+        JTSenhaR.add(JLImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, -1, 100));
 
         kGradientPanel1.setkEndColor(new java.awt.Color(255, 102, 0));
         kGradientPanel1.setkStartColor(new java.awt.Color(255, 102, 0));
@@ -296,6 +299,7 @@ public class TelaMostrar extends javax.swing.JFrame {
         jLMensagem.setVisible(false);
         jLMensagem1.setVisible(true);
         actionButton1.setEnabled(false);
+        JTSenha2.requestFocus();
 
     }//GEN-LAST:event_actionButton1ActionPerformed
 
@@ -374,6 +378,7 @@ public class TelaMostrar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel JLImagem;
     private javax.swing.JTextField JTLogin;
     private javax.swing.JTextField JTSenha;
     private javax.swing.JTextField JTSenha2;
@@ -382,7 +387,6 @@ public class TelaMostrar extends javax.swing.JFrame {
     private javax.swing.JButton jBFechar;
     private javax.swing.JLabel jLMensagem;
     private javax.swing.JLabel jLMensagem1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;

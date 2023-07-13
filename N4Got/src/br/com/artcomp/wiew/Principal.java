@@ -91,7 +91,7 @@ public class Principal extends javax.swing.JFrame {
                         ob.setPalavraChave(lista.get(row).getPalavraChave());
                         ob.setLogin(lista.get(row).getLogin());
                         ob.setSenha(lista.get(row).getSenha());
-                        //edit.mostraDados(lista.get(row).getNome(), lista.get(row).getPalavraChave(),lista.get(row).getLogin(),lista.get(row).getSenha());
+                        edit.mostraDados(lista.get(row).getNome(), lista.get(row).getPalavraChave(),lista.get(row).getLogin(),lista.get(row).getSenha());
                         edit.setVisible(true);
                     }
 

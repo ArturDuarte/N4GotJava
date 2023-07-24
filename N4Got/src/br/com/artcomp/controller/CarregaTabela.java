@@ -4,7 +4,7 @@
  */
 package br.com.artcomp.controller;
 
-import br.com.artcomp.DAO.ObjetoDAO;
+import br.com.artcomp.DAO.SelectDAO;
 import br.com.artcomp.model.Objetos;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 public class CarregaTabela {
     
-    ObjetoDAO objDAO = new ObjetoDAO();
+    SelectDAO objDAO = new SelectDAO();
     ArrayList<Objetos> lista;
 
     public CarregaTabela() throws SQLException {

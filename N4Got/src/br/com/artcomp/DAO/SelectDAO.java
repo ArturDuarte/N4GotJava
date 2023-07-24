@@ -13,11 +13,11 @@ import java.util.ArrayList;
  *
  * @author artco
  */
-public class ObjetoDAO {
+public class SelectDAO {
 
     Conexao con_cadastro;
 
-    public ObjetoDAO() {
+    public SelectDAO() {
 
     }
 

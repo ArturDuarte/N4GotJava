@@ -13,11 +13,11 @@ import javax.swing.JOptionPane;
  *
  * @author artco
  */
-public class CadastroDAO {
+public class InsertDAO {
 
     Conexao con_cadastro;
 
-    public CadastroDAO() {
+    public InsertDAO() {
 
     }
 

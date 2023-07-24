@@ -23,13 +23,15 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Principal extends javax.swing.JFrame {
 
-    CarregaTabela CaTab = new CarregaTabela();
+    CarregaTabela CaTab;
     TelaCadastro tc = new TelaCadastro();
-    ArrayList<Objetos> lista = CaTab.VerificaLista();
+    ArrayList<Objetos> lista = null;
 
     public Principal() throws SQLException {
-        initComponents();
 
+        initComponents();
+        this.CaTab = new CarregaTabela();
+        lista = CaTab.VerificaLista();
         this.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel1.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel2.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
@@ -53,6 +55,8 @@ public class Principal extends javax.swing.JFrame {
         this.Pesquisa.setOpaque(false);
         this.Pesquisa.setSelectionColor(new Color(9, 73, 110));
 
+        this.kGradientPanel7.setVisible(true);
+
         criatabela();
 
         carregaTabela();
@@ -65,7 +69,7 @@ public class Principal extends javax.swing.JFrame {
         return icon;
     }
 
-    public void carregaTabela() throws SQLException {
+    public void carregaTabela() {
 
         var linha = 0;
 
@@ -87,12 +91,14 @@ public class Principal extends javax.swing.JFrame {
                         System.out.println("Editar row : " + row);
                         TelaEditar edit = new TelaEditar();
                         Objetos ob = new Objetos();
+                        ob.setId(lista.get(row).getId());
                         ob.setNome(lista.get(row).getNome());
                         ob.setPalavraChave(lista.get(row).getPalavraChave());
                         ob.setLogin(lista.get(row).getLogin());
                         ob.setSenha(lista.get(row).getSenha());
-                        edit.mostraDados(lista.get(row).getNome(), lista.get(row).getPalavraChave(),lista.get(row).getLogin(),lista.get(row).getSenha());
+                        edit.mostraDados(lista.get(row).getId(), lista.get(row).getNome(), lista.get(row).getPalavraChave(), lista.get(row).getLogin(), lista.get(row).getSenha());
                         edit.setVisible(true);
+
                     }
 
                     @Override
@@ -147,7 +153,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
 
         kGradientPanel1.setBackground(new java.awt.Color(255, 102, 0));
@@ -520,6 +526,7 @@ public class Principal extends javax.swing.JFrame {
                 } catch (SQLException ex) {
                     Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
                 }
+
             }
         });
     }
@@ -538,11 +545,20 @@ public class Principal extends javax.swing.JFrame {
     private com.k33ptoo.components.KButton kButton5;
     private com.k33ptoo.components.KGradientPanel kGradientPanel1;
     private com.k33ptoo.components.KGradientPanel kGradientPanel2;
-    private com.k33ptoo.components.KGradientPanel kGradientPanel7;
+    public com.k33ptoo.components.KGradientPanel kGradientPanel7;
     private com.k33ptoo.components.KGradientPanel kGradientPanel8;
-    private br.com.artcomp.scroll.ScrollPaneWin11 scrollPaneWin112;
-    private javax.swing.JTable table;
+    public br.com.artcomp.scroll.ScrollPaneWin11 scrollPaneWin112;
+    public javax.swing.JTable table;
     // End of variables declaration//GEN-END:variables
+
+    public void recarrega() {
+
+       table.repaint();
+       table.validate();
+       this.dispose();
+       this.setVisible(true);
+        kGradientPanel7.repaint();
+    }
 
     public void criatabela() {
 
@@ -1770,7 +1786,7 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(2).setPreferredWidth(1);
                     //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
-                    case 31:
+                case 31:
                     System.out.println("entrou aqui 31");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
@@ -1826,7 +1842,7 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(2).setPreferredWidth(1);
                     //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
-                    case 32:
+                case 32:
                     System.out.println("entrou aqui 32");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
@@ -1883,7 +1899,7 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(2).setPreferredWidth(1);
                     //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
-                    case 33:
+                case 33:
                     System.out.println("entrou aqui 33");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
@@ -1941,7 +1957,7 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(2).setPreferredWidth(1);
                     //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
-                    case 34:
+                case 34:
                     System.out.println("entrou aqui 34");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
@@ -2000,7 +2016,7 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(2).setPreferredWidth(1);
                     //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
-                    case 35:
+                case 35:
                     System.out.println("entrou aqui 35");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
@@ -2060,7 +2076,7 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(2).setPreferredWidth(1);
                     //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
-                    case 36:
+                case 36:
                     System.out.println("entrou aqui 35");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
@@ -2121,7 +2137,7 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(2).setPreferredWidth(1);
                     //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
-                    case 37:
+                case 37:
                     System.out.println("entrou aqui 35");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
@@ -2183,7 +2199,7 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(2).setPreferredWidth(1);
                     //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
-                    case 38:
+                case 38:
                     System.out.println("entrou aqui 35");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
@@ -2246,7 +2262,7 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(2).setPreferredWidth(1);
                     //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
-                    case 39:
+                case 39:
                     System.out.println("entrou aqui 35");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
@@ -2310,7 +2326,7 @@ public class Principal extends javax.swing.JFrame {
                     table.getColumnModel().getColumn(2).setPreferredWidth(1);
                     //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
-                    case 40:
+                case 40:
                     System.out.println("entrou aqui 35");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
@@ -2380,4 +2396,5 @@ public class Principal extends javax.swing.JFrame {
             }
         }
     }
+
 }

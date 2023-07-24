@@ -18,17 +18,17 @@ import javax.swing.BorderFactory;
 public class Login extends javax.swing.JFrame {
 
     VerificaLogin verL;
-    Principal principal;
+    Principal princ;
 
     public Login() {
-        initComponents();
 
-        this.verL = new VerificaLogin();
+        initComponents();
         try {
-            this.principal = new Principal();
+            this.princ = new Principal();
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
+        this.verL = new VerificaLogin();
         this.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel1.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.jButton2.setBackground(new Color(0, 0, 0, 150));
@@ -287,8 +287,10 @@ public class Login extends javax.swing.JFrame {
         if (evt.getKeyCode() == evt.VK_ENTER) {
 
             if (verL.verificaLogin(Login.getText(), new String(this.Senha.getPassword()))) {
+
                 this.dispose();
-                principal.setVisible(true);
+                princ.setVisible(true);
+                
             } else {
                 jLErro.setForeground(new Color(255, 0, 0, 255));
                 jLErro.setVisible(true);
@@ -304,10 +306,11 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_LoginFocusGained
 
     private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed
-
+        
         if (verL.verificaLogin(Login.getText(), new String(this.Senha.getPassword()))) {
             this.dispose();
-            principal.setVisible(true);
+            princ.setVisible(true);
+            
         } else {
             jLErro.setForeground(new Color(255, 0, 0, 255));
             jLErro.setVisible(true);

@@ -1,22 +1,38 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package br.com.artcomp.model;
 
 import br.com.artcomp.wiew.Principal;
-import br.com.artcomp.wiew.TelaEditar;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
+/**
+ *
+ * @author artco
+ */
 public class Fabrica {
 
+    private Principal principal;
+    private static Fabrica INSTANCIA = new Fabrica();
+
     /**
-     * @param principal
+     * @param principal the Principal to set
      */
-    public void setPainelPrincipal(Principal principal) {
-        this.setpPrincipal(principal);
+    public void setPrincipal(Principal principal) {
+        this.principal = principal;
     }
 
-    public void setTelaEditar(TelaEditar telaEditar) {
-        this.setpEditar(telaEditar);
+    private Fabrica() {
+        try {
+            principal = new Principal();
+        } catch (SQLException ex) {
+            Logger.getLogger(Fabrica.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     /**
@@ -26,71 +42,21 @@ public class Fabrica {
         return INSTANCIA;
     }
 
-    /**
-     * @param aINSTANCIA the INSTANCIA to set
-     */
-    public static void setINSTANCIA(Fabrica aINSTANCIA) {
-        INSTANCIA = aINSTANCIA;
-    }
-
-    private Principal pPrincipal;
-    private TelaEditar pEditar;
-
-    // private ConexaoBanco conexaoBanco;
-    private static Fabrica INSTANCIA = new Fabrica();
-
-    private Fabrica() {
-        try {
-            pPrincipal = new Principal();
-            pEditar = new TelaEditar();
-
-            // conexaoBanco = new ConexaoBanco();
-        } catch (SQLException ex) {
-            Logger.getLogger(Fabrica.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }
-
     public static Fabrica getInstancia() {
         return getINSTANCIA();
+    }
+
+    /**
+     * @param INSTANCIA the INSTANCIA to set
+     */
+    public static void setINSTANCIA(Fabrica INSTANCIA) {
+        INSTANCIA = INSTANCIA;
     }
 
     /**
      * @return the painelPrincipal
      */
     public Principal getPrincipal() {
-        return getpPrincipal();
+        return principal;
     }
-    public TelaEditar getTelaEditar() {
-        return getpEditar();
-    }
-
-    /**
-     * @return the pPrincipal
-     */
-    public Principal getpPrincipal() {
-        return pPrincipal;
-    }
-
-    /**
-     * @param pPrincipal the pPrincipal to set
-     */
-    public void setpPrincipal(Principal pPrincipal) {
-        this.pPrincipal = pPrincipal;
-    }
-
-    /**
-     * @return the pEditar
-     */
-    public TelaEditar getpEditar() {
-        return pEditar;
-    }
-
-    /**
-     * @param pEditar the pEditar to set
-     */
-    public void setpEditar(TelaEditar pEditar) {
-        this.pEditar = pEditar;
-    }
-
 }

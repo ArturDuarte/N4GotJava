@@ -142,7 +142,7 @@ public class TelaSenha extends javax.swing.JFrame {
         VerificaSenha vs = new VerificaSenha();
         if (vs.VerificaSenha(JTSenha2.getText())) {
 
-            TelaEditar te = Fabrica.getInstancia().getTelaEditar();
+            //TelaEditar te = Fabrica.getInstancia().getTelaEditar();
             this.dispose();
 
         } else {
@@ -164,7 +164,7 @@ public class TelaSenha extends javax.swing.JFrame {
             VerificaSenha vs = new VerificaSenha();
             if (vs.VerificaSenha(JTSenha2.getText())) {
 
-                TelaEditar te = Fabrica.getInstancia().getTelaEditar();
+               // TelaEditar te = Fabrica.getInstancia().getTelaEditar();
                 this.dispose();
 
             } else {

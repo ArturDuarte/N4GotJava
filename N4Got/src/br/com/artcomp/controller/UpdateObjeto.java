@@ -6,21 +6,22 @@ package br.com.artcomp.controller;
 
 import br.com.artcomp.DAO.InsertDAO;
 import br.com.artcomp.DAO.SelectDAO;
+import br.com.artcomp.DAO.UpdateDAO;
 import br.com.artcomp.model.Objetos;
 
 /**
  *
  * @author artco
  */
-public class CadastroObjeto {
+public class UpdateObjeto {
     
-    InsertDAO cadDAO = new InsertDAO();
+    UpdateDAO upDAO = new UpdateDAO();
     
-    public CadastroObjeto(){
+    public UpdateObjeto(){
         
     }
     
-    public boolean cadastroObjeto(String login, String senha, String nome, String sobrNome, String imagem){
+    public boolean updateObjeto(Integer ID,String login, String senha, String nome, String sobrNome, String imagem){
         
         
         if (nome.isEmpty()) {
@@ -28,6 +29,7 @@ public class CadastroObjeto {
         } else {
 
             Objetos ob = new Objetos();
+            ob.setId(ID);
             ob.setNome(nome);
             ob.setPalavraChave(sobrNome);
             ob.setLogin(login);
@@ -35,7 +37,7 @@ public class CadastroObjeto {
             ob.setImagem(imagem);
            
             
-             return cadDAO.insert(ob);
+             return upDAO.update(ob);
 
         }
         return false;

@@ -4,11 +4,13 @@
  */
 package br.com.artcomp.wiew;
 
+import br.com.artcomp.controller.UpdateObjeto;
 import br.com.artcomp.controller.VerificaSenha;
-import br.com.artcomp.model.Objetos;
+import br.com.artcomp.model.Fabrica;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,11 +19,12 @@ import javax.swing.BorderFactory;
 public class TelaEditar extends javax.swing.JFrame {
 
     String T = "";
+    Integer id = 0;
+    String imagem = "art";
 
     public TelaEditar() {
         initComponents();
 
-        
         this.JTNome.setBackground(new Color(9, 73, 110));
         this.JTNome.setFont(new Font("Square721 BT", 1, 14));
         this.JTNome.setForeground(new Color(255, 255, 255));
@@ -60,7 +63,7 @@ public class TelaEditar extends javax.swing.JFrame {
         this.JTSenha.setCaretColor(new Color(255, 255, 255));
         this.JTSenha.setDisabledTextColor(new Color(255, 255, 255));
         this.JTSenha.setOpaque(false);
-        this.JTSenha.setSelectionColor(new Color(9, 73, 110));        
+        this.JTSenha.setSelectionColor(new Color(9, 73, 110));
 
         this.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel1.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
@@ -69,28 +72,27 @@ public class TelaEditar extends javax.swing.JFrame {
         this.kGradientPanel4.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel5.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel6.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
-        
-        
+
         kGradientPanel5.setVisible(false);
-       
-        
+
     }
 
-    public void mostraDados(String nome, String palavraChave, String login, String senha) {
-        
+    public void mostraDados(Integer ID, String nome, String palavraChave, String login, String senha) {
+        id = ID;
         JTNome.setText(nome);
         JTSobNome.setText(palavraChave);
         JTLogin.setText(login);
         T = senha;
         JTSenha.setText("********");
-        JTSenha.setEditable(false);       
+        JTSenha.setEditable(false);
         System.out.println("o valor de senha  " + senha);
+
     }
 
-   public void atualizaDados(){
-       this.dispose();
-       JTSenha.setVisible(false);
-   }
+    public void atualizaDados() {
+        this.dispose();
+        JTSenha.setVisible(false);
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -104,6 +106,7 @@ public class TelaEditar extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         btolhar = new br.com.artcomp.cell.ActionButton();
+        btolhar2 = new br.com.artcomp.cell.ActionButton();
         JTNome = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         JTSobNome = new javax.swing.JTextField();
@@ -182,6 +185,14 @@ public class TelaEditar extends javax.swing.JFrame {
             }
         });
         kGradientPanel2.add(btolhar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 220, 40, 40));
+
+        btolhar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/cadeado.png"))); // NOI18N
+        btolhar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btolhar2ActionPerformed(evt);
+            }
+        });
+        kGradientPanel2.add(btolhar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 220, 40, 40));
 
         JTNome.setBackground(new java.awt.Color(30, 30, 30));
         JTNome.setFont(new java.awt.Font("Square721 BT", 1, 14)); // NOI18N
@@ -344,7 +355,7 @@ public class TelaEditar extends javax.swing.JFrame {
 
         kGradientPanel2.setVisible(false);
         kGradientPanel5.setVisible(true);
-        
+
 
     }//GEN-LAST:event_btolharActionPerformed
 
@@ -379,12 +390,37 @@ public class TelaEditar extends javax.swing.JFrame {
             JTSenha.setText(T);
             kGradientPanel5.setVisible(false);
             kGradientPanel2.setVisible(true);
+            btolhar.setVisible(false);
+            btolhar2.setVisible(true);
         } else {
             System.out.println("erro da senha");
         }
 
         // TODO add your handling code here:
     }//GEN-LAST:event_kButton2ActionPerformed
+
+    private void btolhar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btolhar2ActionPerformed
+
+        UpdateObjeto up = new UpdateObjeto();
+
+        if (up.updateObjeto(id, JTLogin.getText(), JTSenha.getText(), JTNome.getText(), JTSobNome.getText(), imagem)) {
+
+            JOptionPane.showMessageDialog(null, "Gravação realizada com sucesso ");
+            //instancia de uma classe fabrica
+            Principal pri = (Principal) Fabrica.getInstancia().getPrincipal();
+            pri.recarrega();
+            limpaDados();
+            this.dispose();
+           
+           // pri.setVisible(true);
+          //  pri.recarrega();
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Erro de Gravação ");
+        }
+
+
+    }//GEN-LAST:event_btolhar2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -430,6 +466,7 @@ public class TelaEditar extends javax.swing.JFrame {
     private javax.swing.JTextField JTSobNome;
     private br.com.artcomp.cell.ActionButton btolhar;
     private br.com.artcomp.cell.ActionButton btolhar1;
+    private br.com.artcomp.cell.ActionButton btolhar2;
     private javax.swing.JButton jBFechar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -445,4 +482,12 @@ public class TelaEditar extends javax.swing.JFrame {
     private com.k33ptoo.components.KGradientPanel kGradientPanel5;
     private com.k33ptoo.components.KGradientPanel kGradientPanel6;
     // End of variables declaration//GEN-END:variables
+
+    private void limpaDados() {
+        JTNome.setText("");
+        JTSobNome.setText("");
+        JTLogin.setText("");
+        JTSenha.setText("");
+    }
+
 }

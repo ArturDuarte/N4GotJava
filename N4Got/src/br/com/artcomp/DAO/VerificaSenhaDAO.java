@@ -36,7 +36,7 @@ public class VerificaSenhaDAO {
 
                 if (senha.equalsIgnoreCase(new String(SENHA))) {
 
-                    this.con_cadastro.desconecta();
+                    //this.con_cadastro.desconecta();
                     return true;
 
                 }

@@ -4,16 +4,10 @@
  */
 package br.com.artcomp.wiew;
 
-import br.com.artcomp.cell.PintarCabecalho;
-import br.com.artcomp.cell.TableActionCellEditor;
-import br.com.artcomp.cell.TableActionCellRender;
-import br.com.artcomp.cell.TableActionEvent;
 import br.com.artcomp.controller.UpdateObjeto;
 import br.com.artcomp.controller.VerificaSenha;
-import br.com.artcomp.model.Objetos;
 import java.awt.Color;
 import java.awt.Font;
-import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
@@ -22,13 +16,16 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
  *
  * @author artco
  */
-public class TelaEditar extends javax.swing.JInternalFrame {
+public class telaSub extends javax.swing.JInternalFrame {
 
     String T = "";
     Integer id = 0;
     String imagem = "art";
 
-    public TelaEditar() {
+    /**
+     * Creates new form telaSub
+     */
+    public telaSub() {
         initComponents();
 
         this.JTNome.setBackground(new Color(9, 73, 110));
@@ -72,17 +69,15 @@ public class TelaEditar extends javax.swing.JInternalFrame {
         this.JTSenha.setSelectionColor(new Color(9, 73, 110));
 
         this.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
-        this.kGradientPanel7.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
+        this.kGradientPanel1.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel2.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel3.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel4.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel5.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel6.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
 
-        this.setSize(760, 595);
+        this.setSize(760, 600);// seta o tamanho
         this.setLocation(0, 0);
-
-        kGradientPanel7.setSize(740, 530);
 
         kGradientPanel5.setVisible(false);
 
@@ -122,7 +117,7 @@ public class TelaEditar extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        kGradientPanel7 = new com.k33ptoo.components.KGradientPanel();
+        kGradientPanel1 = new com.k33ptoo.components.KGradientPanel();
         kGradientPanel2 = new com.k33ptoo.components.KGradientPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -144,19 +139,17 @@ public class TelaEditar extends javax.swing.JInternalFrame {
         JTSenha2 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         kButton2 = new com.k33ptoo.components.KButton();
-        jLabel4 = new javax.swing.JLabel();
-        btolhar3 = new br.com.artcomp.cell.ActionButton();
-        jBFechar1 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 102, 0));
         setBorder(null);
-        setResizable(true);
         setPreferredSize(new java.awt.Dimension(750, 590));
 
-        kGradientPanel7.setkEndColor(new java.awt.Color(233, 93, 0));
-        kGradientPanel7.setkGradientFocus(200);
-        kGradientPanel7.setkStartColor(new java.awt.Color(233, 93, 0));
-        kGradientPanel7.setkTransparentControls(false);
+        kGradientPanel1.setBackground(new java.awt.Color(255, 102, 0));
+        kGradientPanel1.setkBorderRadius(15);
+        kGradientPanel1.setkEndColor(new java.awt.Color(195, 79, 1));
+        kGradientPanel1.setkGradientFocus(200);
+        kGradientPanel1.setkStartColor(new java.awt.Color(255, 102, 0));
+        kGradientPanel1.setName(""); // NOI18N
+        kGradientPanel1.setPreferredSize(new java.awt.Dimension(730, 575));
 
         kGradientPanel2.setkEndColor(new java.awt.Color(255, 102, 0));
         kGradientPanel2.setkStartColor(new java.awt.Color(255, 102, 0));
@@ -317,15 +310,15 @@ public class TelaEditar extends javax.swing.JInternalFrame {
                 JTSenha2KeyPressed(evt);
             }
         });
-        kGradientPanel6.add(JTSenha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 330, 40));
+        kGradientPanel6.add(JTSenha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 240, 40));
 
-        kGradientPanel5.add(kGradientPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 228, 360, 40));
+        kGradientPanel5.add(kGradientPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 108, 260, 38));
 
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Digite sua senha ! ");
-        kGradientPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 183, 350, 40));
+        kGradientPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 53, 180, 20));
 
         kButton2.setText("Descriptografar");
         kButton2.setBorderPainted(false);
@@ -347,87 +340,50 @@ public class TelaEditar extends javax.swing.JInternalFrame {
                 kButton2ActionPerformed(evt);
             }
         });
-        kGradientPanel5.add(kButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 286, 300, 60));
+        kGradientPanel5.add(kButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 176, -1, 50));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/camera.png"))); // NOI18N
-        kGradientPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, -1, 100));
-
-        btolhar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/Itens.png"))); // NOI18N
-        btolhar3.setFocusable(false);
-        btolhar3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btolhar3ActionPerformed(evt);
-            }
-        });
-        kGradientPanel5.add(btolhar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, 40, -1));
-
-        jBFechar1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jBFechar1.setForeground(new java.awt.Color(255, 255, 255));
-        jBFechar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/seta.png"))); // NOI18N
-        jBFechar1.setToolTipText("FECHAR");
-        jBFechar1.setBorder(null);
-        jBFechar1.setBorderPainted(false);
-        jBFechar1.setContentAreaFilled(false);
-        jBFechar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jBFechar1.setFocusPainted(false);
-        jBFechar1.setFocusable(false);
-        jBFechar1.setRolloverEnabled(false);
-        jBFechar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBFechar1ActionPerformed(evt);
-            }
-        });
-        kGradientPanel5.add(jBFechar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 30, 30));
-
-        javax.swing.GroupLayout kGradientPanel7Layout = new javax.swing.GroupLayout(kGradientPanel7);
-        kGradientPanel7.setLayout(kGradientPanel7Layout);
-        kGradientPanel7Layout.setHorizontalGroup(
-            kGradientPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 750, Short.MAX_VALUE)
-            .addGroup(kGradientPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(kGradientPanel7Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(kGradientPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 738, Short.MAX_VALUE)
-                    .addContainerGap()))
-            .addGroup(kGradientPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(kGradientPanel7Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(kGradientPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 738, Short.MAX_VALUE)
-                    .addContainerGap()))
+        javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
+        kGradientPanel1.setLayout(kGradientPanel1Layout);
+        kGradientPanel1Layout.setHorizontalGroup(
+            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(kGradientPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 738, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addGap(150, 150, 150)
+                .addComponent(kGradientPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        kGradientPanel7Layout.setVerticalGroup(
-            kGradientPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 556, Short.MAX_VALUE)
-            .addGroup(kGradientPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(kGradientPanel7Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(kGradientPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 544, Short.MAX_VALUE)
-                    .addContainerGap()))
-            .addGroup(kGradientPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(kGradientPanel7Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(kGradientPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 544, Short.MAX_VALUE)
-                    .addContainerGap()))
+        kGradientPanel1Layout.setVerticalGroup(
+            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(kGradientPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addGap(170, 170, 170)
+                .addComponent(kGradientPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(kGradientPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(kGradientPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
         );
 
-        setBounds(0, 0, 750, 590);
+        setBounds(0, 0, 750, 532);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btolhar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btolhar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btolhar1ActionPerformed
 
     private void btolharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btolharActionPerformed
 
@@ -453,24 +409,12 @@ public class TelaEditar extends javax.swing.JInternalFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Erro de Gravação ");
         }
+
     }//GEN-LAST:event_btolhar2ActionPerformed
 
     private void JTSobNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTSobNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JTSobNomeActionPerformed
-
-    private void btolhar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btolhar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btolhar1ActionPerformed
-
-    private void jBFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBFecharActionPerformed
-
-        TabelaInterna tab = new TabelaInterna();
-        getParent().add(tab);
-        tab.setVisible(true);
-        limpaDados();
-        this.dispose();
-    }//GEN-LAST:event_jBFecharActionPerformed
 
     private void JTSenha2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTSenha2KeyPressed
 
@@ -481,7 +425,7 @@ public class TelaEditar extends javax.swing.JInternalFrame {
 
                 JTSenha.setText(T);
                 kGradientPanel2.setVisible(false);
-                kGradientPanel7.setVisible(true);
+                kGradientPanel1.setVisible(true);
             } else {
                 System.out.println("erro da senha");
             }
@@ -508,17 +452,14 @@ public class TelaEditar extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_kButton2ActionPerformed
 
-    private void btolhar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btolhar3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btolhar3ActionPerformed
+    private void jBFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBFecharActionPerformed
 
-    private void jBFechar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBFechar1ActionPerformed
         TabelaInterna tab = new TabelaInterna();
         getParent().add(tab);
         tab.setVisible(true);
         limpaDados();
         this.dispose();
-    }//GEN-LAST:event_jBFechar1ActionPerformed
+    }//GEN-LAST:event_jBFecharActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -530,22 +471,19 @@ public class TelaEditar extends javax.swing.JInternalFrame {
     private br.com.artcomp.cell.ActionButton btolhar;
     private br.com.artcomp.cell.ActionButton btolhar1;
     private br.com.artcomp.cell.ActionButton btolhar2;
-    private br.com.artcomp.cell.ActionButton btolhar3;
     private javax.swing.JButton jBFechar;
-    private javax.swing.JButton jBFechar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private com.k33ptoo.components.KButton kButton2;
+    private com.k33ptoo.components.KGradientPanel kGradientPanel1;
     private com.k33ptoo.components.KGradientPanel kGradientPanel2;
     private com.k33ptoo.components.KGradientPanel kGradientPanel3;
     private com.k33ptoo.components.KGradientPanel kGradientPanel4;
     private com.k33ptoo.components.KGradientPanel kGradientPanel5;
     private com.k33ptoo.components.KGradientPanel kGradientPanel6;
-    public com.k33ptoo.components.KGradientPanel kGradientPanel7;
     // End of variables declaration//GEN-END:variables
 }

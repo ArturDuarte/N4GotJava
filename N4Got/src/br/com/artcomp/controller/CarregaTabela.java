@@ -8,6 +8,8 @@ import br.com.artcomp.DAO.SelectDAO;
 import br.com.artcomp.model.Objetos;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -18,8 +20,12 @@ public class CarregaTabela {
     SelectDAO objDAO = new SelectDAO();
     ArrayList<Objetos> lista;
 
-    public CarregaTabela() throws SQLException {
-        this.lista = objDAO.readAll();
+    public CarregaTabela()  {
+        try {
+            this.lista = objDAO.readAll();
+        } catch (SQLException ex) {
+            Logger.getLogger(CarregaTabela.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public ArrayList<Objetos> VerificaLista(){

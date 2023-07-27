@@ -6,9 +6,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 
 /**
@@ -18,16 +15,12 @@ import javax.swing.BorderFactory;
 public class Login extends javax.swing.JFrame {
 
     VerificaLogin verL;
-    Principal princ;
+    
 
-    public Login() {
+    public Login()  {
 
-        initComponents();
-        try {
-            this.princ = new Principal();
-        } catch (SQLException ex) {
-            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        initComponents();        
+       
         this.verL = new VerificaLogin();
         this.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel1.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
@@ -284,10 +277,11 @@ public class Login extends javax.swing.JFrame {
 
     private void SenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SenhaKeyPressed
 
+        Principal princ = new Principal();
         if (evt.getKeyCode() == evt.VK_ENTER) {
-
+            
             if (verL.verificaLogin(Login.getText(), new String(this.Senha.getPassword()))) {
-
+                
                 this.dispose();
                 princ.setVisible(true);
                 
@@ -307,6 +301,7 @@ public class Login extends javax.swing.JFrame {
 
     private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed
         
+        Principal princ = new Principal();
         if (verL.verificaLogin(Login.getText(), new String(this.Senha.getPassword()))) {
             this.dispose();
             princ.setVisible(true);

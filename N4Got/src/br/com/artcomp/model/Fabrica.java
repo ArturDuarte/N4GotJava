@@ -27,11 +27,7 @@ public class Fabrica {
     }
 
     private Fabrica() {
-        try {
-            principal = new Principal();
-        } catch (SQLException ex) {
-            Logger.getLogger(Fabrica.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        principal = new Principal();
 
     }
 

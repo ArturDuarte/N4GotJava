@@ -444,7 +444,7 @@ public class TelaEditar extends javax.swing.JInternalFrame {
 
             JOptionPane.showMessageDialog(null, "Gravação realizada com sucesso ");
             //instancia de uma classe fabrica
-            TabelaInterna tab = new TabelaInterna();
+            TelaTabela tab = new TelaTabela();
             getParent().add(tab);
             tab.setVisible(true);
             limpaDados();
@@ -465,7 +465,7 @@ public class TelaEditar extends javax.swing.JInternalFrame {
 
     private void jBFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBFecharActionPerformed
 
-        TabelaInterna tab = new TabelaInterna();
+        TelaTabela tab = new TelaTabela();
         getParent().add(tab);
         tab.setVisible(true);
         limpaDados();
@@ -513,7 +513,7 @@ public class TelaEditar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btolhar3ActionPerformed
 
     private void jBFechar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBFechar1ActionPerformed
-        TabelaInterna tab = new TabelaInterna();
+        TelaTabela tab = new TelaTabela();
         getParent().add(tab);
         tab.setVisible(true);
         limpaDados();

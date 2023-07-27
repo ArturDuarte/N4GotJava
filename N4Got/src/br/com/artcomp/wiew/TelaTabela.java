@@ -20,28 +20,28 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
  *
  * @author artco
  */
-public class TabelaInterna extends javax.swing.JInternalFrame {
+public class TelaTabela extends javax.swing.JInternalFrame {
 
     CarregaTabela CaTab;
     ArrayList<Objetos> lista = null;
 
-    public TabelaInterna() {
+    public TelaTabela() {
         initComponents();
 
         //this.setModal(true);
         this.CaTab = new CarregaTabela();
         lista = CaTab.VerificaLista();
         this.kGradientPanel7.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
-      //  this.jPanel1.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
+        //  this.jPanel1.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.scrollPaneWin112.setBorder(BorderFactory.createLineBorder(new Color(255, 102, 51), 1));
         this.scrollPaneWin112.setBackground(new Color(170, 68, 0));
 
         this.table.setForeground(new Color(255, 255, 255));
         table.getParent().setBackground(new Color(255, 102, 0));
-        
+
         this.setSize(760, 595);
         this.setLocation(0, 0);
-        
+
         kGradientPanel7.setSize(740, 530);
 
         ((BasicInternalFrameUI) this.getUI()).setNorthPane(null);// remove a barra do JInternoFrame
@@ -71,8 +71,8 @@ public class TabelaInterna extends javax.swing.JInternalFrame {
                     @Override
                     public void onEdit(int row) {
                         System.out.println("Editar row : " + row);
-                       // TelaEditar edit = new TelaEditar();
-                       TelaEditar edi = new TelaEditar();
+
+                        TelaEditar edi = new TelaEditar();
                         Objetos ob = new Objetos();
                         ob.setId(lista.get(row).getId());
                         ob.setNome(lista.get(row).getNome());
@@ -80,12 +80,10 @@ public class TabelaInterna extends javax.swing.JInternalFrame {
                         ob.setLogin(lista.get(row).getLogin());
                         ob.setSenha(lista.get(row).getSenha());
                         edi.mostraDados(lista.get(row).getId(), lista.get(row).getNome(), lista.get(row).getPalavraChave(), lista.get(row).getLogin(), lista.get(row).getSenha());
-                       // edit.setVisible(true);
-                        
                         getParent().add(edi);
                         edi.setVisible(true);
                         fecha();
-                        
+
                     }
 
                     @Override
@@ -103,10 +101,13 @@ public class TabelaInterna extends javax.swing.JInternalFrame {
                     @Override
                     public void onView(int row) {
                         System.out.println("View row : " + row);
-                        TelaMostrar most = new TelaMostrar();
+                        TelaMostrarInt most = new TelaMostrarInt();
                         most.mostraDados(lista.get(row).getLogin(), lista.get(row).getSenha());
                         most.setVisible(true);
 
+                        getParent().add(most);
+                        most.setVisible(true);
+                        fecha();
                     }
                 };
                 table.getColumnModel().getColumn(2).setCellRenderer(new TableActionCellRender());
@@ -116,9 +117,10 @@ public class TabelaInterna extends javax.swing.JInternalFrame {
         }
     }
 
-    public void fecha(){
+    public void fecha() {
         this.dispose();
     }
+
     public void criatabela() {
 
         if (lista == null) {

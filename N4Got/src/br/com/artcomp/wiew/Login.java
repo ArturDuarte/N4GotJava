@@ -14,8 +14,7 @@ import javax.swing.BorderFactory;
  */
 public class Login extends javax.swing.JFrame {
 
-    VerificaLogin verL;
-    
+    VerificaLogin verL;    
 
     public Login()  {
 
@@ -257,8 +256,7 @@ public class Login extends javax.swing.JFrame {
             jLPass2.setVisible(false);
             jLPass1.setVisible(true);
             Senha.requestFocus();
-        }
-        // TODO add your handling code here:
+        }        
     }//GEN-LAST:event_LoginKeyPressed
 
     private void SenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SenhaMouseClicked
@@ -266,9 +264,7 @@ public class Login extends javax.swing.JFrame {
         jLPass2.setVisible(false);
         jLPass1.setVisible(true);
         Senha.setText(null);
-        jLErro.setVisible(false);
-        //jLErro.setBackground(new Color(0, 113, 155, 150));
-        // TODO add your handling code here:
+        jLErro.setVisible(false);        
     }//GEN-LAST:event_SenhaMouseClicked
 
     private void SenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SenhaActionPerformed

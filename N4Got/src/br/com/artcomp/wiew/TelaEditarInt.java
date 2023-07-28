@@ -22,13 +22,13 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
  *
  * @author artco
  */
-public class TelaEditar extends javax.swing.JInternalFrame {
+public class TelaEditarInt extends javax.swing.JInternalFrame {
 
     String T = "";
     Integer id = 0;
     String imagem = "art";
 
-    public TelaEditar() {
+    public TelaEditarInt() {
         initComponents();
 
         this.JTNome.setBackground(new Color(9, 73, 110));

@@ -72,7 +72,7 @@ public class TelaTabela extends javax.swing.JInternalFrame {
                     public void onEdit(int row) {
                         System.out.println("Editar row : " + row);
 
-                        TelaEditar edi = new TelaEditar();
+                        TelaEditarInt edi = new TelaEditarInt();
                         Objetos ob = new Objetos();
                         ob.setId(lista.get(row).getId());
                         ob.setNome(lista.get(row).getNome());

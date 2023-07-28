@@ -1,4 +1,5 @@
 package br.com.artcomp.wiew;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
@@ -11,16 +12,14 @@ import javax.swing.BorderFactory;
  */
 public class Principal extends javax.swing.JFrame {
 
-   
-    TelaCadastro tc = new TelaCadastro();   
-
-    public Principal()  {
+    
+    public Principal() {
 
         initComponents();
-      
+
         this.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel1.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
-        this.kGradientPanel2.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));      
+        this.kGradientPanel2.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel8.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.setIconImage(this.getIconImage());
         this.Pesquisa.setBackground(new Color(9, 73, 110));
@@ -34,8 +33,8 @@ public class Principal extends javax.swing.JFrame {
         this.Pesquisa.setSelectionColor(new Color(9, 73, 110));
 
         TelaTabela TabInt = new TelaTabela();
-        this.jDesktopPane1.add(TabInt).setVisible(true);      
-                     
+        this.jDesktopPane1.add(TabInt).setVisible(true);
+
     }
 
     @Override
@@ -320,7 +319,7 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBFecharActionPerformed
-        
+
         System.exit(0);
     }//GEN-LAST:event_jBFecharActionPerformed
 
@@ -331,7 +330,10 @@ public class Principal extends javax.swing.JFrame {
 
     private void kButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton3ActionPerformed
 
-        tc.setVisible(true);
+        TelaCadastroInt cad = new TelaCadastroInt();
+        jDesktopPane1.removeAll();
+        jDesktopPane1.add(cad).setVisible(true);
+        
 
     }//GEN-LAST:event_kButton3ActionPerformed
 
@@ -415,6 +417,5 @@ public class Principal extends javax.swing.JFrame {
     private com.k33ptoo.components.KGradientPanel kGradientPanel2;
     private com.k33ptoo.components.KGradientPanel kGradientPanel8;
     // End of variables declaration//GEN-END:variables
-                    
-            
+
 }

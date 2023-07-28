@@ -4,16 +4,11 @@
  */
 package br.com.artcomp.wiew;
 
-import br.com.artcomp.cell.PintarCabecalho;
-import br.com.artcomp.cell.TableActionCellEditor;
-import br.com.artcomp.cell.TableActionCellRender;
-import br.com.artcomp.cell.TableActionEvent;
+
 import br.com.artcomp.controller.UpdateObjeto;
 import br.com.artcomp.controller.VerificaSenha;
-import br.com.artcomp.model.Objetos;
 import java.awt.Color;
 import java.awt.Font;
-import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;

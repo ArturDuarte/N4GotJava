@@ -14,13 +14,13 @@ import javax.swing.BorderFactory;
  */
 public class Login extends javax.swing.JFrame {
 
-    VerificaLogin verL;    
+    
 
     public Login()  {
 
         initComponents();        
        
-        this.verL = new VerificaLogin();
+        
         this.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel1.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.jButton2.setBackground(new Color(0, 0, 0, 150));
@@ -78,9 +78,9 @@ public class Login extends javax.swing.JFrame {
         setUndecorated(true);
 
         kGradientPanel1.setkBorderRadius(30);
-        kGradientPanel1.setkEndColor(new java.awt.Color(255, 102, 0));
+        kGradientPanel1.setkEndColor(new java.awt.Color(170, 68, 0));
         kGradientPanel1.setkGradientFocus(300);
-        kGradientPanel1.setkStartColor(new java.awt.Color(255, 255, 255));
+        kGradientPanel1.setkStartColor(new java.awt.Color(255, 102, 0));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -190,16 +190,6 @@ public class Login extends javax.swing.JFrame {
         Senha.setCaretColor(new java.awt.Color(255, 255, 255));
         Senha.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         Senha.setSelectionColor(new java.awt.Color(9, 73, 110));
-        Senha.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SenhaMouseClicked(evt);
-            }
-        });
-        Senha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SenhaActionPerformed(evt);
-            }
-        });
         Senha.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 SenhaKeyPressed(evt);
@@ -259,25 +249,15 @@ public class Login extends javax.swing.JFrame {
         }        
     }//GEN-LAST:event_LoginKeyPressed
 
-    private void SenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SenhaMouseClicked
-
-        jLPass2.setVisible(false);
-        jLPass1.setVisible(true);
-        Senha.setText(null);
-        jLErro.setVisible(false);        
-    }//GEN-LAST:event_SenhaMouseClicked
-
-    private void SenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SenhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SenhaActionPerformed
-
     private void SenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SenhaKeyPressed
 
-        Principal princ = new Principal();
+                 
         if (evt.getKeyCode() == evt.VK_ENTER) {
             
+            VerificaLogin verL = new VerificaLogin();
             if (verL.verificaLogin(Login.getText(), new String(this.Senha.getPassword()))) {
                 
+                Principal princ = new Principal();
                 this.dispose();
                 princ.setVisible(true);
                 
@@ -297,8 +277,11 @@ public class Login extends javax.swing.JFrame {
 
     private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed
         
-        Principal princ = new Principal();
+        VerificaLogin verL = new VerificaLogin();
+        
         if (verL.verificaLogin(Login.getText(), new String(this.Senha.getPassword()))) {
+            
+            Principal princ = new Principal();
             this.dispose();
             princ.setVisible(true);
             

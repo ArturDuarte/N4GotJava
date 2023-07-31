@@ -4,17 +4,18 @@
  */
 package br.com.artcomp.wiew;
 
+import br.com.artcomp.DAO.DeleteDAO;
 import br.com.artcomp.cell.PintarCabecalho;
 import br.com.artcomp.cell.TableActionCellEditor;
 import br.com.artcomp.cell.TableActionCellRender;
 import br.com.artcomp.cell.TableActionEvent;
 import br.com.artcomp.controller.CarregaTabela;
-import br.com.artcomp.model.Fabrica;
 import br.com.artcomp.model.Objetos;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -28,11 +29,10 @@ public class TelaTabela extends javax.swing.JInternalFrame {
     public TelaTabela() {
         initComponents();
 
-        //this.setModal(true);
         this.CaTab = new CarregaTabela();
         lista = CaTab.VerificaLista();
+
         this.kGradientPanel7.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
-        //  this.jPanel1.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.scrollPaneWin112.setBorder(BorderFactory.createLineBorder(new Color(255, 102, 51), 1));
         this.scrollPaneWin112.setBackground(new Color(170, 68, 0));
 
@@ -88,14 +88,16 @@ public class TelaTabela extends javax.swing.JInternalFrame {
 
                     @Override
                     public void onDelete(int row) {
-//                        if (table.isEditing()) {
-//                            table.getCellEditor().stopCellEditing();
-//                        }
+                        if (table.isEditing()) {
+                            table.getCellEditor().stopCellEditing();
+                        }
 //                        DefaultTableModel model = (DefaultTableModel) table.getModel();
-//                        model.removeRow(row);
-                        System.out.println("vou apagar");
-                        // Tabela ta = new Tabela();
-                        //ta.setVisible(true);
+//                        model.removeRow(row);                                           
+                        TelaTabela ta = new TelaTabela();
+                        removeLinha(lista.get(row).getId());
+                        ta.dispose();
+                        getParent().add(ta);
+                        ta.setVisible(true);
                     }
 
                     @Override
@@ -104,7 +106,6 @@ public class TelaTabela extends javax.swing.JInternalFrame {
                         TelaMostrarInt most = new TelaMostrarInt();
                         most.mostraDados(lista.get(row).getLogin(), lista.get(row).getSenha());
                         most.setVisible(true);
-
                         getParent().add(most);
                         most.setVisible(true);
                         fecha();
@@ -119,6 +120,15 @@ public class TelaTabela extends javax.swing.JInternalFrame {
 
     public void fecha() {
         this.dispose();
+    }
+
+    public void removeLinha(Integer ID) {
+       
+        System.out.println("numero da linha"+ ID);
+        int id = ID;
+        DeleteDAO Del = new DeleteDAO();
+        Del.removeLinha(id);
+        
     }
 
     public void criatabela() {
@@ -1638,7 +1648,7 @@ public class TelaTabela extends javax.swing.JInternalFrame {
                     //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 36:
-                    System.out.println("entrou aqui 35");
+                    System.out.println("entrou aqui 36");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -1699,7 +1709,7 @@ public class TelaTabela extends javax.swing.JInternalFrame {
                     //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 37:
-                    System.out.println("entrou aqui 35");
+                    System.out.println("entrou aqui 37");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -1761,7 +1771,7 @@ public class TelaTabela extends javax.swing.JInternalFrame {
                     //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 38:
-                    System.out.println("entrou aqui 35");
+                    System.out.println("entrou aqui 38");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -1824,7 +1834,7 @@ public class TelaTabela extends javax.swing.JInternalFrame {
                     //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 39:
-                    System.out.println("entrou aqui 35");
+                    System.out.println("entrou aqui 39");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
                                 {null, null, null},
@@ -1888,9 +1898,714 @@ public class TelaTabela extends javax.swing.JInternalFrame {
                     //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
                 case 40:
-                    System.out.println("entrou aqui 35");
+                    System.out.println("entrou aqui 40");
                     table.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null}
+                            },
+                            new String[]{
+                                "OBJETO", "COMENTARIO", "ICONE"
+                            }
+                    ) {
+                        boolean[] canEdit = new boolean[]{
+                            false, false, true
+                        };
+
+                        @Override
+                        public boolean isCellEditable(int rowIndex, int columnIndex) {
+                            return canEdit[columnIndex];
+                        }
+                    });
+                    table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
+                    break;
+                case 41:
+                    System.out.println("entrou aqui 41");
+                    table.setModel(new javax.swing.table.DefaultTableModel(
+                            new Object[][]{
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null}
+                            },
+                            new String[]{
+                                "OBJETO", "COMENTARIO", "ICONE"
+                            }
+                    ) {
+                        boolean[] canEdit = new boolean[]{
+                            false, false, true
+                        };
+
+                        @Override
+                        public boolean isCellEditable(int rowIndex, int columnIndex) {
+                            return canEdit[columnIndex];
+                        }
+                    });
+                    table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
+                    break;
+                case 42:
+                    System.out.println("entrou aqui 42");
+                    table.setModel(new javax.swing.table.DefaultTableModel(
+                            new Object[][]{
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null}
+                            },
+                            new String[]{
+                                "OBJETO", "COMENTARIO", "ICONE"
+                            }
+                    ) {
+                        boolean[] canEdit = new boolean[]{
+                            false, false, true
+                        };
+
+                        @Override
+                        public boolean isCellEditable(int rowIndex, int columnIndex) {
+                            return canEdit[columnIndex];
+                        }
+                    });
+                    table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
+                    break;
+                case 43:
+                    System.out.println("entrou aqui 43");
+                    table.setModel(new javax.swing.table.DefaultTableModel(
+                            new Object[][]{
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null}
+                            },
+                            new String[]{
+                                "OBJETO", "COMENTARIO", "ICONE"
+                            }
+                    ) {
+                        boolean[] canEdit = new boolean[]{
+                            false, false, true
+                        };
+
+                        @Override
+                        public boolean isCellEditable(int rowIndex, int columnIndex) {
+                            return canEdit[columnIndex];
+                        }
+                    });
+                    table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
+                    break;
+                case 44:
+                    System.out.println("entrou aqui 44");
+                    table.setModel(new javax.swing.table.DefaultTableModel(
+                            new Object[][]{
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null}
+                            },
+                            new String[]{
+                                "OBJETO", "COMENTARIO", "ICONE"
+                            }
+                    ) {
+                        boolean[] canEdit = new boolean[]{
+                            false, false, true
+                        };
+
+                        @Override
+                        public boolean isCellEditable(int rowIndex, int columnIndex) {
+                            return canEdit[columnIndex];
+                        }
+                    });
+                    table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
+                    break;
+                case 45:
+                    System.out.println("entrou aqui 45");
+                    table.setModel(new javax.swing.table.DefaultTableModel(
+                            new Object[][]{
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null}
+                            },
+                            new String[]{
+                                "OBJETO", "COMENTARIO", "ICONE"
+                            }
+                    ) {
+                        boolean[] canEdit = new boolean[]{
+                            false, false, true
+                        };
+
+                        @Override
+                        public boolean isCellEditable(int rowIndex, int columnIndex) {
+                            return canEdit[columnIndex];
+                        }
+                    });
+                    table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
+                    break;
+                case 46:
+                    System.out.println("entrou aqui 46");
+                    table.setModel(new javax.swing.table.DefaultTableModel(
+                            new Object[][]{
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null}
+                            },
+                            new String[]{
+                                "OBJETO", "COMENTARIO", "ICONE"
+                            }
+                    ) {
+                        boolean[] canEdit = new boolean[]{
+                            false, false, true
+                        };
+
+                        @Override
+                        public boolean isCellEditable(int rowIndex, int columnIndex) {
+                            return canEdit[columnIndex];
+                        }
+                    });
+                    table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
+                    break;
+                case 47:
+                    System.out.println("entrou aqui 47");
+                    table.setModel(new javax.swing.table.DefaultTableModel(
+                            new Object[][]{
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null}
+                            },
+                            new String[]{
+                                "OBJETO", "COMENTARIO", "ICONE"
+                            }
+                    ) {
+                        boolean[] canEdit = new boolean[]{
+                            false, false, true
+                        };
+
+                        @Override
+                        public boolean isCellEditable(int rowIndex, int columnIndex) {
+                            return canEdit[columnIndex];
+                        }
+                    });
+                    table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
+                    break;
+                case 48:
+                    System.out.println("entrou aqui 48");
+                    table.setModel(new javax.swing.table.DefaultTableModel(
+                            new Object[][]{
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null}
+                            },
+                            new String[]{
+                                "OBJETO", "COMENTARIO", "ICONE"
+                            }
+                    ) {
+                        boolean[] canEdit = new boolean[]{
+                            false, false, true
+                        };
+
+                        @Override
+                        public boolean isCellEditable(int rowIndex, int columnIndex) {
+                            return canEdit[columnIndex];
+                        }
+                    });
+                    table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
+                    break;
+                case 49:
+                    System.out.println("entrou aqui 49");
+                    table.setModel(new javax.swing.table.DefaultTableModel(
+                            new Object[][]{
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null}
+                            },
+                            new String[]{
+                                "OBJETO", "COMENTARIO", "ICONE"
+                            }
+                    ) {
+                        boolean[] canEdit = new boolean[]{
+                            false, false, true
+                        };
+
+                        @Override
+                        public boolean isCellEditable(int rowIndex, int columnIndex) {
+                            return canEdit[columnIndex];
+                        }
+                    });
+                    table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
+                    break;
+                case 50:
+                    System.out.println("entrou aqui 50");
+                    table.setModel(new javax.swing.table.DefaultTableModel(
+                            new Object[][]{
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
                                 {null, null, null},
                                 {null, null, null},
                                 {null, null, null},
@@ -1958,11 +2673,6 @@ public class TelaTabela extends javax.swing.JInternalFrame {
         }
     }
 
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
-     */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

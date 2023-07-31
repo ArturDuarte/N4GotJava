@@ -65,12 +65,23 @@ public class TelaCadastroInt extends javax.swing.JInternalFrame {
         this.JTSenha.setDisabledTextColor(new Color(255, 255, 255));
         this.JTSenha.setOpaque(false);
         this.JTSenha.setSelectionColor(new Color(9, 73, 110));
+        
+        this.JTRepeteSenha.setBackground(new Color(9, 73, 110));
+        this.JTRepeteSenha.setFont(new Font("Square721 BT", 1, 14));
+        this.JTRepeteSenha.setForeground(new Color(255, 255, 255));
+        this.JTRepeteSenha.setToolTipText("");
+        this.JTRepeteSenha.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(255, 255, 255)));
+        this.JTRepeteSenha.setCaretColor(new Color(255, 255, 255));
+        this.JTRepeteSenha.setDisabledTextColor(new Color(255, 255, 255));
+        this.JTRepeteSenha.setOpaque(false);
+        this.JTRepeteSenha.setSelectionColor(new Color(9, 73, 110));
 
         this.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel1.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel3.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel4.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel7.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
+        this.kGradientPanel5.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
 
         this.setSize(760, 595);
         this.setLocation(0, 0);
@@ -106,14 +117,18 @@ public class TelaCadastroInt extends javax.swing.JInternalFrame {
         JTSobNome = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         kButton2 = new com.k33ptoo.components.KButton();
-        kGradientPanel3 = new com.k33ptoo.components.KGradientPanel();
-        JTSenha = new javax.swing.JTextField();
         kGradientPanel4 = new com.k33ptoo.components.KGradientPanel();
         JTLogin = new javax.swing.JTextField();
+        kGradientPanel3 = new com.k33ptoo.components.KGradientPanel();
+        JTSenha = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         btolhar = new br.com.artcomp.cell.ActionButton();
         jBFechar1 = new javax.swing.JButton();
+        kGradientPanel5 = new com.k33ptoo.components.KGradientPanel();
+        JTRepeteSenha = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        btolhar2 = new br.com.artcomp.cell.ActionButton();
 
         setBackground(new java.awt.Color(255, 102, 0));
         setBorder(null);
@@ -140,10 +155,10 @@ public class TelaCadastroInt extends javax.swing.JInternalFrame {
                 btolhar1ActionPerformed(evt);
             }
         });
-        kGradientPanel1.add(btolhar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 40, -1));
+        kGradientPanel1.add(btolhar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, 40, -1));
 
         JLImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/camera.png"))); // NOI18N
-        kGradientPanel1.add(JLImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, -1, 100));
+        kGradientPanel1.add(JLImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, -1, 100));
 
         JTNome.setBackground(new java.awt.Color(30, 30, 30));
         JTNome.setFont(new java.awt.Font("Square721 BT", 1, 14)); // NOI18N
@@ -201,25 +216,7 @@ public class TelaCadastroInt extends javax.swing.JInternalFrame {
                 kButton2ActionPerformed(evt);
             }
         });
-        kGradientPanel1.add(kButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 420, -1, -1));
-
-        kGradientPanel3.setkBorderRadius(30);
-        kGradientPanel3.setkEndColor(new java.awt.Color(170, 68, 0));
-        kGradientPanel3.setkStartColor(new java.awt.Color(170, 68, 0));
-        kGradientPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        JTSenha.setBackground(new java.awt.Color(30, 30, 30));
-        JTSenha.setFont(new java.awt.Font("Square721 BT", 1, 14)); // NOI18N
-        JTSenha.setForeground(new java.awt.Color(255, 255, 255));
-        JTSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTSenha.setToolTipText("");
-        JTSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
-        JTSenha.setCaretColor(new java.awt.Color(255, 255, 255));
-        JTSenha.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        JTSenha.setSelectionColor(new java.awt.Color(9, 73, 110));
-        kGradientPanel3.add(JTSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 240, 30));
-
-        kGradientPanel1.add(kGradientPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, 260, 30));
+        kGradientPanel1.add(kButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 480, -1, -1));
 
         kGradientPanel4.setkBorderRadius(30);
         kGradientPanel4.setkEndColor(new java.awt.Color(170, 68, 0));
@@ -238,6 +235,24 @@ public class TelaCadastroInt extends javax.swing.JInternalFrame {
         kGradientPanel4.add(JTLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 240, 30));
 
         kGradientPanel1.add(kGradientPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, 260, 30));
+
+        kGradientPanel3.setkBorderRadius(30);
+        kGradientPanel3.setkEndColor(new java.awt.Color(170, 68, 0));
+        kGradientPanel3.setkStartColor(new java.awt.Color(170, 68, 0));
+        kGradientPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        JTSenha.setBackground(new java.awt.Color(30, 30, 30));
+        JTSenha.setFont(new java.awt.Font("Square721 BT", 1, 14)); // NOI18N
+        JTSenha.setForeground(new java.awt.Color(255, 255, 255));
+        JTSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTSenha.setToolTipText("");
+        JTSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        JTSenha.setCaretColor(new java.awt.Color(255, 255, 255));
+        JTSenha.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        JTSenha.setSelectionColor(new java.awt.Color(9, 73, 110));
+        kGradientPanel3.add(JTSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 240, 30));
+
+        kGradientPanel1.add(kGradientPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, 260, 30));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -276,6 +291,38 @@ public class TelaCadastroInt extends javax.swing.JInternalFrame {
             }
         });
         kGradientPanel1.add(jBFechar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 30, 30));
+
+        kGradientPanel5.setkBorderRadius(30);
+        kGradientPanel5.setkEndColor(new java.awt.Color(170, 68, 0));
+        kGradientPanel5.setkStartColor(new java.awt.Color(170, 68, 0));
+        kGradientPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        JTRepeteSenha.setBackground(new java.awt.Color(30, 30, 30));
+        JTRepeteSenha.setFont(new java.awt.Font("Square721 BT", 1, 14)); // NOI18N
+        JTRepeteSenha.setForeground(new java.awt.Color(255, 255, 255));
+        JTRepeteSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTRepeteSenha.setToolTipText("");
+        JTRepeteSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        JTRepeteSenha.setCaretColor(new java.awt.Color(255, 255, 255));
+        JTRepeteSenha.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        JTRepeteSenha.setSelectionColor(new java.awt.Color(9, 73, 110));
+        kGradientPanel5.add(JTRepeteSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 240, 30));
+
+        kGradientPanel1.add(kGradientPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 260, -1));
+
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Repita Senha");
+        kGradientPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 410, -1, 20));
+
+        btolhar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/olho.png"))); // NOI18N
+        btolhar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btolhar2ActionPerformed(evt);
+            }
+        });
+        kGradientPanel1.add(btolhar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 430, 30, 30));
 
         javax.swing.GroupLayout kGradientPanel7Layout = new javax.swing.GroupLayout(kGradientPanel7);
         kGradientPanel7.setLayout(kGradientPanel7Layout);
@@ -342,10 +389,6 @@ public class TelaCadastroInt extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_kButton2ActionPerformed
 
-    private void btolharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btolharActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btolharActionPerformed
-
     private void jBFechar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBFechar1ActionPerformed
         TelaTabela tab = new TelaTabela();
         getParent().add(tab);
@@ -354,24 +397,36 @@ public class TelaCadastroInt extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_jBFechar1ActionPerformed
 
+    private void btolharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btolharActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btolharActionPerformed
+
+    private void btolhar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btolhar2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btolhar2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel JLImagem;
     private javax.swing.JTextField JTLogin;
     private javax.swing.JTextField JTNome;
+    private javax.swing.JTextField JTRepeteSenha;
     private javax.swing.JTextField JTSenha;
     private javax.swing.JTextField JTSobNome;
     private br.com.artcomp.cell.ActionButton btolhar;
     private br.com.artcomp.cell.ActionButton btolhar1;
+    private br.com.artcomp.cell.ActionButton btolhar2;
     private javax.swing.JButton jBFechar1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private com.k33ptoo.components.KButton kButton2;
     private com.k33ptoo.components.KGradientPanel kGradientPanel1;
     private com.k33ptoo.components.KGradientPanel kGradientPanel3;
     private com.k33ptoo.components.KGradientPanel kGradientPanel4;
+    private com.k33ptoo.components.KGradientPanel kGradientPanel5;
     public com.k33ptoo.components.KGradientPanel kGradientPanel7;
     // End of variables declaration//GEN-END:variables
 }

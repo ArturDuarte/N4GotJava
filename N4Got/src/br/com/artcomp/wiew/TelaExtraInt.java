@@ -10,10 +10,11 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
  *
  * @author artco
  */
-public class TelaBase extends javax.swing.JInternalFrame {
+public class TelaExtraInt extends javax.swing.JInternalFrame {
 
     
-    public TelaBase() {
+
+    public TelaExtraInt() {
         initComponents();
         
         this.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));

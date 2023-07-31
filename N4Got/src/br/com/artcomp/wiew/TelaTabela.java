@@ -10,10 +10,12 @@ import br.com.artcomp.cell.TableActionCellEditor;
 import br.com.artcomp.cell.TableActionCellRender;
 import br.com.artcomp.cell.TableActionEvent;
 import br.com.artcomp.controller.CarregaTabela;
+import br.com.artcomp.controller.DeletaObjeto;
 import br.com.artcomp.model.Objetos;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 
@@ -91,12 +93,10 @@ public class TelaTabela extends javax.swing.JInternalFrame {
                         if (table.isEditing()) {
                             table.getCellEditor().stopCellEditing();
                         }
-//                        DefaultTableModel model = (DefaultTableModel) table.getModel();
-//                        model.removeRow(row);                                           
+                                 
                         TelaTabela ta = new TelaTabela();
-                        removeLinha(lista.get(row).getId());
+                        removeLinha(lista.get(row).getId());                         
                         ta.dispose();
-                        getParent().add(ta);
                         ta.setVisible(true);
                     }
 
@@ -126,8 +126,16 @@ public class TelaTabela extends javax.swing.JInternalFrame {
        
         System.out.println("numero da linha"+ ID);
         int id = ID;
-        DeleteDAO Del = new DeleteDAO();
-        Del.removeLinha(id);
+        DeletaObjeto Del = new DeletaObjeto();
+        if(Del.delete(id)){
+            JOptionPane.showMessageDialog(null, "Deletodo com sucesso ");
+            
+            TelaTabela tab = new TelaTabela();
+            getParent().add(tab);
+            tab.setVisible(true);            
+            this.dispose();
+        }
+        
         
     }
 

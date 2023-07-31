@@ -140,19 +140,14 @@ public class TelaMostrarInt extends javax.swing.JInternalFrame {
         JTSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTSenha.setText("***************");
         JTSenha.setToolTipText("");
-        JTSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        JTSenha.setBorder(null);
         JTSenha.setCaretColor(new java.awt.Color(255, 255, 255));
         JTSenha.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         JTSenha.setEnabled(false);
         JTSenha.setSelectionColor(new java.awt.Color(9, 73, 110));
-        JTSenha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTSenhaActionPerformed(evt);
-            }
-        });
         kGradientPanel3.add(JTSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 290, 40));
 
-        kGradientPanel1.add(kGradientPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 310, -1));
+        kGradientPanel1.add(kGradientPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 310, 38));
 
         kGradientPanel4.setkBorderRadius(30);
         kGradientPanel4.setkEndColor(new java.awt.Color(170, 68, 0));
@@ -164,14 +159,14 @@ public class TelaMostrarInt extends javax.swing.JInternalFrame {
         JTLogin.setForeground(new java.awt.Color(255, 255, 255));
         JTLogin.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTLogin.setToolTipText("");
-        JTLogin.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        JTLogin.setBorder(null);
         JTLogin.setCaretColor(new java.awt.Color(255, 255, 255));
         JTLogin.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         JTLogin.setEnabled(false);
         JTLogin.setSelectionColor(new java.awt.Color(9, 73, 110));
         kGradientPanel4.add(JTLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 290, 40));
 
-        kGradientPanel1.add(kGradientPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 310, -1));
+        kGradientPanel1.add(kGradientPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 310, 38));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -185,11 +180,10 @@ public class TelaMostrarInt extends javax.swing.JInternalFrame {
         jLabel6.setText("Senha");
         kGradientPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, -1, -1));
 
-        jLMensagem.setBackground(new java.awt.Color(255, 255, 255));
-        jLMensagem.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLMensagem.setForeground(new java.awt.Color(255, 255, 255));
-        jLMensagem.setText("Clicando no cadeado a senha sera descriptografada.");
-        kGradientPanel1.add(jLMensagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 450, 20));
+        jLMensagem.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLMensagem.setForeground(new java.awt.Color(0, 0, 0));
+        jLMensagem.setText("Clique no cadeado para descriptografar !");
+        kGradientPanel1.add(jLMensagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, 280, 20));
 
         actionButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/cadeado.png"))); // NOI18N
         actionButton1.setFocusable(false);
@@ -200,11 +194,10 @@ public class TelaMostrarInt extends javax.swing.JInternalFrame {
         });
         kGradientPanel1.add(actionButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 280, 40, 40));
 
-        jLMensagem1.setBackground(new java.awt.Color(255, 255, 255));
-        jLMensagem1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLMensagem1.setForeground(new java.awt.Color(255, 255, 255));
-        jLMensagem1.setText("Senha descriptografada.");
-        kGradientPanel1.add(jLMensagem1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, 220, 20));
+        jLMensagem1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLMensagem1.setForeground(new java.awt.Color(0, 0, 0));
+        jLMensagem1.setText("Senha descriptografada !");
+        kGradientPanel1.add(jLMensagem1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, 180, 20));
 
         JLImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/camera.png"))); // NOI18N
         kGradientPanel1.add(JLImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, -1, 100));
@@ -244,7 +237,7 @@ public class TelaMostrarInt extends javax.swing.JInternalFrame {
         JTSenha2.setForeground(new java.awt.Color(255, 255, 255));
         JTSenha2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTSenha2.setToolTipText("");
-        JTSenha2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        JTSenha2.setBorder(null);
         JTSenha2.setCaretColor(new java.awt.Color(255, 255, 255));
         JTSenha2.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         JTSenha2.setSelectionColor(new java.awt.Color(9, 73, 110));
@@ -253,9 +246,9 @@ public class TelaMostrarInt extends javax.swing.JInternalFrame {
                 JTSenha2KeyPressed(evt);
             }
         });
-        kGradientPanel5.add(JTSenha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 240, 40));
+        kGradientPanel5.add(JTSenha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 280, 40));
 
-        kGradientPanel2.add(kGradientPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(214, 198, 300, -1));
+        kGradientPanel2.add(kGradientPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(214, 198, 300, 38));
 
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -273,7 +266,7 @@ public class TelaMostrarInt extends javax.swing.JInternalFrame {
         kButton2.setkFillButton(false);
         kButton2.setkHoverColor(new java.awt.Color(255, 0, 0));
         kButton2.setkHoverEndColor(new java.awt.Color(255, 102, 0));
-        kButton2.setkHoverForeGround(new java.awt.Color(255, 102, 0));
+        kButton2.setkHoverForeGround(new java.awt.Color(255, 255, 255));
         kButton2.setkHoverStartColor(new java.awt.Color(255, 255, 255));
         kButton2.setkIndicatorColor(new java.awt.Color(0, 255, 255));
         kButton2.setkPressedColor(new java.awt.Color(255, 255, 255));
@@ -283,7 +276,7 @@ public class TelaMostrarInt extends javax.swing.JInternalFrame {
                 kButton2ActionPerformed(evt);
             }
         });
-        kGradientPanel2.add(kButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 286, 230, 70));
+        kGradientPanel2.add(kButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, 230, 70));
 
         jBFechar1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jBFechar1.setForeground(new java.awt.Color(255, 255, 255));
@@ -344,10 +337,6 @@ public class TelaMostrarInt extends javax.swing.JInternalFrame {
 
         setBounds(0, 0, 750, 590);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void JTSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTSenhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTSenhaActionPerformed
 
     private void actionButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionButton1ActionPerformed
 

@@ -35,6 +35,7 @@ public class TelaEditarInt extends javax.swing.JInternalFrame {
         this.JTNome.setDisabledTextColor(new Color(255, 255, 255));
         this.JTNome.setOpaque(false);
         this.JTNome.setSelectionColor(new Color(9, 73, 110));
+        this.JTNome.setEditable(false);
 
         this.JTSobNome.setBackground(new Color(9, 73, 110));
         this.JTSobNome.setFont(new Font("Square721 BT", 1, 14));
@@ -45,6 +46,7 @@ public class TelaEditarInt extends javax.swing.JInternalFrame {
         this.JTSobNome.setDisabledTextColor(new Color(255, 255, 255));
         this.JTSobNome.setOpaque(false);
         this.JTSobNome.setSelectionColor(new Color(9, 73, 110));
+        this.JTSobNome.setEditable(false);
 
         this.JTLogin.setBackground(new Color(9, 73, 110));
         this.JTLogin.setFont(new Font("Square721 BT", 1, 14));
@@ -55,6 +57,7 @@ public class TelaEditarInt extends javax.swing.JInternalFrame {
         this.JTLogin.setDisabledTextColor(new Color(255, 255, 255));
         this.JTLogin.setOpaque(false);
         this.JTLogin.setSelectionColor(new Color(9, 73, 110));
+        this.JTLogin.setEditable(false);
 
         this.JTSenha.setBackground(new Color(9, 73, 110));
         this.JTSenha.setFont(new Font("Square721 BT", 1, 14));
@@ -73,6 +76,8 @@ public class TelaEditarInt extends javax.swing.JInternalFrame {
         this.kGradientPanel4.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel5.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel6.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
+        
+        jLCliqueGravar.setVisible(false);
 
         this.setSize(760, 595);
         this.setLocation(0, 0);
@@ -124,9 +129,9 @@ public class TelaEditarInt extends javax.swing.JInternalFrame {
         btolhar = new br.com.artcomp.cell.ActionButton();
         btolhar2 = new br.com.artcomp.cell.ActionButton();
         JTNome = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        jLSobreNome = new javax.swing.JLabel();
         JTSobNome = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        jLNome = new javax.swing.JLabel();
         kGradientPanel3 = new com.k33ptoo.components.KGradientPanel();
         JTLogin = new javax.swing.JTextField();
         kGradientPanel4 = new com.k33ptoo.components.KGradientPanel();
@@ -134,6 +139,8 @@ public class TelaEditarInt extends javax.swing.JInternalFrame {
         btolhar1 = new br.com.artcomp.cell.ActionButton();
         jLabel1 = new javax.swing.JLabel();
         jBFechar = new javax.swing.JButton();
+        jLCliqueEditar = new javax.swing.JLabel();
+        jLCliqueGravar = new javax.swing.JLabel();
         kGradientPanel5 = new com.k33ptoo.components.KGradientPanel();
         kGradientPanel6 = new com.k33ptoo.components.KGradientPanel();
         JTSenha2 = new javax.swing.JTextField();
@@ -169,7 +176,7 @@ public class TelaEditarInt extends javax.swing.JInternalFrame {
         jLabel6.setText("Senha");
         kGradientPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, -1, 30));
 
-        btolhar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/olho.png"))); // NOI18N
+        btolhar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/cadeado.png"))); // NOI18N
         btolhar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btolharActionPerformed(evt);
@@ -177,7 +184,7 @@ public class TelaEditarInt extends javax.swing.JInternalFrame {
         });
         kGradientPanel2.add(btolhar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 380, 40, 40));
 
-        btolhar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/cadeado.png"))); // NOI18N
+        btolhar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/cadeadoFechado.png"))); // NOI18N
         btolhar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btolhar2ActionPerformed(evt);
@@ -195,11 +202,11 @@ public class TelaEditarInt extends javax.swing.JInternalFrame {
         JTNome.setSelectionColor(new java.awt.Color(9, 73, 110));
         kGradientPanel2.add(JTNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 360, 30));
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Sobre Nome");
-        kGradientPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 120, 20));
+        jLSobreNome.setBackground(new java.awt.Color(255, 255, 255));
+        jLSobreNome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLSobreNome.setForeground(new java.awt.Color(255, 255, 255));
+        jLSobreNome.setText("Sobre Nome");
+        kGradientPanel2.add(jLSobreNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 120, 20));
 
         JTSobNome.setBackground(new java.awt.Color(30, 30, 30));
         JTSobNome.setFont(new java.awt.Font("Square721 BT", 1, 14)); // NOI18N
@@ -216,11 +223,11 @@ public class TelaEditarInt extends javax.swing.JInternalFrame {
         });
         kGradientPanel2.add(JTSobNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 360, 30));
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Nome");
-        kGradientPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, -1, 20));
+        jLNome.setBackground(new java.awt.Color(255, 255, 255));
+        jLNome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLNome.setForeground(new java.awt.Color(255, 255, 255));
+        jLNome.setText("Nome");
+        kGradientPanel2.add(jLNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, -1, 20));
 
         kGradientPanel3.setkBorderRadius(30);
         kGradientPanel3.setkEndColor(new java.awt.Color(170, 68, 0));
@@ -232,7 +239,7 @@ public class TelaEditarInt extends javax.swing.JInternalFrame {
         JTLogin.setForeground(new java.awt.Color(255, 255, 255));
         JTLogin.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTLogin.setToolTipText("");
-        JTLogin.setBorder(null);
+        JTLogin.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         JTLogin.setCaretColor(new java.awt.Color(255, 255, 255));
         JTLogin.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         JTLogin.setSelectionColor(new java.awt.Color(9, 73, 110));
@@ -251,7 +258,7 @@ public class TelaEditarInt extends javax.swing.JInternalFrame {
         JTSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTSenha.setText("***************");
         JTSenha.setToolTipText("");
-        JTSenha.setBorder(null);
+        JTSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         JTSenha.setCaretColor(new java.awt.Color(255, 255, 255));
         JTSenha.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         JTSenha.setSelectionColor(new java.awt.Color(9, 73, 110));
@@ -289,6 +296,14 @@ public class TelaEditarInt extends javax.swing.JInternalFrame {
         });
         kGradientPanel2.add(jBFechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 30, 30));
 
+        jLCliqueEditar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLCliqueEditar.setText("Clique no cadeado para editar !");
+        kGradientPanel2.add(jLCliqueEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 420, 220, -1));
+
+        jLCliqueGravar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLCliqueGravar.setText("Clique no cadeado para gravar !");
+        kGradientPanel2.add(jLCliqueGravar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 420, 220, 20));
+
         kGradientPanel5.setkEndColor(new java.awt.Color(255, 102, 0));
         kGradientPanel5.setkStartColor(new java.awt.Color(255, 102, 0));
         kGradientPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -303,7 +318,7 @@ public class TelaEditarInt extends javax.swing.JInternalFrame {
         JTSenha2.setForeground(new java.awt.Color(255, 255, 255));
         JTSenha2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         JTSenha2.setToolTipText("");
-        JTSenha2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        JTSenha2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 0, new java.awt.Color(255, 255, 255)));
         JTSenha2.setCaretColor(new java.awt.Color(255, 255, 255));
         JTSenha2.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         JTSenha2.setSelectionColor(new java.awt.Color(9, 73, 110));
@@ -312,7 +327,7 @@ public class TelaEditarInt extends javax.swing.JInternalFrame {
                 JTSenha2KeyPressed(evt);
             }
         });
-        kGradientPanel6.add(JTSenha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 330, 40));
+        kGradientPanel6.add(JTSenha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 340, 40));
 
         kGradientPanel5.add(kGradientPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 228, 360, 40));
 
@@ -342,7 +357,7 @@ public class TelaEditarInt extends javax.swing.JInternalFrame {
                 kButton2ActionPerformed(evt);
             }
         });
-        kGradientPanel5.add(kButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 286, 300, 60));
+        kGradientPanel5.add(kButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 286, 220, 60));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/camera.png"))); // NOI18N
         kGradientPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, -1, 100));
@@ -496,6 +511,13 @@ public class TelaEditarInt extends javax.swing.JInternalFrame {
             kGradientPanel2.setVisible(true);
             btolhar.setVisible(false);
             btolhar2.setVisible(true);
+            JTSenha.setEditable(true);
+            JTNome.setEditable(true);
+            JTSobNome.setEditable(true);
+            JTLogin.setEditable(true);
+            jLCliqueEditar.setVisible(false);
+            jLCliqueGravar.setVisible(true);
+                    
         } else {
             System.out.println("erro da senha");
         }
@@ -528,9 +550,11 @@ public class TelaEditarInt extends javax.swing.JInternalFrame {
     private br.com.artcomp.cell.ActionButton btolhar3;
     private javax.swing.JButton jBFechar;
     private javax.swing.JButton jBFechar1;
+    private javax.swing.JLabel jLCliqueEditar;
+    private javax.swing.JLabel jLCliqueGravar;
+    private javax.swing.JLabel jLNome;
+    private javax.swing.JLabel jLSobreNome;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

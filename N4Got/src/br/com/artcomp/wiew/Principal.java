@@ -12,7 +12,6 @@ import javax.swing.BorderFactory;
  */
 public class Principal extends javax.swing.JFrame {
 
-    
     public Principal() {
 
         initComponents();
@@ -35,6 +34,7 @@ public class Principal extends javax.swing.JFrame {
         TelaTabela TabInt = new TelaTabela();
         this.jDesktopPane1.add(TabInt).setVisible(true);
 
+        jBEmitente.setSize(80,80);
     }
 
     @Override
@@ -54,9 +54,11 @@ public class Principal extends javax.swing.JFrame {
         kButton3 = new com.k33ptoo.components.KButton();
         kButton4 = new com.k33ptoo.components.KButton();
         kButton5 = new com.k33ptoo.components.KButton();
+        kButton6 = new com.k33ptoo.components.KButton();
         jLabel2 = new javax.swing.JLabel();
-        Pesquisa = new javax.swing.JTextField();
+        jBEmitente = new javax.swing.JButton();
         kGradientPanel8 = new com.k33ptoo.components.KGradientPanel();
+        Pesquisa = new javax.swing.JTextField();
         btolhar2 = new br.com.artcomp.cell.ActionButton();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jLabel4 = new javax.swing.JLabel();
@@ -116,7 +118,7 @@ public class Principal extends javax.swing.JFrame {
         kGradientPanel2.setkStartColor(new java.awt.Color(170, 68, 0));
         kGradientPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        kButton3.setText("Novo Objeto");
+        kButton3.setText("Novo");
         kButton3.setBorderPainted(false);
         kButton3.setFocusPainted(false);
         kButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -136,7 +138,7 @@ public class Principal extends javax.swing.JFrame {
                 kButton3ActionPerformed(evt);
             }
         });
-        kGradientPanel2.add(kButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 166, 125, 70));
+        kGradientPanel2.add(kButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 110, 70));
 
         kButton4.setText("Configurar");
         kButton4.setBorderPainted(false);
@@ -158,7 +160,7 @@ public class Principal extends javax.swing.JFrame {
                 kButton4ActionPerformed(evt);
             }
         });
-        kGradientPanel2.add(kButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 254, 125, 70));
+        kGradientPanel2.add(kButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 110, 70));
 
         kButton5.setText("Extras");
         kButton5.setBorderPainted(false);
@@ -180,12 +182,50 @@ public class Principal extends javax.swing.JFrame {
                 kButton5ActionPerformed(evt);
             }
         });
-        kGradientPanel2.add(kButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 342, 124, 70));
+        kGradientPanel2.add(kButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 110, 70));
+
+        kButton6.setText("Objetos");
+        kButton6.setBorderPainted(false);
+        kButton6.setFocusPainted(false);
+        kButton6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        kButton6.setkBackGroundColor(new java.awt.Color(0, 255, 255));
+        kButton6.setkBorderRadius(20);
+        kButton6.setkEndColor(new java.awt.Color(255, 255, 255));
+        kButton6.setkFillButton(false);
+        kButton6.setkHoverColor(new java.awt.Color(255, 0, 0));
+        kButton6.setkHoverEndColor(new java.awt.Color(255, 102, 0));
+        kButton6.setkHoverForeGround(new java.awt.Color(255, 102, 0));
+        kButton6.setkHoverStartColor(new java.awt.Color(255, 255, 255));
+        kButton6.setkIndicatorColor(new java.awt.Color(0, 255, 255));
+        kButton6.setkPressedColor(new java.awt.Color(255, 255, 255));
+        kButton6.setkStartColor(new java.awt.Color(255, 102, 0));
+        kButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton6ActionPerformed(evt);
+            }
+        });
+        kGradientPanel2.add(kButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 110, 70));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/engren.png"))); // NOI18N
         kGradientPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 640, 30, 40));
 
+        jBEmitente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/PessoaIcon.png"))); // NOI18N
+        jBEmitente.setBorderPainted(false);
+        jBEmitente.setContentAreaFilled(false);
+        jBEmitente.setFocusPainted(false);
+        jBEmitente.setFocusable(false);
+        jBEmitente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBEmitenteActionPerformed(evt);
+            }
+        });
+        kGradientPanel2.add(jBEmitente, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 90, 80));
+
         kGradientPanel1.add(kGradientPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 680));
+
+        kGradientPanel8.setkBorderRadius(20);
+        kGradientPanel8.setkEndColor(new java.awt.Color(170, 68, 0));
+        kGradientPanel8.setkStartColor(new java.awt.Color(170, 68, 0));
 
         Pesquisa.setBackground(new java.awt.Color(30, 30, 30));
         Pesquisa.setFont(new java.awt.Font("Square721 BT", 1, 14)); // NOI18N
@@ -213,11 +253,6 @@ public class Principal extends javax.swing.JFrame {
                 PesquisaKeyPressed(evt);
             }
         });
-        kGradientPanel1.add(Pesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 50, 270, 40));
-
-        kGradientPanel8.setkBorderRadius(20);
-        kGradientPanel8.setkEndColor(new java.awt.Color(170, 68, 0));
-        kGradientPanel8.setkStartColor(new java.awt.Color(170, 68, 0));
 
         btolhar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/lupa25.png"))); // NOI18N
         btolhar2.addActionListener(new java.awt.event.ActionListener() {
@@ -231,12 +266,17 @@ public class Principal extends javax.swing.JFrame {
         kGradientPanel8Layout.setHorizontalGroup(
             kGradientPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel8Layout.createSequentialGroup()
-                .addGap(0, 284, Short.MAX_VALUE)
+                .addGap(0, 22, Short.MAX_VALUE)
+                .addComponent(Pesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btolhar2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         kGradientPanel8Layout.setVerticalGroup(
             kGradientPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btolhar2, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+            .addComponent(btolhar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(kGradientPanel8Layout.createSequentialGroup()
+                .addComponent(Pesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         kGradientPanel1.add(kGradientPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 50, 320, 35));
@@ -299,18 +339,18 @@ public class Principal extends javax.swing.JFrame {
         TelaCadastroInt cad = new TelaCadastroInt();
         jDesktopPane1.removeAll();
         jDesktopPane1.add(cad).setVisible(true);
-        
-
+        kGradientPanel8.setVisible(false);
     }//GEN-LAST:event_kButton3ActionPerformed
 
     private void kButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton4ActionPerformed
-       TelaConfigInt conf = new TelaConfigInt();
+        TelaConfigInt conf = new TelaConfigInt();
         jDesktopPane1.removeAll();
         jDesktopPane1.add(conf).setVisible(true);
+        kGradientPanel8.setVisible(false);
     }//GEN-LAST:event_kButton4ActionPerformed
 
     private void kButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton5ActionPerformed
-       
+
         TelaExtraInt ext = new TelaExtraInt();
         jDesktopPane1.removeAll();
         jDesktopPane1.add(ext).setVisible(true);
@@ -333,8 +373,26 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_PesquisaFocusGained
 
     private void btolhar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btolhar2ActionPerformed
-       
+
     }//GEN-LAST:event_btolhar2ActionPerformed
+
+    private void kButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton6ActionPerformed
+
+        TelaTabela tab = new TelaTabela();
+        jDesktopPane1.removeAll();
+        jDesktopPane1.add(tab).setVisible(true);
+        kGradientPanel8.setVisible(true);
+
+    }//GEN-LAST:event_kButton6ActionPerformed
+
+    private void jBEmitenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEmitenteActionPerformed
+
+        TelaEmitente emi = new TelaEmitente();
+        jDesktopPane1.removeAll();
+        jDesktopPane1.add(emi).setVisible(true);
+
+
+    }//GEN-LAST:event_jBEmitenteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -376,6 +434,7 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Pesquisa;
     private br.com.artcomp.cell.ActionButton btolhar2;
+    private javax.swing.JButton jBEmitente;
     private javax.swing.JButton jBFechar;
     private javax.swing.JButton jBMinimisar;
     private javax.swing.JDesktopPane jDesktopPane1;
@@ -386,6 +445,7 @@ public class Principal extends javax.swing.JFrame {
     private com.k33ptoo.components.KButton kButton3;
     private com.k33ptoo.components.KButton kButton4;
     private com.k33ptoo.components.KButton kButton5;
+    private com.k33ptoo.components.KButton kButton6;
     private com.k33ptoo.components.KGradientPanel kGradientPanel1;
     private com.k33ptoo.components.KGradientPanel kGradientPanel2;
     private com.k33ptoo.components.KGradientPanel kGradientPanel8;

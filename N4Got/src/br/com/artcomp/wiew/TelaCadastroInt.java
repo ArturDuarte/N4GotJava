@@ -5,12 +5,8 @@
 package br.com.artcomp.wiew;
 
 import br.com.artcomp.controller.CadastroObjeto;
-import br.com.artcomp.controller.CarregaTabela;
-import br.com.artcomp.model.Fabrica;
-import br.com.artcomp.model.Objetos;
 import java.awt.Color;
 import java.awt.Font;
-import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;

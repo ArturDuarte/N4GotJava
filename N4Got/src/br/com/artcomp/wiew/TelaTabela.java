@@ -4,7 +4,6 @@
  */
 package br.com.artcomp.wiew;
 
-import br.com.artcomp.DAO.DeleteDAO;
 import br.com.artcomp.cell.PintarCabecalho;
 import br.com.artcomp.cell.TableActionCellEditor;
 import br.com.artcomp.cell.TableActionCellRender;
@@ -17,7 +16,6 @@ import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *

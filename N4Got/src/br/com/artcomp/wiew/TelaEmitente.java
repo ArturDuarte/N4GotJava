@@ -4,23 +4,21 @@
  */
 package br.com.artcomp.wiew;
 import java.awt.Color;
-import javax.swing.BorderFactory;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /**
  *
  * @author artco
  */
-public class TelaConfigInt extends javax.swing.JInternalFrame {
+public class TelaEmitente extends javax.swing.JInternalFrame {
 
     
-    public TelaConfigInt() {
+    public TelaEmitente() {
         initComponents();
         
         this.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel1.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));         
         this.kGradientPanel7.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
-        
 
         this.setSize(760, 595);
         this.setLocation(0, 0);
@@ -44,10 +42,6 @@ public class TelaConfigInt extends javax.swing.JInternalFrame {
         kGradientPanel7 = new com.k33ptoo.components.KGradientPanel();
         kGradientPanel1 = new com.k33ptoo.components.KGradientPanel();
         jBFechar1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jLabel2 = new javax.swing.JLabel();
-        jCheckBox2 = new javax.swing.JCheckBox();
 
         setBackground(new java.awt.Color(255, 102, 0));
         setBorder(null);
@@ -84,44 +78,6 @@ public class TelaConfigInt extends javax.swing.JInternalFrame {
             }
         });
         kGradientPanel1.add(jBFechar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 30, 30));
-
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Configurações de entrada _________________________________________________________________________________________________");
-        kGradientPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
-
-        jCheckBox1.setBackground(new java.awt.Color(255, 102, 0));
-        jCheckBox1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox1.setText(" Abrir Login ao iniciar o sistema.");
-        jCheckBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jCheckBox1.setFocusable(false);
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
-        kGradientPanel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
-
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Configurações de senha __________________________________________________________________________________________________");
-        kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, 20));
-
-        jCheckBox2.setBackground(new java.awt.Color(255, 102, 0));
-        jCheckBox2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jCheckBox2.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox2.setText("Usar senha padrão");
-        jCheckBox2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jCheckBox2.setFocusable(false);
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
-            }
-        });
-        kGradientPanel1.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
 
         javax.swing.GroupLayout kGradientPanel7Layout = new javax.swing.GroupLayout(kGradientPanel7);
         kGradientPanel7.setLayout(kGradientPanel7Layout);
@@ -166,21 +122,9 @@ public class TelaConfigInt extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_jBFechar1ActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
-
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBFechar1;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private com.k33ptoo.components.KGradientPanel kGradientPanel1;
     public com.k33ptoo.components.KGradientPanel kGradientPanel7;
     // End of variables declaration//GEN-END:variables

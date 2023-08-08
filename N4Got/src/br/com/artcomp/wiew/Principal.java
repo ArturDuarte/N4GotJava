@@ -56,6 +56,7 @@ public class Principal extends javax.swing.JFrame {
         kButton5 = new com.k33ptoo.components.KButton();
         kButton6 = new com.k33ptoo.components.KButton();
         jLabel2 = new javax.swing.JLabel();
+        btolhar3 = new br.com.artcomp.cell.ActionButton();
         jBEmitente = new javax.swing.JButton();
         kGradientPanel8 = new com.k33ptoo.components.KGradientPanel();
         Pesquisa = new javax.swing.JTextField();
@@ -208,6 +209,15 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/engren.png"))); // NOI18N
         kGradientPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 640, 30, 40));
+
+        btolhar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/Itens.png"))); // NOI18N
+        btolhar3.setFocusable(false);
+        btolhar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btolhar3ActionPerformed(evt);
+            }
+        });
+        kGradientPanel2.add(btolhar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 40, -1));
 
         jBEmitente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/PessoaIcon.png"))); // NOI18N
         jBEmitente.setBorderPainted(false);
@@ -394,6 +404,10 @@ public class Principal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jBEmitenteActionPerformed
 
+    private void btolhar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btolhar3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btolhar3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -434,6 +448,7 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Pesquisa;
     private br.com.artcomp.cell.ActionButton btolhar2;
+    private br.com.artcomp.cell.ActionButton btolhar3;
     private javax.swing.JButton jBEmitente;
     private javax.swing.JButton jBFechar;
     private javax.swing.JButton jBMinimisar;

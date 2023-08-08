@@ -4,10 +4,13 @@
  */
 package br.com.artcomp.DAO;
 
+import br.com.artcomp.model.ConfiguracaoLogin;
 import br.com.artcomp.model.Objetos;
 import br.com.artcomp.utilitarios.Conexao;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -22,6 +25,7 @@ public class SelectDAO {
     }
 
     public ArrayList<Objetos> readAll() throws SQLException {
+        
         con_cadastro = new Conexao();
         con_cadastro.conecta();
         ArrayList<Objetos> lista = new ArrayList<>();
@@ -50,5 +54,35 @@ public class SelectDAO {
         }
 
         return lista;
+    }
+    
+    public boolean readTelLogin () {// verifica a tabela cad_conf
+        
+        con_cadastro = new Conexao();
+        con_cadastro.conecta();
+        
+        con_cadastro.executeSQL("select * from cad_conf ");
+        
+        ConfiguracaoLogin confLogin = new ConfiguracaoLogin();
+        try {
+            while (con_cadastro.resultset.next()) {                
+                
+                confLogin.setTelLogin(con_cadastro.resultset.getInt("tellogin"));                
+                
+            }
+            } catch (SQLException ex) {
+            System.err.println("deu erro cad_conf");
+        } catch (Exception ex) {
+            System.err.println("Erro gerallll´´" + ex.getMessage());
+        }
+               
+        
+        if(confLogin.getTelLogin() == 0){
+            
+            return true;
+        }
+        
+        return false;        
+        
     }
 }

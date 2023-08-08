@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package br.com.artcomp.wiew;
+import br.com.artcomp.switchButton.SwitchListener;
 import java.awt.Color;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
@@ -15,6 +16,13 @@ public class TelaBase extends javax.swing.JInternalFrame {
     
     public TelaBase() {
         initComponents();
+        
+        switchButton1.addEventSwitchSelected(new SwitchListener() {
+            @Override
+            public void selectChange(boolean on) {
+                System.out.println(on);
+            }
+        });
         
         this.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel1.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));         
@@ -42,6 +50,7 @@ public class TelaBase extends javax.swing.JInternalFrame {
         kGradientPanel7 = new com.k33ptoo.components.KGradientPanel();
         kGradientPanel1 = new com.k33ptoo.components.KGradientPanel();
         jBFechar1 = new javax.swing.JButton();
+        switchButton1 = new br.com.artcomp.switchButton.SwitchButton();
 
         setBackground(new java.awt.Color(255, 102, 0));
         setBorder(null);
@@ -78,6 +87,21 @@ public class TelaBase extends javax.swing.JInternalFrame {
             }
         });
         kGradientPanel1.add(jBFechar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 30, 30));
+
+        switchButton1.setRound(999);
+
+        javax.swing.GroupLayout switchButton1Layout = new javax.swing.GroupLayout(switchButton1);
+        switchButton1.setLayout(switchButton1Layout);
+        switchButton1Layout.setHorizontalGroup(
+            switchButton1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        switchButton1Layout.setVerticalGroup(
+            switchButton1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+
+        kGradientPanel1.add(switchButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 100, 50));
 
         javax.swing.GroupLayout kGradientPanel7Layout = new javax.swing.GroupLayout(kGradientPanel7);
         kGradientPanel7.setLayout(kGradientPanel7Layout);
@@ -127,5 +151,6 @@ public class TelaBase extends javax.swing.JInternalFrame {
     private javax.swing.JButton jBFechar1;
     private com.k33ptoo.components.KGradientPanel kGradientPanel1;
     public com.k33ptoo.components.KGradientPanel kGradientPanel7;
+    private br.com.artcomp.switchButton.SwitchButton switchButton1;
     // End of variables declaration//GEN-END:variables
 }

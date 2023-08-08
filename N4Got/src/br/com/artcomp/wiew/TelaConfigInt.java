@@ -3,8 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package br.com.artcomp.wiew;
+
+import br.com.artcomp.switchButton.SwitchListener;
 import java.awt.Color;
-import javax.swing.BorderFactory;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /**
@@ -13,14 +14,20 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
  */
 public class TelaConfigInt extends javax.swing.JInternalFrame {
 
-    
     public TelaConfigInt() {
         initComponents();
+
+        switchButton1.setOn(false);
+        switchButton1.addEventSwitchSelected(new SwitchListener() {
+            @Override
+            public void selectChange(boolean on) {
+                System.out.println(on);
+            }
+        });
         
         this.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
-        this.kGradientPanel1.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));         
+        this.kGradientPanel1.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel7.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
-        
 
         this.setSize(760, 595);
         this.setLocation(0, 0);
@@ -30,7 +37,6 @@ public class TelaConfigInt extends javax.swing.JInternalFrame {
         ((BasicInternalFrameUI) this.getUI()).setNorthPane(null);// remove a barra do JInternoFrame
 
     }
-   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -45,9 +51,12 @@ public class TelaConfigInt extends javax.swing.JInternalFrame {
         kGradientPanel1 = new com.k33ptoo.components.KGradientPanel();
         jBFechar1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
         jLabel2 = new javax.swing.JLabel();
-        jCheckBox2 = new javax.swing.JCheckBox();
+        kButton2 = new com.k33ptoo.components.KButton();
+        switchButton1 = new br.com.artcomp.switchButton.SwitchButton();
+        switchButton2 = new br.com.artcomp.switchButton.SwitchButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 102, 0));
         setBorder(null);
@@ -91,37 +100,78 @@ public class TelaConfigInt extends javax.swing.JInternalFrame {
         jLabel1.setText("Configurações de entrada _________________________________________________________________________________________________");
         kGradientPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
 
-        jCheckBox1.setBackground(new java.awt.Color(255, 102, 0));
-        jCheckBox1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox1.setText(" Abrir Login ao iniciar o sistema.");
-        jCheckBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jCheckBox1.setFocusable(false);
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
-        kGradientPanel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
-
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Configurações de senha __________________________________________________________________________________________________");
         kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, 20));
 
-        jCheckBox2.setBackground(new java.awt.Color(255, 102, 0));
-        jCheckBox2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jCheckBox2.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox2.setText("Usar senha padrão");
-        jCheckBox2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jCheckBox2.setFocusable(false);
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+        kButton2.setText("Gravar");
+        kButton2.setBorderPainted(false);
+        kButton2.setFocusPainted(false);
+        kButton2.setkBackGroundColor(new java.awt.Color(0, 255, 255));
+        kButton2.setkBorderRadius(20);
+        kButton2.setkEndColor(new java.awt.Color(255, 255, 255));
+        kButton2.setkFillButton(false);
+        kButton2.setkHoverColor(new java.awt.Color(255, 0, 0));
+        kButton2.setkHoverEndColor(new java.awt.Color(255, 102, 0));
+        kButton2.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        kButton2.setkHoverStartColor(new java.awt.Color(255, 255, 255));
+        kButton2.setkIndicatorColor(new java.awt.Color(0, 255, 255));
+        kButton2.setkPressedColor(new java.awt.Color(255, 255, 255));
+        kButton2.setkStartColor(new java.awt.Color(255, 102, 0));
+        kButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
+                kButton2ActionPerformed(evt);
             }
         });
-        kGradientPanel1.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
+        kGradientPanel1.add(kButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 450, -1, -1));
+
+        switchButton1.setToolTipText("");
+        switchButton1.setName(""); // NOI18N
+        switchButton1.setRound(999);
+        switchButton1.setSwitchColor(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout switchButton1Layout = new javax.swing.GroupLayout(switchButton1);
+        switchButton1.setLayout(switchButton1Layout);
+        switchButton1Layout.setHorizontalGroup(
+            switchButton1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+        switchButton1Layout.setVerticalGroup(
+            switchButton1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        kGradientPanel1.add(switchButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 40, 20));
+
+        switchButton2.setRound(999);
+        switchButton2.setSwitchColor(new java.awt.Color(255, 255, 255));
+        switchButton2.setVerifyInputWhenFocusTarget(false);
+
+        javax.swing.GroupLayout switchButton2Layout = new javax.swing.GroupLayout(switchButton2);
+        switchButton2.setLayout(switchButton2Layout);
+        switchButton2Layout.setHorizontalGroup(
+            switchButton2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+        switchButton2Layout.setVerticalGroup(
+            switchButton2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        kGradientPanel1.add(switchButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 40, 20));
+
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Tela de Login ao iniciar.");
+        kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 160, 20));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Usar senha padrão.");
+        kGradientPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 170, 20));
 
         javax.swing.GroupLayout kGradientPanel7Layout = new javax.swing.GroupLayout(kGradientPanel7);
         kGradientPanel7.setLayout(kGradientPanel7Layout);
@@ -162,26 +212,26 @@ public class TelaConfigInt extends javax.swing.JInternalFrame {
     private void jBFechar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBFechar1ActionPerformed
         TelaTabela tab = new TelaTabela();
         getParent().add(tab);
-        tab.setVisible(true);       
+        tab.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jBFechar1ActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
 
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
+    }//GEN-LAST:event_kButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBFechar1;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private com.k33ptoo.components.KButton kButton2;
     private com.k33ptoo.components.KGradientPanel kGradientPanel1;
     public com.k33ptoo.components.KGradientPanel kGradientPanel7;
+    private br.com.artcomp.switchButton.SwitchButton switchButton1;
+    private br.com.artcomp.switchButton.SwitchButton switchButton2;
     // End of variables declaration//GEN-END:variables
 }

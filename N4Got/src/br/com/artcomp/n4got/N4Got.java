@@ -4,8 +4,9 @@
  */
 package br.com.artcomp.n4got;
 
+import br.com.artcomp.controller.VerificaConfiguracao;
 import br.com.artcomp.wiew.Login;
-import java.sql.SQLException;
+import br.com.artcomp.wiew.Principal;
 
 /**
  *
@@ -16,10 +17,17 @@ public class N4Got {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
 
-        Login login = new Login();
-        login.setVisible(true);
+        
+        VerificaConfiguracao verifica = new VerificaConfiguracao();
+
+        if (verifica.verificaEntradaLogin()) {
+            Login login = new Login();
+            login.setVisible(true);
+        }else{
+            Principal pri = new Principal();
+            pri.setVisible(true);
+        }
     }
-
 }

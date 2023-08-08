@@ -4,9 +4,9 @@
  */
 package br.com.artcomp.wiew;
 
+import br.com.artcomp.controller.CadastroCofiguracoes;
 import br.com.artcomp.controller.VerificaConfiguracao;
 import br.com.artcomp.model.ConfiguracaoLogin;
-import br.com.artcomp.model.Objetos;
 import br.com.artcomp.switchButton.SwitchListener;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -259,9 +259,28 @@ public class TelaConfigInt extends javax.swing.JInternalFrame {
 
     private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
 
-        // TODO add your handling code here:
+        int login = 0;
+        int senha = 0;
+        CadastroCofiguracoes cadConf = new CadastroCofiguracoes();
+        System.out.println(switchLogin.isOn());
+        System.out.println(switchSenha.isOn());
+        
+        if(switchLogin.isOn()){
+            login = 0;
+                       
+        }else{
+            login = 1;
+        }
+        
+        if(switchSenha.isOn()){
+            senha = 0;
+        }else{
+            senha = 1;
+        }
+        
+        cadConf.cadastraMarcadores(login, senha);        
+        
     }//GEN-LAST:event_kButton2ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBFechar1;

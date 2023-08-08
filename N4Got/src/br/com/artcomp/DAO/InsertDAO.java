@@ -4,6 +4,7 @@
  */
 package br.com.artcomp.DAO;
 
+import br.com.artcomp.model.ConfiguracaoLogin;
 import br.com.artcomp.model.Objetos;
 import br.com.artcomp.utilitarios.Conexao;
 import java.sql.SQLException;
@@ -52,6 +53,6 @@ public class InsertDAO {
         }
         return false;
 
-    }
+    }   
 
 }

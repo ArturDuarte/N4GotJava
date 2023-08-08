@@ -4,6 +4,7 @@
  */
 package br.com.artcomp.DAO;
 
+import br.com.artcomp.model.ConfiguracaoLogin;
 import br.com.artcomp.model.Objetos;
 import br.com.artcomp.utilitarios.Conexao;
 import java.sql.SQLException;
@@ -29,7 +30,7 @@ public class UpdateDAO {
         this.con_cadastro.conecta();
 
         try {
-            
+
             String sql = "UPDATE cad_obj SET nome= '" + String.valueOf(ob.getNome()) + "',"
                     + "login='" + String.valueOf(ob.getLogin()) + "',"
                     + "senha='" + String.valueOf(ob.getSenha()) + "',"
@@ -41,7 +42,6 @@ public class UpdateDAO {
 
             con_cadastro.statement.executeUpdate(sql);
 
-            
             this.con_cadastro.desconecta();
             return true;
 
@@ -50,6 +50,36 @@ public class UpdateDAO {
             JOptionPane.showMessageDialog(null, "-Erro ao tentar Atualizar o registro de pessoa " + e);
 
         }
+        return false;
+
+    }
+
+    public boolean updateMarcadores(ConfiguracaoLogin conf) {
+
+        System.out.println("chegou marcadores " + conf.getTelLogin() + conf.getSenhaPadrao());
+
+        con_cadastro = new Conexao();
+        this.con_cadastro.conecta();
+
+        try {
+            String sql = "UPDATE cad_conf SET tellogin= '"
+                    + String.valueOf(conf.getTelLogin()) + "',"
+                    + "senpadrao='" + String.valueOf(conf.getSenhaPadrao()) + "'"
+                    + "WHERE id = 1" ;
+            
+            System.out.println(sql);
+
+            con_cadastro.statement.executeUpdate(sql);
+
+            this.con_cadastro.desconecta();
+            return true;
+
+        } catch (SQLException e) {
+
+            JOptionPane.showMessageDialog(null, "-Erro ao tentar Gravar o registro de marcadores " + e);
+
+        }
+
         return false;
 
     }

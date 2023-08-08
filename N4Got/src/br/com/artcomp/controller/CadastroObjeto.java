@@ -5,7 +5,6 @@
 package br.com.artcomp.controller;
 
 import br.com.artcomp.DAO.InsertDAO;
-import br.com.artcomp.DAO.SelectDAO;
 import br.com.artcomp.model.Objetos;
 
 /**

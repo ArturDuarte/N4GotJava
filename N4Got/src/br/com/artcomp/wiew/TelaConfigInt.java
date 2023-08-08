@@ -4,8 +4,12 @@
  */
 package br.com.artcomp.wiew;
 
+import br.com.artcomp.controller.VerificaConfiguracao;
+import br.com.artcomp.model.ConfiguracaoLogin;
+import br.com.artcomp.model.Objetos;
 import br.com.artcomp.switchButton.SwitchListener;
 import java.awt.Color;
+import java.util.ArrayList;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /**
@@ -14,11 +18,24 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
  */
 public class TelaConfigInt extends javax.swing.JInternalFrame {
 
+     VerificaConfiguracao veriConf;
+     ArrayList<ConfiguracaoLogin> marcacoes = null;
+     
     public TelaConfigInt() {
-        initComponents();
+        initComponents();           
 
-        switchButton1.setOn(false);
-        switchButton1.addEventSwitchSelected(new SwitchListener() {
+        this.veriConf  = new VerificaConfiguracao();
+        marcacoes = veriConf.verificaMarcacoes();
+        
+        verificaSwitchs(marcacoes);        
+        
+        switchLogin.addEventSwitchSelected(new SwitchListener() {
+            @Override
+            public void selectChange(boolean on) {
+                System.out.println(on);
+            }
+        });
+        switchSenha.addEventSwitchSelected(new SwitchListener() {
             @Override
             public void selectChange(boolean on) {
                 System.out.println(on);
@@ -38,6 +55,30 @@ public class TelaConfigInt extends javax.swing.JInternalFrame {
 
     }
 
+    public void verificaSwitchs(ArrayList<ConfiguracaoLogin> marcacao){
+        
+         for (ConfiguracaoLogin conf: marcacao) {                        
+             
+             if(conf.getTelLogin() == 0){
+                 System.out.println("resultado login "+ conf.getTelLogin());
+                 switchLogin.setOn(true);
+             }else{
+                 System.out.println("resultado login "+ conf.getTelLogin());
+                 switchLogin.setOn(false);  
+             }
+             
+             if(conf.getSenhaPadrao() == 0){
+                 System.out.println("resultado senha "+ conf.getSenhaPadrao());
+                 switchSenha.setOn(true);                 
+             }else{
+                 System.out.println("resultado senha "+ conf.getSenhaPadrao());
+                 switchSenha.setOn(false);  
+             }
+             
+        }
+            
+    }
+                 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -53,8 +94,8 @@ public class TelaConfigInt extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         kButton2 = new com.k33ptoo.components.KButton();
-        switchButton1 = new br.com.artcomp.switchButton.SwitchButton();
-        switchButton2 = new br.com.artcomp.switchButton.SwitchButton();
+        switchLogin = new br.com.artcomp.switchButton.SwitchButton();
+        switchSenha = new br.com.artcomp.switchButton.SwitchButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
@@ -127,40 +168,40 @@ public class TelaConfigInt extends javax.swing.JInternalFrame {
         });
         kGradientPanel1.add(kButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 450, -1, -1));
 
-        switchButton1.setToolTipText("");
-        switchButton1.setName(""); // NOI18N
-        switchButton1.setRound(999);
-        switchButton1.setSwitchColor(new java.awt.Color(255, 255, 255));
+        switchLogin.setToolTipText("");
+        switchLogin.setName(""); // NOI18N
+        switchLogin.setRound(999);
+        switchLogin.setSwitchColor(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout switchButton1Layout = new javax.swing.GroupLayout(switchButton1);
-        switchButton1.setLayout(switchButton1Layout);
-        switchButton1Layout.setHorizontalGroup(
-            switchButton1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout switchLoginLayout = new javax.swing.GroupLayout(switchLogin);
+        switchLogin.setLayout(switchLoginLayout);
+        switchLoginLayout.setHorizontalGroup(
+            switchLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 40, Short.MAX_VALUE)
         );
-        switchButton1Layout.setVerticalGroup(
-            switchButton1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        switchLoginLayout.setVerticalGroup(
+            switchLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(switchButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 40, 20));
+        kGradientPanel1.add(switchLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 40, 20));
 
-        switchButton2.setRound(999);
-        switchButton2.setSwitchColor(new java.awt.Color(255, 255, 255));
-        switchButton2.setVerifyInputWhenFocusTarget(false);
+        switchSenha.setRound(999);
+        switchSenha.setSwitchColor(new java.awt.Color(255, 255, 255));
+        switchSenha.setVerifyInputWhenFocusTarget(false);
 
-        javax.swing.GroupLayout switchButton2Layout = new javax.swing.GroupLayout(switchButton2);
-        switchButton2.setLayout(switchButton2Layout);
-        switchButton2Layout.setHorizontalGroup(
-            switchButton2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout switchSenhaLayout = new javax.swing.GroupLayout(switchSenha);
+        switchSenha.setLayout(switchSenhaLayout);
+        switchSenhaLayout.setHorizontalGroup(
+            switchSenhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 40, Short.MAX_VALUE)
         );
-        switchButton2Layout.setVerticalGroup(
-            switchButton2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        switchSenhaLayout.setVerticalGroup(
+            switchSenhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(switchButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 40, 20));
+        kGradientPanel1.add(switchSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 40, 20));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -231,7 +272,7 @@ public class TelaConfigInt extends javax.swing.JInternalFrame {
     private com.k33ptoo.components.KButton kButton2;
     private com.k33ptoo.components.KGradientPanel kGradientPanel1;
     public com.k33ptoo.components.KGradientPanel kGradientPanel7;
-    private br.com.artcomp.switchButton.SwitchButton switchButton1;
-    private br.com.artcomp.switchButton.SwitchButton switchButton2;
+    private br.com.artcomp.switchButton.SwitchButton switchLogin;
+    private br.com.artcomp.switchButton.SwitchButton switchSenha;
     // End of variables declaration//GEN-END:variables
 }

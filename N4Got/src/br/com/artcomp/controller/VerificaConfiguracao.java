@@ -5,7 +5,8 @@
 package br.com.artcomp.controller;
 
 import br.com.artcomp.DAO.SelectDAO;
-import java.sql.SQLException;
+import br.com.artcomp.model.ConfiguracaoLogin;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,14 +15,34 @@ import java.sql.SQLException;
 public class VerificaConfiguracao {    
     
     SelectDAO selDAO = new SelectDAO();    
+    ArrayList<ConfiguracaoLogin> marcacoes;
     
-    public boolean verificaEntradaLogin () {        
+    public VerificaConfiguracao () {        
         
-        if (selDAO.readTelLogin()) {
-            return true;
+        this.marcacoes = selDAO.readConfMarcacoes();            
+        
+    }
+    
+    public ArrayList<ConfiguracaoLogin> verificaMarcacoes(){
+        
+        if(marcacoes == null){
+            
+            System.out.println("marcações vazias ----");
+        }
+            return marcacoes;                 
+        
+    }
+    
+    public boolean verificaTelaLogin(){        
+        
+        for (ConfiguracaoLogin co : marcacoes) {
+            
+            if(co.getTelLogin() == 0){
+                return true;
+            }
+            
         }
         return false;
-        
     }
     
 }

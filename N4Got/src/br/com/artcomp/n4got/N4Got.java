@@ -22,7 +22,7 @@ public class N4Got {
         
         VerificaConfiguracao verifica = new VerificaConfiguracao();
 
-        if (verifica.verificaEntradaLogin()) {
+        if (verifica.verificaTelaLogin()) {
             Login login = new Login();
             login.setVisible(true);
         }else{

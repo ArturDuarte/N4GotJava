@@ -56,18 +56,23 @@ public class SelectDAO {
         return lista;
     }
     
-    public boolean readTelLogin () {// verifica a tabela cad_conf
+    public ArrayList<ConfiguracaoLogin> readConfMarcacoes () {// verifica a tabela cad_conf
         
         con_cadastro = new Conexao();
         con_cadastro.conecta();
+        ArrayList<ConfiguracaoLogin> marcacoes = new ArrayList<>();
         
         con_cadastro.executeSQL("select * from cad_conf ");
         
-        ConfiguracaoLogin confLogin = new ConfiguracaoLogin();
+        
         try {
             while (con_cadastro.resultset.next()) {                
-                
-                confLogin.setTelLogin(con_cadastro.resultset.getInt("tellogin"));                
+                ConfiguracaoLogin confLogin = new ConfiguracaoLogin();
+                confLogin.setTelLogin(con_cadastro.resultset.getInt("tellogin"));   
+                confLogin.setSenhaPadrao(con_cadastro.resultset.getInt("senpadrao"));
+                System.out.println("Estou em selct login" + con_cadastro.resultset.getInt("tellogin"));
+                System.out.println("Estou em selct senha" + con_cadastro.resultset.getInt("senpadrao"));
+                marcacoes.add(confLogin);
                 
             }
             } catch (SQLException ex) {
@@ -76,13 +81,7 @@ public class SelectDAO {
             System.err.println("Erro gerallll´´" + ex.getMessage());
         }
                
-        
-        if(confLogin.getTelLogin() == 0){
-            
-            return true;
-        }
-        
-        return false;        
+        return marcacoes;        
         
     }
 }

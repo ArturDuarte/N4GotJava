@@ -223,7 +223,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Container class="br.com.artcomp.switchButton.SwitchButton" name="switchButton1">
+            <Container class="br.com.artcomp.switchButton.SwitchButton" name="switchLogin">
               <Properties>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="name" type="java.lang.String" value="" noResource="true"/>
@@ -251,7 +251,7 @@
                 </DimensionLayout>
               </Layout>
             </Container>
-            <Container class="br.com.artcomp.switchButton.SwitchButton" name="switchButton2">
+            <Container class="br.com.artcomp.switchButton.SwitchButton" name="switchSenha">
               <Properties>
                 <Property name="round" type="int" value="999"/>
                 <Property name="switchColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">

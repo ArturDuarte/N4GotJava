@@ -278,7 +278,12 @@ public class TelaConfigInt extends javax.swing.JInternalFrame {
             senha = 1;
         }
         
-        cadConf.cadastraMarcadores(login, senha);        
+        cadConf.cadastraMarcadores(login, senha);    
+        
+        TelaSalvoComSucesso salvo = new TelaSalvoComSucesso();
+        
+        salvo.setVisible(true);                                              
+               
         
     }//GEN-LAST:event_kButton2ActionPerformed
 
@@ -294,4 +299,6 @@ public class TelaConfigInt extends javax.swing.JInternalFrame {
     private br.com.artcomp.switchButton.SwitchButton switchLogin;
     private br.com.artcomp.switchButton.SwitchButton switchSenha;
     // End of variables declaration//GEN-END:variables
+
+    
 }

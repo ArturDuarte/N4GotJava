@@ -342,7 +342,8 @@ public class TelaCadastroInt extends javax.swing.JInternalFrame {
 
         if (co.cadastroObjeto(JTLogin.getText(), JTSenha.getText(), JTNome.getText(), JTSobNome.getText(), imagem)) {
 
-            JOptionPane.showMessageDialog(null, "Gravação realizada com sucesso ");
+            ColorJOptionPane op = new ColorJOptionPane(Color.red);
+            op.showMessageDialog(null, "Gravação realizada com sucesso ");
             //instancia de uma classe fabrica
             TelaTabela tab = new TelaTabela();
             getParent().add(tab);

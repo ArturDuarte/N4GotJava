@@ -5,31 +5,34 @@
  */
 package br.com.artcomp.wiew;
 
+import br.com.artcomp.DAO.DeleteDAO;
+import br.com.artcomp.model.Fabrica;
+import com.k33ptoo.components.KButton;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.plaf.synth.SynthComboBoxUI;
 
 /**
  *
  * @author Artbook
  */
-public class TelaSalvoComSucesso extends javax.swing.JFrame {
- 
-    /**
-     * Creates new form teste
-     */
-    public TelaSalvoComSucesso() {
-        
-        initComponents();        
-        
+public class TelaDeletar extends javax.swing.JFrame  {
+
+    Integer id;   
+
+    public TelaDeletar(Integer id) {
+        this.id = id;
+        initComponents();
         this.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel7.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
+        System.out.println("NUMERO ----" + this.id);
+    }
+
+    private TelaDeletar() {
        
     }
 
-    
-
-  
-
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,6 +45,7 @@ public class TelaSalvoComSucesso extends javax.swing.JFrame {
         kGradientPanel7 = new com.k33ptoo.components.KGradientPanel();
         kButton3 = new com.k33ptoo.components.KButton();
         jLabel1 = new javax.swing.JLabel();
+        kButton4 = new com.k33ptoo.components.KButton();
 
         setTitle("ALTERAÇÃO REALIZADA COM SUCESSO !");
         setAlwaysOnTop(true);
@@ -53,7 +57,9 @@ public class TelaSalvoComSucesso extends javax.swing.JFrame {
         kGradientPanel7.setkStartColor(new java.awt.Color(233, 93, 0));
         kGradientPanel7.setkTransparentControls(false);
 
-        kButton3.setText("OK");
+        kButton3.setText("Cancelar");
+        kButton3.setToolTipText("");
+        kButton3.setActionCommand("");
         kButton3.setBorderPainted(false);
         kButton3.setFocusPainted(false);
         kButton3.setkBackGroundColor(new java.awt.Color(0, 255, 255));
@@ -75,21 +81,42 @@ public class TelaSalvoComSucesso extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Configurações salvas com sucesso");
+        jLabel1.setText("Deseja mesmo deletar esse registro?");
+
+        kButton4.setText("Deletar");
+        kButton4.setActionCommand("");
+        kButton4.setBorderPainted(false);
+        kButton4.setFocusPainted(false);
+        kButton4.setkBackGroundColor(new java.awt.Color(0, 255, 255));
+        kButton4.setkBorderRadius(20);
+        kButton4.setkEndColor(new java.awt.Color(255, 255, 255));
+        kButton4.setkFillButton(false);
+        kButton4.setkHoverColor(new java.awt.Color(255, 0, 0));
+        kButton4.setkHoverEndColor(new java.awt.Color(255, 102, 0));
+        kButton4.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        kButton4.setkHoverStartColor(new java.awt.Color(255, 255, 255));
+        kButton4.setkIndicatorColor(new java.awt.Color(0, 255, 255));
+        kButton4.setkPressedColor(new java.awt.Color(255, 255, 255));
+        kButton4.setkStartColor(new java.awt.Color(255, 102, 0));
+        kButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout kGradientPanel7Layout = new javax.swing.GroupLayout(kGradientPanel7);
         kGradientPanel7.setLayout(kGradientPanel7Layout);
         kGradientPanel7Layout.setHorizontalGroup(
             kGradientPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel7Layout.createSequentialGroup()
-                .addGroup(kGradientPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(kGradientPanel7Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(jLabel1))
-                    .addGroup(kGradientPanel7Layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(kButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addGap(53, 53, 53)
+                .addGroup(kGradientPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel7Layout.createSequentialGroup()
+                        .addComponent(kButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(kButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         kGradientPanel7Layout.setVerticalGroup(
             kGradientPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,7 +124,9 @@ public class TelaSalvoComSucesso extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(kButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(kGradientPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(kButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(kButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23))
         );
 
@@ -113,40 +142,22 @@ public class TelaSalvoComSucesso extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_kButton3ActionPerformed
 
+    private void kButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton4ActionPerformed
+
+        TelaTabela tt = Fabrica.getInstancia().getTelaTabela();
+        this.dispose();
+        tt.removeLinha(id);
+    }//GEN-LAST:event_kButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaSalvoComSucesso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaSalvoComSucesso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaSalvoComSucesso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaSalvoComSucesso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-       
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new TelaSalvoComSucesso().setVisible(true);
+                new TelaDeletar().setVisible(true);
             }
         });
     }
@@ -155,10 +166,9 @@ public class TelaSalvoComSucesso extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private com.k33ptoo.components.KButton kButton3;
+    private com.k33ptoo.components.KButton kButton4;
     public com.k33ptoo.components.KGradientPanel kGradientPanel7;
     // End of variables declaration//GEN-END:variables
-
-   
 
     
 }

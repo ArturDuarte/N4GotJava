@@ -35,6 +35,7 @@ public class DeleteDAO {
             
             System.out.println("linha apagada");
             
+            this.con_cadastro.desconecta();
             return true;
 
         } catch (SQLException e) {

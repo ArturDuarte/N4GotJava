@@ -34,7 +34,7 @@ public class Principal extends javax.swing.JFrame {
         TelaTabela TabInt = new TelaTabela();
         this.jDesktopPane1.add(TabInt).setVisible(true);
 
-        jBEmitente.setSize(80,80);
+        jBEmitente.setSize(80, 80);
     }
 
     @Override
@@ -42,6 +42,15 @@ public class Principal extends javax.swing.JFrame {
         Image icon = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("br/com/artcomp/imagens/n4got50.png"));
         return icon;
     }      //        
+
+    public void recarregaTabela() {
+
+        TelaTabela tab = new TelaTabela();
+        jDesktopPane1.removeAll();
+        jDesktopPane1.add(tab).setVisible(true);
+        kGradientPanel8.setVisible(true);
+
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

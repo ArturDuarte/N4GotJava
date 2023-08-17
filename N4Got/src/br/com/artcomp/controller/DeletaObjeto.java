@@ -5,12 +5,15 @@
 package br.com.artcomp.controller;
 
 import br.com.artcomp.DAO.DeleteDAO;
+import br.com.artcomp.wiew.TelaDeletar;
+import br.com.artcomp.wiew.TelaTabela;
 
 /**
  *
  * @author artco
  */
 public class DeletaObjeto {
+    
     
     DeleteDAO delete = new DeleteDAO();
     
@@ -20,14 +23,17 @@ public class DeletaObjeto {
     
     public boolean delete (Integer ID){
         
-        if(ID.equals(0)){
-           
-            System.out.println("ID não existe");
-        }else{
+        if(ID.equals(0)){        
             
-            return delete.removeLinha(ID);            
+            System.out.println("ID não existe");
+        }else{            
+            
+           return delete.removeLinha(ID);                          
+                             
         }   
         
         return false;
     }    
+    
+   
 }

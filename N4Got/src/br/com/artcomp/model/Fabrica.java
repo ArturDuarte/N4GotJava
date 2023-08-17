@@ -5,19 +5,13 @@
 package br.com.artcomp.model;
 
 import br.com.artcomp.wiew.Principal;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
+import br.com.artcomp.wiew.TelaTabela;
 
 /**
  *
  * @author artco
  */
 public class Fabrica {
-
-    private Principal principal;
-    private static Fabrica INSTANCIA = new Fabrica();
 
     /**
      * @param principal the Principal to set
@@ -26,11 +20,13 @@ public class Fabrica {
         this.principal = principal;
     }
 
-    private Fabrica() {
-        principal = new Principal();
-
+     /**
+     * @param telaDeletar the Principal to set
+     */
+    public void setTelaTabela(TelaTabela telaTabela) {
+        this.telaTabela = telaTabela;
     }
-
+    
     /**
      * @return the INSTANCIA
      */
@@ -38,21 +34,39 @@ public class Fabrica {
         return INSTANCIA;
     }
 
+    /**
+     * @param aINSTANCIA the INSTANCIA to set     
+     */
+    public static void setINSTANCIA(Fabrica aINSTANCIA) {
+        INSTANCIA = aINSTANCIA;
+    }
+
+    private Principal principal;
+    private TelaTabela telaTabela;
+
+    private static Fabrica INSTANCIA = new Fabrica();
+
+    private Fabrica() {
+        principal = new Principal();
+        telaTabela = new TelaTabela();
+
+    }
+
     public static Fabrica getInstancia() {
         return getINSTANCIA();
     }
 
     /**
-     * @param INSTANCIA the INSTANCIA to set
-     */
-    public static void setINSTANCIA(Fabrica INSTANCIA) {
-        INSTANCIA = INSTANCIA;
-    }
-
-    /**
-     * @return the painelPrincipal
+     * @return the Principal
      */
     public Principal getPrincipal() {
         return principal;
+    }
+    
+    /**
+     * @return the Principal
+     */
+    public TelaTabela getTelaTabela() {
+        return telaTabela;
     }
 }

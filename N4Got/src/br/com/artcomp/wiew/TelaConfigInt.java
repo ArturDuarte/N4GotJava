@@ -18,17 +18,17 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
  */
 public class TelaConfigInt extends javax.swing.JInternalFrame {
 
-     VerificaConfiguracao veriConf;
-     ArrayList<ConfiguracaoLogin> marcacoes = null;
-     
-    public TelaConfigInt() {
-        initComponents();           
+    VerificaConfiguracao veriConf;
+    ArrayList<ConfiguracaoLogin> marcacoes = null;
 
-        this.veriConf  = new VerificaConfiguracao();
+    public TelaConfigInt() {
+        initComponents();
+
+        this.veriConf = new VerificaConfiguracao();
         marcacoes = veriConf.verificaMarcacoes();
-        
-        verificaSwitchs(marcacoes);        
-        
+
+        verificaSwitchs(marcacoes);
+
         switchLogin.addEventSwitchSelected(new SwitchListener() {
             @Override
             public void selectChange(boolean on) {
@@ -41,7 +41,7 @@ public class TelaConfigInt extends javax.swing.JInternalFrame {
                 System.out.println(on);
             }
         });
-        
+
         this.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel1.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel7.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
@@ -55,30 +55,30 @@ public class TelaConfigInt extends javax.swing.JInternalFrame {
 
     }
 
-    public void verificaSwitchs(ArrayList<ConfiguracaoLogin> marcacao){
-        
-         for (ConfiguracaoLogin conf: marcacao) {                        
-             
-             if(conf.getTelLogin() == 0){
-                 System.out.println("resultado login "+ conf.getTelLogin());
-                 switchLogin.setOn(true);
-             }else{
-                 System.out.println("resultado login "+ conf.getTelLogin());
-                 switchLogin.setOn(false);  
-             }
-             
-             if(conf.getSenhaPadrao() == 0){
-                 System.out.println("resultado senha "+ conf.getSenhaPadrao());
-                 switchSenha.setOn(true);                 
-             }else{
-                 System.out.println("resultado senha "+ conf.getSenhaPadrao());
-                 switchSenha.setOn(false);  
-             }
-             
+    public void verificaSwitchs(ArrayList<ConfiguracaoLogin> marcacao) {
+
+        for (ConfiguracaoLogin conf : marcacao) {
+
+            if (conf.getTelLogin() == 0) {
+                System.out.println("resultado login " + conf.getTelLogin());
+                switchLogin.setOn(true);
+            } else {
+                System.out.println("resultado login " + conf.getTelLogin());
+                switchLogin.setOn(false);
+            }
+
+            if (conf.getSenhaPadrao() == 0) {
+                System.out.println("resultado senha " + conf.getSenhaPadrao());
+                switchSenha.setOn(true);
+            } else {
+                System.out.println("resultado senha " + conf.getSenhaPadrao());
+                switchSenha.setOn(false);
+            }
+
         }
-            
+
     }
-                 
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -264,27 +264,27 @@ public class TelaConfigInt extends javax.swing.JInternalFrame {
         CadastroCofiguracoes cadConf = new CadastroCofiguracoes();
         System.out.println(switchLogin.isOn());
         System.out.println(switchSenha.isOn());
-        
-        if(switchLogin.isOn()){
+
+        if (switchLogin.isOn()) {
             login = 0;
-                       
-        }else{
+
+        } else {
             login = 1;
         }
-        
-        if(switchSenha.isOn()){
+
+        if (switchSenha.isOn()) {
             senha = 0;
-        }else{
+        } else {
             senha = 1;
         }
-        
-        cadConf.cadastraMarcadores(login, senha);    
-        
-        TelaSalvoComSucesso salvo = new TelaSalvoComSucesso();
-        
-        salvo.setVisible(true);                                              
-               
-        
+
+        cadConf.cadastraMarcadores(login, senha);
+
+//        TelaSalvoComSucesso salvo = new TelaSalvoComSucesso();        
+//        salvo.setVisible(true);                                              
+        ColorJOptionPane op = new ColorJOptionPane(Color.red);
+        op.showMessageDialog(null, "Configurações salvas com sucesso ");
+
     }//GEN-LAST:event_kButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -300,5 +300,4 @@ public class TelaConfigInt extends javax.swing.JInternalFrame {
     private br.com.artcomp.switchButton.SwitchButton switchSenha;
     // End of variables declaration//GEN-END:variables
 
-    
 }

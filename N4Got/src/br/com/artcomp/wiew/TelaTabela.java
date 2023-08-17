@@ -10,11 +10,24 @@ import br.com.artcomp.cell.TableActionCellRender;
 import br.com.artcomp.cell.TableActionEvent;
 import br.com.artcomp.controller.CarregaTabela;
 import br.com.artcomp.controller.DeletaObjeto;
+import br.com.artcomp.model.Fabrica;
 import br.com.artcomp.model.Objetos;
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
+import java.awt.EventQueue;
+import java.awt.Frame;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /**
@@ -91,11 +104,9 @@ public class TelaTabela extends javax.swing.JInternalFrame {
                         if (table.isEditing()) {
                             table.getCellEditor().stopCellEditing();
                         }
-                                 
-                        TelaTabela ta = new TelaTabela();
-                        removeLinha(lista.get(row).getId());                         
-                        ta.dispose();
-                        ta.setVisible(true);
+
+                        removeLinha(lista.get(row).getId());
+
                     }
 
                     @Override
@@ -121,20 +132,31 @@ public class TelaTabela extends javax.swing.JInternalFrame {
     }
 
     public void removeLinha(Integer ID) {
-       
-        System.out.println("numero da linha"+ ID);
+
+        System.out.println("numero da linha" + ID);
         int id = ID;
         DeletaObjeto Del = new DeletaObjeto();
-        if(Del.delete(id)){
-            JOptionPane.showMessageDialog(null, "Deletodo com sucesso ");
-            
-            TelaTabela tab = new TelaTabela();
-            getParent().add(tab);
-            tab.setVisible(true);            
-            this.dispose();
+        ImageIcon img = new ImageIcon("br/com/artcomp/imagens/n4goticon.ico");
+        //   JOptionPane.showMessageDialog(null, "<html><background = blue font color=blue face=arial><i><b>Deletodo com sucesso ");
+        int answer = new ColorJOptionPane(Color.ORANGE).showConfirmDialog(null, "Confirma a exclusão do registro?", "", 0, 0, img);
+
+        System.out.println(answer);
+        //testePane();
+
+        if (answer == 0) {
+
+            if (Del.delete(id)) {
+                System.out.println("resposta" + answer);
+                TelaTabela tab = Fabrica.getInstancia().getTelaTabela();
+                getParent().add(tab);
+                tab.setVisible(true);
+                this.dispose();
+            } else {
+                ColorJOptionPane.showMessageDialog(null, "Não foi possive remover o registro");
+            }
+
         }
-        
-        
+
     }
 
     public void criatabela() {
@@ -2673,6 +2695,396 @@ public class TelaTabela extends javax.swing.JInternalFrame {
                     table.getColumnModel().getColumn(2).setPreferredWidth(1);
                     //table.getColumnModel().getColumn(3).setPreferredWidth(10);
                     break;
+                case 51:
+                    System.out.println("entrou aqui 51");
+                    table.setModel(new javax.swing.table.DefaultTableModel(
+                            new Object[][]{
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null}
+                            },
+                            new String[]{
+                                "OBJETO", "COMENTARIO", "ICONE"
+                            }
+                    ) {
+                        boolean[] canEdit = new boolean[]{
+                            false, false, true
+                        };
+
+                        @Override
+                        public boolean isCellEditable(int rowIndex, int columnIndex) {
+                            return canEdit[columnIndex];
+                        }
+                    });
+                    table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
+                    break;
+                case 52:
+                    System.out.println("entrou aqui 52");
+                    table.setModel(new javax.swing.table.DefaultTableModel(
+                            new Object[][]{
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null}
+                            },
+                            new String[]{
+                                "OBJETO", "COMENTARIO", "ICONE"
+                            }
+                    ) {
+                        boolean[] canEdit = new boolean[]{
+                            false, false, true
+                        };
+
+                        @Override
+                        public boolean isCellEditable(int rowIndex, int columnIndex) {
+                            return canEdit[columnIndex];
+                        }
+                    });
+                    table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
+                    break;
+                case 53:
+                    System.out.println("entrou aqui 53");
+                    table.setModel(new javax.swing.table.DefaultTableModel(
+                            new Object[][]{
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null}
+                            },
+                            new String[]{
+                                "OBJETO", "COMENTARIO", "ICONE"
+                            }
+                    ) {
+                        boolean[] canEdit = new boolean[]{
+                            false, false, true
+                        };
+
+                        @Override
+                        public boolean isCellEditable(int rowIndex, int columnIndex) {
+                            return canEdit[columnIndex];
+                        }
+                    });
+                    table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
+                    break;
+                case 54:
+                    System.out.println("entrou aqui 54");
+                    table.setModel(new javax.swing.table.DefaultTableModel(
+                            new Object[][]{
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null}
+                            },
+                            new String[]{
+                                "OBJETO", "COMENTARIO", "ICONE"
+                            }
+                    ) {
+                        boolean[] canEdit = new boolean[]{
+                            false, false, true
+                        };
+
+                        @Override
+                        public boolean isCellEditable(int rowIndex, int columnIndex) {
+                            return canEdit[columnIndex];
+                        }
+                    });
+                    table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
+                    break;
+                case 55:
+                    System.out.println("entrou aqui 55");
+                    table.setModel(new javax.swing.table.DefaultTableModel(
+                            new Object[][]{
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null},
+                                {null, null, null}
+                            },
+                            new String[]{
+                                "OBJETO", "COMENTARIO", "ICONE"
+                            }
+                    ) {
+                        boolean[] canEdit = new boolean[]{
+                            false, false, true
+                        };
+
+                        @Override
+                        public boolean isCellEditable(int rowIndex, int columnIndex) {
+                            return canEdit[columnIndex];
+                        }
+                    });
+                    table.getColumnModel().getColumn(0).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(1).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    //table.getColumnModel().getColumn(3).setHeaderRenderer(new PintarCabecalho(new java.awt.Font("Tahoma", 1, 12), true, new Color(170, 68, 0), Color.WHITE));
+                    table.getColumnModel().getColumn(2).setPreferredWidth(1);
+                    //table.getColumnModel().getColumn(3).setPreferredWidth(10);
+                    break;
                 default:
 
             }
@@ -2772,4 +3184,43 @@ public class TelaTabela extends javax.swing.JInternalFrame {
     public br.com.artcomp.scroll.ScrollPaneWin11 scrollPaneWin112;
     public javax.swing.JTable table;
     // End of variables declaration//GEN-END:variables
+
+    private void testePane() {
+
+        EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+                }
+
+                final JDialog dialog = new JDialog((Frame) null, "Boo");
+
+                JOptionPane op = new JOptionPane("Look ma, no hands", JOptionPane.INFORMATION_MESSAGE, JOptionPane.OK_CANCEL_OPTION);
+                op.addPropertyChangeListener(new PropertyChangeListener() {
+                    @Override
+                    public void propertyChange(PropertyChangeEvent evt) {
+                        String name = evt.getPropertyName();
+                        System.out.println("O nome é "+ name);
+                        if ("value".equals(name)) {
+
+                            dialog.dispose();
+
+                        }
+                    }
+
+                });
+                                 
+                dialog.setUndecorated(true);
+                dialog.setLayout(new BorderLayout());
+                dialog.setBackground(Color.yellow);
+                dialog.add(op);
+                dialog.pack();
+                dialog.setLocationRelativeTo(null);
+                dialog.setVisible(true);
+            }
+        });
+    }
 }
+

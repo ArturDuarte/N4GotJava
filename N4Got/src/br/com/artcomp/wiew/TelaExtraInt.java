@@ -20,6 +20,7 @@ public class TelaExtraInt extends javax.swing.JInternalFrame {
         this.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel1.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));         
         this.kGradientPanel7.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
+        this.kGradientPanel2.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
 
         this.setSize(760, 595);
         this.setLocation(0, 0);
@@ -43,6 +44,9 @@ public class TelaExtraInt extends javax.swing.JInternalFrame {
         kGradientPanel7 = new com.k33ptoo.components.KGradientPanel();
         kGradientPanel1 = new com.k33ptoo.components.KGradientPanel();
         jBFechar1 = new javax.swing.JButton();
+        kGradientPanel2 = new com.k33ptoo.components.KGradientPanel();
+        kButton3 = new com.k33ptoo.components.KButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 102, 0));
         setBorder(null);
@@ -79,6 +83,38 @@ public class TelaExtraInt extends javax.swing.JInternalFrame {
             }
         });
         kGradientPanel1.add(jBFechar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 30, 30));
+
+        kGradientPanel2.setkEndColor(new java.awt.Color(255, 153, 51));
+        kGradientPanel2.setkStartColor(new java.awt.Color(255, 102, 0));
+        kGradientPanel2.setLayout(null);
+
+        kButton3.setText("BACKUP");
+        kButton3.setBorderPainted(false);
+        kButton3.setFocusPainted(false);
+        kButton3.setkBackGroundColor(new java.awt.Color(0, 255, 255));
+        kButton3.setkBorderRadius(20);
+        kButton3.setkEndColor(new java.awt.Color(255, 255, 255));
+        kButton3.setkFillButton(false);
+        kButton3.setkHoverColor(new java.awt.Color(255, 0, 0));
+        kButton3.setkHoverEndColor(new java.awt.Color(255, 102, 0));
+        kButton3.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        kButton3.setkHoverStartColor(new java.awt.Color(255, 255, 255));
+        kButton3.setkIndicatorColor(new java.awt.Color(0, 255, 255));
+        kButton3.setkPressedColor(new java.awt.Color(255, 255, 255));
+        kButton3.setkStartColor(new java.awt.Color(255, 102, 0));
+        kButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton3ActionPerformed(evt);
+            }
+        });
+        kGradientPanel2.add(kButton3);
+        kButton3.setBounds(30, 150, 100, 45);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/Base.png"))); // NOI18N
+        kGradientPanel2.add(jLabel1);
+        jLabel1.setBounds(30, 10, 100, 126);
+
+        kGradientPanel1.add(kGradientPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 160, 220));
 
         javax.swing.GroupLayout kGradientPanel7Layout = new javax.swing.GroupLayout(kGradientPanel7);
         kGradientPanel7.setLayout(kGradientPanel7Layout);
@@ -123,10 +159,20 @@ public class TelaExtraInt extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_jBFechar1ActionPerformed
 
+    private void kButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton3ActionPerformed
+
+        this.dispose();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kButton3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBFechar1;
+    private javax.swing.JLabel jLabel1;
+    private com.k33ptoo.components.KButton kButton3;
     private com.k33ptoo.components.KGradientPanel kGradientPanel1;
+    private com.k33ptoo.components.KGradientPanel kGradientPanel2;
     public com.k33ptoo.components.KGradientPanel kGradientPanel7;
     // End of variables declaration//GEN-END:variables
 }

@@ -3,7 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package br.com.artcomp.wiew;
+import br.com.artcomp.utilitarios.BackupPostgresql;
 import java.awt.Color;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /**
@@ -21,6 +24,7 @@ public class TelaExtraInt extends javax.swing.JInternalFrame {
         this.kGradientPanel1.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));         
         this.kGradientPanel7.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.kGradientPanel2.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
+        this.kGradientPanel3.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
 
         this.setSize(760, 595);
         this.setLocation(0, 0);
@@ -47,6 +51,11 @@ public class TelaExtraInt extends javax.swing.JInternalFrame {
         kGradientPanel2 = new com.k33ptoo.components.KGradientPanel();
         kButton3 = new com.k33ptoo.components.KButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        kGradientPanel3 = new com.k33ptoo.components.KGradientPanel();
+        kButton4 = new com.k33ptoo.components.KButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 102, 0));
         setBorder(null);
@@ -88,7 +97,7 @@ public class TelaExtraInt extends javax.swing.JInternalFrame {
         kGradientPanel2.setkStartColor(new java.awt.Color(255, 102, 0));
         kGradientPanel2.setLayout(null);
 
-        kButton3.setText("BACKUP");
+        kButton3.setText("Senha");
         kButton3.setBorderPainted(false);
         kButton3.setFocusPainted(false);
         kButton3.setkBackGroundColor(new java.awt.Color(0, 255, 255));
@@ -108,13 +117,59 @@ public class TelaExtraInt extends javax.swing.JInternalFrame {
             }
         });
         kGradientPanel2.add(kButton3);
-        kButton3.setBounds(30, 150, 100, 45);
+        kButton3.setBounds(30, 140, 100, 45);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/Base.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/CHAVE.png"))); // NOI18N
         kGradientPanel2.add(jLabel1);
         jLabel1.setBounds(30, 10, 100, 126);
 
-        kGradientPanel1.add(kGradientPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 160, 220));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("GERAR SENHA ALEATÓRIA");
+        kGradientPanel2.add(jLabel4);
+        jLabel4.setBounds(0, 200, 160, 16);
+
+        kGradientPanel1.add(kGradientPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 160, 220));
+
+        kGradientPanel3.setkEndColor(new java.awt.Color(255, 153, 51));
+        kGradientPanel3.setkStartColor(new java.awt.Color(255, 102, 0));
+        kGradientPanel3.setLayout(null);
+
+        kButton4.setText("Backup");
+        kButton4.setBorderPainted(false);
+        kButton4.setFocusPainted(false);
+        kButton4.setkBackGroundColor(new java.awt.Color(0, 255, 255));
+        kButton4.setkBorderRadius(20);
+        kButton4.setkEndColor(new java.awt.Color(255, 255, 255));
+        kButton4.setkFillButton(false);
+        kButton4.setkHoverColor(new java.awt.Color(255, 0, 0));
+        kButton4.setkHoverEndColor(new java.awt.Color(255, 102, 0));
+        kButton4.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        kButton4.setkHoverStartColor(new java.awt.Color(255, 255, 255));
+        kButton4.setkIndicatorColor(new java.awt.Color(0, 255, 255));
+        kButton4.setkPressedColor(new java.awt.Color(255, 255, 255));
+        kButton4.setkStartColor(new java.awt.Color(255, 102, 0));
+        kButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton4ActionPerformed(evt);
+            }
+        });
+        kGradientPanel3.add(kButton4);
+        kButton4.setBounds(30, 140, 100, 45);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/Base.png"))); // NOI18N
+        kGradientPanel3.add(jLabel2);
+        jLabel2.setBounds(30, 10, 100, 126);
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("GERAR BACKUP DA BASE");
+        kGradientPanel3.add(jLabel3);
+        jLabel3.setBounds(0, 200, 160, 16);
+
+        kGradientPanel1.add(kGradientPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 160, 220));
 
         javax.swing.GroupLayout kGradientPanel7Layout = new javax.swing.GroupLayout(kGradientPanel7);
         kGradientPanel7.setLayout(kGradientPanel7Layout);
@@ -166,13 +221,28 @@ public class TelaExtraInt extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_kButton3ActionPerformed
 
+    private void kButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton4ActionPerformed
+       
+        BackupPostgresql bc = new BackupPostgresql();
+        try {
+            bc.realizaBackup();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(TelaExtraInt.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_kButton4ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBFechar1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private com.k33ptoo.components.KButton kButton3;
+    private com.k33ptoo.components.KButton kButton4;
     private com.k33ptoo.components.KGradientPanel kGradientPanel1;
     private com.k33ptoo.components.KGradientPanel kGradientPanel2;
+    private com.k33ptoo.components.KGradientPanel kGradientPanel3;
     public com.k33ptoo.components.KGradientPanel kGradientPanel7;
     // End of variables declaration//GEN-END:variables
 }

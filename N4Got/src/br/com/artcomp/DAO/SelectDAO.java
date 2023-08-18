@@ -9,8 +9,6 @@ import br.com.artcomp.model.Objetos;
 import br.com.artcomp.utilitarios.Conexao;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -55,6 +53,16 @@ public class SelectDAO {
 
         return lista;
     }
+    
+    public ArrayList<Objetos> readPesquisaObjeto() throws SQLException {
+        
+        
+       // select * from cad_obj where nome like '%GMA%' order by nome 
+        
+        
+        return null;
+        
+    }    
     
     public ArrayList<ConfiguracaoLogin> readConfMarcacoes () {// verifica a tabela cad_conf
         

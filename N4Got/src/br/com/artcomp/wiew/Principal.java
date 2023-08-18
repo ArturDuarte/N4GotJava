@@ -1,5 +1,6 @@
 package br.com.artcomp.wiew;
 
+import br.com.artcomp.controller.PesquisaObjeto;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
@@ -285,8 +286,8 @@ public class Principal extends javax.swing.JFrame {
         kGradientPanel8Layout.setHorizontalGroup(
             kGradientPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel8Layout.createSequentialGroup()
-                .addGap(0, 22, Short.MAX_VALUE)
-                .addComponent(Pesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(Pesquisa, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btolhar2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -393,6 +394,22 @@ public class Principal extends javax.swing.JFrame {
 
     private void btolhar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btolhar2ActionPerformed
 
+        if(!Pesquisa.getText().isEmpty()){
+            System.out.println("temmmmmm");
+            
+            PesquisaObjeto po = new PesquisaObjeto();                    
+            if(po.verificaObjeto(Pesquisa.getText())){
+                
+                
+            }
+            
+            
+            
+            
+        }else{
+            System.out.println("valor não digitado");
+        }
+        
     }//GEN-LAST:event_btolhar2ActionPerformed
 
     private void kButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton6ActionPerformed
@@ -414,7 +431,11 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jBEmitenteActionPerformed
 
     private void btolhar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btolhar3ActionPerformed
-        // TODO add your handling code here:
+       
+        TelaUsuario usu = new TelaUsuario();
+        jDesktopPane1.removeAll();
+        jDesktopPane1.add(usu).setVisible(true);
+
     }//GEN-LAST:event_btolhar3ActionPerformed
 
     /**

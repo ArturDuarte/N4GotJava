@@ -98,6 +98,8 @@ public class TelaConfigInt extends javax.swing.JInternalFrame {
         switchSenha = new br.com.artcomp.switchButton.SwitchButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        switchLogin1 = new br.com.artcomp.switchButton.SwitchButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 102, 0));
         setBorder(null);
@@ -138,7 +140,7 @@ public class TelaConfigInt extends javax.swing.JInternalFrame {
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Configurações de entrada _________________________________________________________________________________________________");
+        jLabel1.setText("Configurações gerais _____________________________________________________________________________________________________");
         kGradientPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -206,13 +208,37 @@ public class TelaConfigInt extends javax.swing.JInternalFrame {
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Tela de Login ao iniciar.");
-        kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 160, 20));
+        jLabel3.setText("Permitir cadastro com o mesmo nome.");
+        kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 280, 20));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Usar senha padrão.");
         kGradientPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 170, 20));
+
+        switchLogin1.setToolTipText("");
+        switchLogin1.setName(""); // NOI18N
+        switchLogin1.setRound(999);
+        switchLogin1.setSwitchColor(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout switchLogin1Layout = new javax.swing.GroupLayout(switchLogin1);
+        switchLogin1.setLayout(switchLogin1Layout);
+        switchLogin1Layout.setHorizontalGroup(
+            switchLogin1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+        switchLogin1Layout.setVerticalGroup(
+            switchLogin1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        kGradientPanel1.add(switchLogin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 40, 20));
+
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Tela de Login ao iniciar.");
+        kGradientPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 160, 20));
 
         javax.swing.GroupLayout kGradientPanel7Layout = new javax.swing.GroupLayout(kGradientPanel7);
         kGradientPanel7.setLayout(kGradientPanel7Layout);
@@ -293,10 +319,12 @@ public class TelaConfigInt extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private com.k33ptoo.components.KButton kButton2;
     private com.k33ptoo.components.KGradientPanel kGradientPanel1;
     public com.k33ptoo.components.KGradientPanel kGradientPanel7;
     private br.com.artcomp.switchButton.SwitchButton switchLogin;
+    private br.com.artcomp.switchButton.SwitchButton switchLogin1;
     private br.com.artcomp.switchButton.SwitchButton switchSenha;
     // End of variables declaration//GEN-END:variables
 

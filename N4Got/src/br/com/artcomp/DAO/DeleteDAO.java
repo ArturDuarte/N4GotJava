@@ -5,6 +5,7 @@
 package br.com.artcomp.DAO;
 
 import br.com.artcomp.utilitarios.Conexao;
+import br.com.artcomp.utilitarios.ConexaoFirebird;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
@@ -14,7 +15,7 @@ import javax.swing.JOptionPane;
  */
 public class DeleteDAO {
     
-     Conexao con_cadastro;
+     ConexaoFirebird con_cadastro;
     
     public DeleteDAO (){        
     
@@ -22,12 +23,12 @@ public class DeleteDAO {
     
     public boolean removeLinha(Integer ID){
         
-         con_cadastro = new Conexao();
+         con_cadastro = new ConexaoFirebird();
         this.con_cadastro.conecta();
         
         try {
             
-            String sql = "DELETE FROM cad_obj WHERE id ="+ ID +";";                   
+            String sql = "DELETE FROM TB_OBJETO WHERE id ="+ ID +";";                   
 
             System.out.println(sql);
 

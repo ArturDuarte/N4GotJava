@@ -4,9 +4,9 @@
  */
 package br.com.artcomp.DAO;
 
-import br.com.artcomp.model.ConfiguracaoLogin;
 import br.com.artcomp.model.Objetos;
 import br.com.artcomp.utilitarios.Conexao;
+import br.com.artcomp.utilitarios.ConexaoFirebird;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  */
 public class InsertDAO {
 
-    Conexao con_cadastro;
+    ConexaoFirebird con_cadastro;
 
     public InsertDAO() {
 
@@ -26,12 +26,12 @@ public class InsertDAO {
 
         System.out.println("chegou gravardados" + ob.getNome() + ob.getLogin() + ob.getSenha() + ob.getPalavraChave() + ob.getImagem());
 
-        con_cadastro = new Conexao();
+        con_cadastro = new ConexaoFirebird();
         this.con_cadastro.conecta();
 
         try {
             //String sql = "insert into cad_obj (nome,login,senha,palavrachave,imagem) values ('artur','wqwqw','1234','eu','we')";
-            String sql = "insert into cad_obj (nome,login,senha,palavrachave,imagem) values ('"
+            String sql = "insert into TB_OBJETO (nome,login,senha,palavrachave,imagem) values ('"
                     + String.valueOf(ob.getNome()) + "','"
                     + String.valueOf(ob.getLogin()) + "','"
                     + String.valueOf(ob.getSenha()) + "','"

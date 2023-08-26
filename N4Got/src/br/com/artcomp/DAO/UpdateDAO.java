@@ -7,6 +7,7 @@ package br.com.artcomp.DAO;
 import br.com.artcomp.model.ConfiguracaoLogin;
 import br.com.artcomp.model.Objetos;
 import br.com.artcomp.utilitarios.Conexao;
+import br.com.artcomp.utilitarios.ConexaoFirebird;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
@@ -16,7 +17,7 @@ import javax.swing.JOptionPane;
  */
 public class UpdateDAO {
 
-    Conexao con_cadastro;
+    ConexaoFirebird con_cadastro;
 
     public UpdateDAO() {
 
@@ -26,7 +27,7 @@ public class UpdateDAO {
 
         System.out.println("chegou update" + ob.getId() + ob.getNome() + ob.getLogin() + ob.getSenha() + ob.getPalavraChave() + ob.getImagem());
 
-        con_cadastro = new Conexao();
+        con_cadastro = new ConexaoFirebird();
         this.con_cadastro.conecta();
 
         try {
@@ -58,11 +59,11 @@ public class UpdateDAO {
 
         System.out.println("chegou marcadores " + conf.getTelLogin() + conf.getSenhaPadrao());
 
-        con_cadastro = new Conexao();
+        con_cadastro = new ConexaoFirebird();
         this.con_cadastro.conecta();
 
         try {
-            String sql = "UPDATE cad_conf SET tellogin= '"
+            String sql = "UPDATE TB_CONFIGURACAO SET tellogin= '"
                     + String.valueOf(conf.getTelLogin()) + "',"
                     + "senpadrao='" + String.valueOf(conf.getSenhaPadrao()) + "'"
                     + "WHERE id = 1" ;

@@ -5,6 +5,7 @@
 package br.com.artcomp.DAO;
 
 import br.com.artcomp.utilitarios.Conexao;
+import br.com.artcomp.utilitarios.ConexaoFirebird;
 import java.sql.SQLException;
 
 /**
@@ -13,26 +14,26 @@ import java.sql.SQLException;
  */
 public class VerificaSenhaDAO {
 
-    Conexao con_cadastro;
+    ConexaoFirebird con_cadastro;
 
     public boolean VerificaSenhaDAO(String SENHA) {
 
-        con_cadastro = new Conexao();
+        con_cadastro = new ConexaoFirebird();
         this.con_cadastro.conecta();
-        this.con_cadastro.executeSQL("select * from login");
+        this.con_cadastro.executeSQL("select * from TB_LOGIN");
         
          try {
             while (true) {
-                Conexao co = this.con_cadastro;
+                ConexaoFirebird co = this.con_cadastro;
 
-                if (!Conexao.resultset.next()) {
+                if (!ConexaoFirebird.resultset.next()) {
                     break;
                 }
 
 //                co = this.con_cadastro;
 //                String id = Conexao.resultset.getString("id");
                 co = this.con_cadastro;
-                String senha = Conexao.resultset.getString("senha");
+                String senha = ConexaoFirebird.resultset.getString("senha");
 
                 if (senha.equalsIgnoreCase(new String(SENHA))) {
 

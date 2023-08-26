@@ -7,6 +7,7 @@ package br.com.artcomp.DAO;
 import br.com.artcomp.model.ConfiguracaoLogin;
 import br.com.artcomp.model.Objetos;
 import br.com.artcomp.utilitarios.Conexao;
+import br.com.artcomp.utilitarios.ConexaoFirebird;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -16,7 +17,7 @@ import java.util.ArrayList;
  */
 public class SelectDAO {
 
-    Conexao con_cadastro;
+    ConexaoFirebird con_cadastro;
 
     public SelectDAO() {
 
@@ -24,11 +25,11 @@ public class SelectDAO {
 
     public ArrayList<Objetos> readAll() throws SQLException {
         
-        con_cadastro = new Conexao();
+        con_cadastro = new ConexaoFirebird();
         con_cadastro.conecta();
         ArrayList<Objetos> lista = new ArrayList<>();
 
-        con_cadastro.executeSQL("select * from cad_obj  order by nome");
+        con_cadastro.executeSQL("select * from TB_OBJETO  order by nome");
 
         try {
             while (con_cadastro.resultset.next()) {
@@ -66,11 +67,11 @@ public class SelectDAO {
     
     public ArrayList<ConfiguracaoLogin> readConfMarcacoes () {// verifica a tabela cad_conf
         
-        con_cadastro = new Conexao();
+        con_cadastro = new ConexaoFirebird();
         con_cadastro.conecta();
         ArrayList<ConfiguracaoLogin> marcacoes = new ArrayList<>();
         
-        con_cadastro.executeSQL("select * from cad_conf ");
+        con_cadastro.executeSQL("select * from TB_CONFIGURACAO ");
         
         
         try {

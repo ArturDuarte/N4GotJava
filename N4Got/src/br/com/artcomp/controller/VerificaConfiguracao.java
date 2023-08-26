@@ -27,7 +27,7 @@ public class VerificaConfiguracao {
         
         if(marcacoes == null){
             
-            System.out.println("marcações vazias ----");
+            System.out.println("marcacoes vazias ----");
         }
             return marcacoes;                 
         

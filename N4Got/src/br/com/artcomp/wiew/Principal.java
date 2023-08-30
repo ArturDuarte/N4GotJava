@@ -1,6 +1,7 @@
 package br.com.artcomp.wiew;
 
 import br.com.artcomp.controller.PesquisaObjeto;
+import br.com.artcomp.controller.VerificaLogin;
 import br.com.artcomp.model.Objetos;
 import br.com.artcomp.model.UpperCaseDocument;
 import java.awt.Color;
@@ -262,6 +263,11 @@ public class Principal extends javax.swing.JFrame {
         Pesquisa.setCaretColor(new java.awt.Color(255, 255, 255));
         Pesquisa.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         Pesquisa.setSelectionColor(new java.awt.Color(9, 73, 110));
+        Pesquisa.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                pesquisaPrecionada(evt);
+            }
+        });
 
         btolhar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/lupa25.png"))); // NOI18N
         btolhar2.addActionListener(new java.awt.event.ActionListener() {
@@ -342,7 +348,7 @@ public class Principal extends javax.swing.JFrame {
 
         this.setState(this.ICONIFIED);
     }//GEN-LAST:event_jBMinimisarActionPerformed
-
+    
     private void kButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton3ActionPerformed
 
         TelaCadastroInt cad = new TelaCadastroInt();
@@ -426,6 +432,44 @@ public class Principal extends javax.swing.JFrame {
         jDesktopPane1.add(usu).setVisible(true);
 
     }//GEN-LAST:event_btolhar3ActionPerformed
+
+    private void pesquisaPrecionada(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pesquisaPrecionada
+       
+        if (evt.getKeyCode() == evt.VK_ENTER) {
+
+            if (!Pesquisa.getText().isEmpty()) {
+                System.out.println("temmmmmm");
+                String obj = Pesquisa.getText().toUpperCase();
+
+                PesquisaObjeto pobj = new PesquisaObjeto();
+                ArrayList<Objetos> lista = pobj.verificaObjeto(obj);
+                System.out.println("lista tem " + lista);
+
+                if (lista == null || lista.size() == 0) {
+                    System.out.println("corinthians");
+                    ColorJOptionPane op = new ColorJOptionPane(Color.red);
+                    op.showMessageDialog(null, "Nenhum registro encontrado!!!!");
+                    Pesquisa.setText("");
+                    TelaTabela tab = new TelaTabela();
+                    jDesktopPane1.removeAll();
+                    jDesktopPane1.add(tab).setVisible(true);
+                    kGradientPanel8.setVisible(true);
+                } else {
+                    TelaTabelaPesquisaObjeto tbpesq = new TelaTabelaPesquisaObjeto(obj);
+                    jDesktopPane1.removeAll();
+                    jDesktopPane1.add(tbpesq).setVisible(true);
+                    kGradientPanel8.setVisible(true);
+                }
+
+            } else {
+                System.out.println("valor não digitado");
+                TelaTabela tab = new TelaTabela();
+                jDesktopPane1.removeAll();
+                jDesktopPane1.add(tab).setVisible(true);
+                kGradientPanel8.setVisible(true);
+            }
+        }
+    }//GEN-LAST:event_pesquisaPrecionada
 
     /**
      * @param args the command line arguments

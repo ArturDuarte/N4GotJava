@@ -340,7 +340,7 @@ public class TelaCadastroInt extends javax.swing.JInternalFrame {
 
         CadastroObjeto co = new CadastroObjeto();
 
-        if (co.cadastroObjeto(JTLogin.getText(), JTSenha.getText(), JTNome.getText(), JTSobNome.getText(), imagem)) {
+        if (co.cadastroObjeto(JTLogin.getText(), JTSenha.getText(), JTNome.getText().toUpperCase(), JTSobNome.getText().toUpperCase(), imagem)) {
 
             ColorJOptionPane op = new ColorJOptionPane(Color.red);
             op.showMessageDialog(null, "Gravação realizada com sucesso ");
@@ -352,7 +352,7 @@ public class TelaCadastroInt extends javax.swing.JInternalFrame {
             this.dispose();
 
         } else {
-            JOptionPane.showMessageDialog(null, "Erro de Gravação ");
+            ColorJOptionPane.showMessageDialog(null, "Erro de Gravação ");
         }
 
         // TODO add your handling code here:

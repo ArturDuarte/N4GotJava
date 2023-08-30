@@ -309,7 +309,7 @@ public class TelaConfigInt extends javax.swing.JInternalFrame {
 //        TelaSalvoComSucesso salvo = new TelaSalvoComSucesso();        
 //        salvo.setVisible(true);                                              
         ColorJOptionPane op = new ColorJOptionPane(Color.red);
-        op.showMessageDialog(null, "Configurações salvas com sucesso ");
+        op.showMessageDialog(null, "ConfiguraÃ§Ãµes salvas com sucesso ");
 
     }//GEN-LAST:event_kButton2ActionPerformed
 

@@ -6,12 +6,17 @@ package br.com.artcomp.model;
 
 import br.com.artcomp.wiew.Principal;
 import br.com.artcomp.wiew.TelaTabela;
+import br.com.artcomp.wiew.TelaTabelaPesquisaObjeto;
 
 /**
  *
  * @author artco
  */
 public class Fabrica {
+
+    private Principal principal;
+    private TelaTabela telaTabela;
+    private TelaTabelaPesquisaObjeto telaTabelaPesquisaObjeto;
 
     /**
      * @param principal the Principal to set
@@ -20,13 +25,20 @@ public class Fabrica {
         this.principal = principal;
     }
 
-     /**
-     * @param telaDeletar the Principal to set
+    /**
+     * @param telaTabela the Principal to set
      */
     public void setTelaTabela(TelaTabela telaTabela) {
         this.telaTabela = telaTabela;
     }
-    
+
+    /**
+     * @param telaTabelaPesqObj the Principal to set
+     */
+    public void setTelaTabela(TelaTabelaPesquisaObjeto telaTabelaPesqObj) {
+        this.telaTabelaPesquisaObjeto = telaTabelaPesqObj;
+    }
+
     /**
      * @return the INSTANCIA
      */
@@ -35,21 +47,19 @@ public class Fabrica {
     }
 
     /**
-     * @param aINSTANCIA the INSTANCIA to set     
+     * @param instancia  the INSTANCIA to set
      */
-    public static void setINSTANCIA(Fabrica aINSTANCIA) {
-        INSTANCIA = aINSTANCIA;
+    public static void setINSTANCIA(Fabrica instancia) {
+        INSTANCIA = instancia;
     }
-
-    private Principal principal;
-    private TelaTabela telaTabela;
 
     private static Fabrica INSTANCIA = new Fabrica();
 
     private Fabrica() {
         principal = new Principal();
         telaTabela = new TelaTabela();
-
+        String obj = null;
+        telaTabelaPesquisaObjeto = new TelaTabelaPesquisaObjeto(obj);
     }
 
     public static Fabrica getInstancia() {
@@ -62,11 +72,18 @@ public class Fabrica {
     public Principal getPrincipal() {
         return principal;
     }
-    
+
     /**
      * @return the Principal
      */
     public TelaTabela getTelaTabela() {
         return telaTabela;
+    }
+
+    /**
+     * @return the Principal
+     */
+    public TelaTabelaPesquisaObjeto getTelaTabelaPesquisaObjeto() {
+        return telaTabelaPesquisaObjeto;
     }
 }

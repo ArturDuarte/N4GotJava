@@ -19,7 +19,7 @@ public class VerificaLoginDAO {
 
     }
     
-    // verifica se o nome e senha estão corretos 
+    // verifica se o nome e senha estao corretos 
     //retornando true para correto 
     public boolean VerificaLoginBD(PessoaLogin pess) {
 

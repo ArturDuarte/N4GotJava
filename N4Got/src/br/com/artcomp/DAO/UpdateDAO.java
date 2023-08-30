@@ -32,7 +32,7 @@ public class UpdateDAO {
 
         try {
 
-            String sql = "UPDATE cad_obj SET nome= '" + String.valueOf(ob.getNome()) + "',"
+            String sql = "UPDATE TB_OBJETO SET nome= '" + String.valueOf(ob.getNome()) + "',"
                     + "login='" + String.valueOf(ob.getLogin()) + "',"
                     + "senha='" + String.valueOf(ob.getSenha()) + "',"
                     + "palavrachave='" + String.valueOf(ob.getPalavraChave()) + "',"

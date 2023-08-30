@@ -10,6 +10,7 @@ import br.com.artcomp.cell.TableActionCellRender;
 import br.com.artcomp.cell.TableActionEvent;
 import br.com.artcomp.controller.CarregaTabela;
 import br.com.artcomp.controller.DeletaObjeto;
+import br.com.artcomp.controller.PesquisaObjeto;
 import br.com.artcomp.model.Fabrica;
 import br.com.artcomp.model.Objetos;
 import java.awt.BorderLayout;
@@ -32,16 +33,16 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
  *
  * @author artco
  */
-public class TelaTabela extends javax.swing.JInternalFrame {
+public class TelaTabelaPesquisaObjeto extends javax.swing.JInternalFrame {
 
-    CarregaTabela CaTab;
+    PesquisaObjeto PesqTab;
     ArrayList<Objetos> lista = null;
 
-    public TelaTabela() {
+    public TelaTabelaPesquisaObjeto(String obj) {
         initComponents();
 
-        this.CaTab = new CarregaTabela();
-        lista = CaTab.VerificaLista();
+        this.PesqTab = new PesquisaObjeto();
+        lista = PesqTab.verificaObjeto(obj);
 
         this.kGradientPanel7.setBackground(new Color(0.0F, 0.0F, 0.0F, 0.0F));
         this.scrollPaneWin112.setBorder(BorderFactory.createLineBorder(new Color(255, 102, 51), 1));
@@ -66,8 +67,9 @@ public class TelaTabela extends javax.swing.JInternalFrame {
 
         var linha = 0;
 
-        if (lista == null) {
-            System.out.println("ultima verificação");
+        if (lista == null || lista.size() == 0) {
+            System.out.println("ultima verificação");            
+            
         } else {
             for (Objetos o : lista) {
 
@@ -145,9 +147,9 @@ public class TelaTabela extends javax.swing.JInternalFrame {
 
             if (Del.delete(id)) {
                 System.out.println("resposta" + answer);
-                TelaTabela tab = Fabrica.getInstancia().getTelaTabela();
-                getParent().add(tab);
-                tab.setVisible(true);
+                TelaTabelaPesquisaObjeto PesqTab = Fabrica.getInstancia().getTelaTabelaPesquisaObjeto();
+                getParent().add(PesqTab);
+                PesqTab.setVisible(true);
                 this.dispose();
             } else {
                 ColorJOptionPane.showMessageDialog(null, "Não foi possive remover o registro");
@@ -3200,7 +3202,7 @@ public class TelaTabela extends javax.swing.JInternalFrame {
                     @Override
                     public void propertyChange(PropertyChangeEvent evt) {
                         String name = evt.getPropertyName();
-                        System.out.println("O nome é "+ name);
+                        System.out.println("O nome é " + name);
                         if ("value".equals(name)) {
 
                             dialog.dispose();
@@ -3209,7 +3211,7 @@ public class TelaTabela extends javax.swing.JInternalFrame {
                     }
 
                 });
-                                 
+
                 dialog.setUndecorated(true);
                 dialog.setLayout(new BorderLayout());
                 dialog.setBackground(Color.yellow);
@@ -3221,4 +3223,3 @@ public class TelaTabela extends javax.swing.JInternalFrame {
         });
     }
 }
-

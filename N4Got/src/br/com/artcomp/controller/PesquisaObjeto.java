@@ -4,15 +4,33 @@
  */
 package br.com.artcomp.controller;
 
+import br.com.artcomp.DAO.SelectDAO;
+import br.com.artcomp.model.Objetos;
+import br.com.artcomp.wiew.ColorJOptionPane;
+import java.util.ArrayList;
+
 /**
  *
  * @author artco
  */
 public class PesquisaObjeto {
+    
+    SelectDAO objDAO = new SelectDAO();
+    ArrayList<Objetos> lista;
 
-    public boolean verificaObjeto(String text) {
+    public ArrayList<Objetos> verificaObjeto(String text) {
        
-        return false;
+        this.lista = objDAO.readPesquisaObjeto(text);
+                     
+        if(lista == null || lista.size() == 0){
+            
+            System.out.println("lista vazia ----");
+//            ColorJOptionPane.showMessageDialog(null, "Nenhum registro encontrado!");            
+            
+        }else{
+            return lista;
+        }
+        return null;  
        
     }
     

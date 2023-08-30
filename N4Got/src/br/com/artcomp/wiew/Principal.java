@@ -1,11 +1,18 @@
 package br.com.artcomp.wiew;
 
 import br.com.artcomp.controller.PesquisaObjeto;
+import br.com.artcomp.model.Objetos;
+import br.com.artcomp.model.UpperCaseDocument;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.BorderFactory;
+import javax.swing.text.MaskFormatter;
 
 /**
  *
@@ -255,24 +262,6 @@ public class Principal extends javax.swing.JFrame {
         Pesquisa.setCaretColor(new java.awt.Color(255, 255, 255));
         Pesquisa.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         Pesquisa.setSelectionColor(new java.awt.Color(9, 73, 110));
-        Pesquisa.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                PesquisaFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                PesquisaFocusLost(evt);
-            }
-        });
-        Pesquisa.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                PesquisaMouseClicked(evt);
-            }
-        });
-        Pesquisa.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                PesquisaKeyPressed(evt);
-            }
-        });
 
         btolhar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/artcomp/imagens/lupa25.png"))); // NOI18N
         btolhar2.addActionListener(new java.awt.event.ActionListener() {
@@ -359,7 +348,7 @@ public class Principal extends javax.swing.JFrame {
         TelaCadastroInt cad = new TelaCadastroInt();
         jDesktopPane1.removeAll();
         jDesktopPane1.add(cad).setVisible(true);
-        kGradientPanel8.setVisible(false);
+        // kGradientPanel8.setVisible(false);
     }//GEN-LAST:event_kButton3ActionPerformed
 
     private void kButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton4ActionPerformed
@@ -376,40 +365,40 @@ public class Principal extends javax.swing.JFrame {
         jDesktopPane1.add(ext).setVisible(true);
     }//GEN-LAST:event_kButton5ActionPerformed
 
-    private void PesquisaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PesquisaKeyPressed
-
-    }//GEN-LAST:event_PesquisaKeyPressed
-
-    private void PesquisaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PesquisaMouseClicked
-
-    }//GEN-LAST:event_PesquisaMouseClicked
-
-    private void PesquisaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PesquisaFocusLost
-
-    }//GEN-LAST:event_PesquisaFocusLost
-
-    private void PesquisaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PesquisaFocusGained
-
-    }//GEN-LAST:event_PesquisaFocusGained
-
     private void btolhar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btolhar2ActionPerformed
 
-        if(!Pesquisa.getText().isEmpty()){
+        if (!Pesquisa.getText().isEmpty()) {
             System.out.println("temmmmmm");
-            
-            PesquisaObjeto po = new PesquisaObjeto();                    
-            if(po.verificaObjeto(Pesquisa.getText())){
-                
-                
+            String obj = Pesquisa.getText().toUpperCase();
+
+            PesquisaObjeto pobj = new PesquisaObjeto();
+            ArrayList<Objetos> lista = pobj.verificaObjeto(obj);
+            System.out.println("lista tem " + lista);
+
+            if (lista == null || lista.size() == 0) {
+                System.out.println("corinthians");
+                ColorJOptionPane op = new ColorJOptionPane(Color.red);
+                op.showMessageDialog(null, "Nenhum registro encontrado!!!!");
+                Pesquisa.setText("");
+                TelaTabela tab = new TelaTabela();
+                jDesktopPane1.removeAll();
+                jDesktopPane1.add(tab).setVisible(true);
+                kGradientPanel8.setVisible(true);
+            } else {
+                TelaTabelaPesquisaObjeto tbpesq = new TelaTabelaPesquisaObjeto(obj);
+                jDesktopPane1.removeAll();
+                jDesktopPane1.add(tbpesq).setVisible(true);
+                kGradientPanel8.setVisible(true);
             }
-            
-            
-            
-            
-        }else{
+
+        } else {
             System.out.println("valor não digitado");
+            TelaTabela tab = new TelaTabela();
+            jDesktopPane1.removeAll();
+            jDesktopPane1.add(tab).setVisible(true);
+            kGradientPanel8.setVisible(true);
         }
-        
+
     }//GEN-LAST:event_btolhar2ActionPerformed
 
     private void kButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton6ActionPerformed
@@ -431,7 +420,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jBEmitenteActionPerformed
 
     private void btolhar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btolhar3ActionPerformed
-       
+
         TelaUsuario usu = new TelaUsuario();
         jDesktopPane1.removeAll();
         jDesktopPane1.add(usu).setVisible(true);
@@ -482,7 +471,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jBEmitente;
     private javax.swing.JButton jBFechar;
     private javax.swing.JButton jBMinimisar;
-    private javax.swing.JDesktopPane jDesktopPane1;
+    public javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -493,7 +482,7 @@ public class Principal extends javax.swing.JFrame {
     private com.k33ptoo.components.KButton kButton6;
     private com.k33ptoo.components.KGradientPanel kGradientPanel1;
     private com.k33ptoo.components.KGradientPanel kGradientPanel2;
-    private com.k33ptoo.components.KGradientPanel kGradientPanel8;
+    public com.k33ptoo.components.KGradientPanel kGradientPanel8;
     // End of variables declaration//GEN-END:variables
 
 }

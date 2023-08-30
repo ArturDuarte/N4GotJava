@@ -55,13 +55,35 @@ public class SelectDAO {
         return lista;
     }
     
-    public ArrayList<Objetos> readPesquisaObjeto() throws SQLException {
+    public ArrayList<Objetos> readPesquisaObjeto(String obj)  {
         
+        con_cadastro = new ConexaoFirebird();
+        con_cadastro.conecta();
+        ArrayList<Objetos> lista = new ArrayList<>();
         
-       // select * from cad_obj where nome like '%GMA%' order by nome 
-        
-        
-        return null;
+        con_cadastro.executeSQL( "select * from TB_OBJETO where nome like '%" + obj + "%' order by nome" );
+        try {
+            while (con_cadastro.resultset.next()) {
+                Objetos objts = new Objetos();
+                objts.setId(con_cadastro.resultset.getInt("id"));
+                objts.setNome(con_cadastro.resultset.getString("nome"));
+                objts.setLogin(con_cadastro.resultset.getString("login"));
+                objts.setSenha(con_cadastro.resultset.getString("senha"));
+                objts.setPalavraChave(con_cadastro.resultset.getString("palavrachave"));
+                objts.setImagem(con_cadastro.resultset.getString("imagem"));
+                lista.add(objts);
+            }
+            //con_cadastro.desconecta();
+            System.out.println("select * from TB_OBJETO where nome like '%" + obj + "%' order by nome");
+            return lista;
+
+        } catch (SQLException ex) {
+            System.err.println("deu erro na tabea lllll");
+        } catch (Exception ex) {
+            System.err.println("Erro gerallll´´" + ex.getMessage());
+        }
+
+        return lista;
         
     }    
     

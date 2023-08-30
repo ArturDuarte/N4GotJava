@@ -48,7 +48,7 @@ public class InsertDAO {
 
         } catch (SQLException e) {
 
-            JOptionPane.showMessageDialog(null, "-Erro ao tentar Gravar o registro de pessoa " + e);
+            JOptionPane.showMessageDialog(null, "-Erro ao tentar Gravar o registro do Objeto " + e);
 
         }
         return false;

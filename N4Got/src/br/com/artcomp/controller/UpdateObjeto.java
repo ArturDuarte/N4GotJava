@@ -23,6 +23,8 @@ public class UpdateObjeto {
     
     public boolean updateObjeto(Integer ID,String login, String senha, String nome, String sobrNome, String imagem){
         
+         Criptografa cri = new Criptografa();
+        String senhaCryter =  cri.Criptografa(senha, "admin");
         
         if (nome.isEmpty()) {
             System.out.println("vazio");
@@ -33,7 +35,7 @@ public class UpdateObjeto {
             ob.setNome(nome);
             ob.setPalavraChave(sobrNome);
             ob.setLogin(login);
-            ob.setSenha(senha);
+            ob.setSenha(senhaCryter);
             ob.setImagem(imagem);
            
             
